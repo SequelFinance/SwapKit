@@ -25,7 +25,7 @@
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/swapkit-explorers",
+  "name": "@sequelfinance/swapkit-explorers",
   "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"
@@ -41,5 +41,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.1.0-development.18"
+  "version": "0.0.1-development.1"
 }
