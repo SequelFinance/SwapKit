@@ -1,4 +1,4 @@
-import { BaseDecimal } from '@thorswap-lib/types';
+import { BaseDecimal } from '@sequel/types';
 
 import { Amount } from './amount.js';
 import { AssetEntity as Asset } from './asset.js';

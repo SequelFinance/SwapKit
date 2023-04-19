@@ -1,4 +1,4 @@
-import { ChainId } from '@thorswap-lib/types';
+import { ChainId } from '@sequel/types';
 
 const THORNODE_MAINNET_API_URI = 'https://thornode.thorswap.net';
 const STAGENET_THORNODE_URL = 'https://stagenet-thornode.ninerealms.com';

@@ -1,4 +1,4 @@
-import { Address, AminoWrapping } from '@thorswap-lib/types';
+import { Address, AminoWrapping } from '@sequel/types';
 
 /**
  * Balance

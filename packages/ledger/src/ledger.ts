@@ -1,4 +1,13 @@
 import { cosmosclient, proto, rest } from '@cosmos-client/core';
+import { AVAXToolbox, ETHToolbox, getProvider } from '@sequel/toolbox-evm';
+import {
+  Chain,
+  ChainId,
+  DerivationPathArray,
+  TxParams,
+  WalletOption,
+  WalletTxParams,
+} from '@sequel/types';
 import {
   BinanceToolbox,
   DepositParam,
@@ -7,7 +16,6 @@ import {
   getDenomWithChain,
   ThorchainToolbox,
 } from '@thorswap-lib/toolbox-cosmos';
-import { AVAXToolbox, ETHToolbox, getProvider } from '@thorswap-lib/toolbox-evm';
 import {
   BCHToolbox,
   BTCToolbox,
@@ -15,14 +23,6 @@ import {
   LTCToolbox,
   UTXOBuildTxParams,
 } from '@thorswap-lib/toolbox-utxo';
-import {
-  Chain,
-  ChainId,
-  DerivationPathArray,
-  TxParams,
-  WalletOption,
-  WalletTxParams,
-} from '@thorswap-lib/types';
 import { auth, StdTx } from 'cosmos-client/x/auth/index.js';
 import Long from 'long';
 import secp256k1 from 'secp256k1';

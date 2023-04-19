@@ -1,5 +1,5 @@
+import { Chain } from '@sequel/types';
 import { getRequest } from '@thorswap-lib/helpers';
-import { Chain } from '@thorswap-lib/types';
 
 const getDefaultTxFeeByChain = (chain: Chain) => {
   switch (chain) {

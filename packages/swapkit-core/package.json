@@ -3,10 +3,10 @@
   "dependencies": {
     "@ethersproject/bytes": "5.7.0",
     "@ethersproject/units": "5.7.0",
+    "@sequel/swapkit-entities": "workspace:*",
+    "@sequel/types": "workspace:*",
     "@thorswap-lib/helpers": "workspace:*",
-    "@thorswap-lib/swapkit-entities": "workspace:*",
     "@thorswap-lib/swapkit-explorers": "workspace:*",
-    "@thorswap-lib/types": "workspace:*",
     "bignumber.js": "9.1.1"
   },
   "description": "THORSwap Lib swapkit-core",
@@ -15,8 +15,8 @@
     "@commitlint/config-conventional": "17.4.4",
     "@ethersproject/units": "5.7.0",
     "@internal/config": "workspace:*",
+    "@sequel/toolbox-evm": "workspace:*",
     "@thorswap-lib/cross-chain-api-sdk": "0.1.31",
-    "@thorswap-lib/toolbox-evm": "workspace:*",
     "@thorswap-lib/walletconnect": "workspace:*",
     "@vitest/coverage-c8": "0.29.7",
     "vite": "4.2.1",

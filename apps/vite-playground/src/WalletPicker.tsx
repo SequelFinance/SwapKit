@@ -1,5 +1,5 @@
 import { getDerivationPathFor } from '@thorswap-lib/ledger';
-import { Chain, WalletOption } from '@thorswap-lib/types';
+import { Chain, WalletOption } from '@sequel/types';
 import { useCallback, useState } from 'react';
 
 import { getSwapKitClient } from './swapKitClient';

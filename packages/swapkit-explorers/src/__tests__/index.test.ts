@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 import { describe, test } from 'vitest';
 
 import { getExplorerAddressUrl, getExplorerTxUrl } from '../index.js';

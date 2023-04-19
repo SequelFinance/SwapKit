@@ -9,7 +9,7 @@ yarn add @thorswap-lib/swapkit-explorers
 ## API:
 
 ```typescript
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 
 import { getExplorerTxUrl, getExplorerAddressUrl } from '@thorswap-lib/swapkit-explorers';
 

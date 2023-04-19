@@ -1,7 +1,7 @@
 {
   "author": "thorswap",
   "dependencies": {
-    "@thorswap-lib/types": "workspace:*"
+    "@sequel/types": "workspace:*"
   },
   "description": "THORSwap Lib swapkit-explorers",
   "devDependencies": {

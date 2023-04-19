@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@thorswap-lib/swapkit-entities": "workspace:*",
-    "@thorswap-lib/types": "workspace:*"
+    "@sequel/swapkit-entities": "workspace:*",
+    "@sequel/types": "workspace:*"
   },
   "description": "THORSwap Lib - Helper library for THORSwap",
   "devDependencies": {

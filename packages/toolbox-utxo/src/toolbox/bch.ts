@@ -4,7 +4,7 @@ import {
   Transaction,
   TransactionBuilder,
 } from '@psf/bitcoincashjs-lib';
-import { Address, Chain, DerivationPath, FeeOption, TxHash, UTXO } from '@thorswap-lib/types';
+import { Address, Chain, DerivationPath, FeeOption, TxHash, UTXO } from '@sequel/types';
 import {
   detectAddressNetwork,
   isValidAddress,

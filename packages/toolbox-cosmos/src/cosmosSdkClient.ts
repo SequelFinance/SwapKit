@@ -1,6 +1,6 @@
 import { cosmosclient, proto, rest } from '@cosmos-client/core';
+import { ChainId } from '@sequel/types';
 import { getRequest } from '@thorswap-lib/helpers';
-import { ChainId } from '@thorswap-lib/types';
 import { fromSeed } from 'bip32';
 import * as bip39 from 'bip39';
 import Long from 'long';

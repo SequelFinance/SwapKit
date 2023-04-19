@@ -1,4 +1,4 @@
-import { DerivationPathArray, NetworkDerivationPath } from '@thorswap-lib/types';
+import { DerivationPathArray, NetworkDerivationPath } from '@sequel/types';
 // @ts-expect-error
 import coininfo from 'coininfo';
 

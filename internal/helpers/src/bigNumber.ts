@@ -1,5 +1,5 @@
 import { BigNumber, BigNumberish, FixedNumber, parseFixed } from '@ethersproject/bignumber';
-import { FixedNumberish } from '@thorswap-lib/types';
+import { FixedNumberish } from '@sequel/types';
 
 export const fixedNumber = (value: FixedNumberish | undefined, decimal: BigNumberish) =>
   FixedNumber.fromValue(parseFixed(value?.toString() || '0', decimal), decimal);

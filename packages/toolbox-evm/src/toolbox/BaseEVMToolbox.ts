@@ -6,8 +6,7 @@ import { hexlify } from '@ethersproject/bytes';
 import { Contract } from '@ethersproject/contracts';
 import { Web3Provider } from '@ethersproject/providers';
 import { toUtf8Bytes } from '@ethersproject/strings';
-import { baseAmount } from '@thorswap-lib/helpers';
-import { AssetEntity, getSignatureAssetFor } from '@thorswap-lib/swapkit-entities';
+import { AssetEntity, getSignatureAssetFor } from '@sequel/swapkit-entities';
 import {
   Address,
   AmountWithBaseDenom,
@@ -21,7 +20,8 @@ import {
   FeeOption,
   WalletOption,
   WalletTxParams,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
+import { baseAmount } from '@thorswap-lib/helpers';
 
 import {
   ApproveParams,

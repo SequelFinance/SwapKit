@@ -1,5 +1,5 @@
 import { cosmosclient, proto } from '@cosmos-client/core';
-import { AminoWrapping, Asset, Chain } from '@thorswap-lib/types';
+import { AminoWrapping, Asset, Chain } from '@sequel/types';
 
 export type MsgCoin = {
   asset: Asset | string;

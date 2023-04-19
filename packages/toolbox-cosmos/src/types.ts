@@ -1,5 +1,5 @@
 import { proto } from '@cosmos-client/core';
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 
 export type CosmosSDKClientParams = {
   server: string;

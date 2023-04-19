@@ -1,5 +1,5 @@
 ---
-'@thorswap-lib/toolbox-evm': patch
+'@sequel/toolbox-evm': patch
 ---
 
 Fixes a bug with ledger + JsonRpcProvider and improves Brave Wallet detection

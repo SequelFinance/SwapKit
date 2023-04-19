@@ -1,5 +1,5 @@
 ---
-'@thorswap-lib/toolbox-evm': patch
+'@sequel/toolbox-evm': patch
 ---
 
 adjust `getETHDefaultWallet`

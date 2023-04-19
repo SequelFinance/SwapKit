@@ -2,9 +2,9 @@
   "author": "thorswap",
   "dependencies": {
     "@psf/bitcoincashjs-lib": "4.0.3",
+    "@sequel/swapkit-entities": "workspace:*",
+    "@sequel/types": "workspace:*",
     "@thorswap-lib/helpers": "workspace:*",
-    "@thorswap-lib/swapkit-entities": "workspace:*",
-    "@thorswap-lib/types": "workspace:*",
     "bchaddrjs": "0.5.2",
     "bip32": "2.0.6",
     "bitcoinjs-lib": "5.2.0",

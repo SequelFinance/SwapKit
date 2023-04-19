@@ -1,4 +1,4 @@
-import { AmountWithBaseDenom, Asset, Network, Tx } from '@thorswap-lib/types';
+import { AmountWithBaseDenom, Asset, Network, Tx } from '@sequel/types';
 
 export type NodeUrl = {
   node: string;

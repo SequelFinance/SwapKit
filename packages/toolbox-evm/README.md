@@ -1,9 +1,9 @@
-# @thorswap-lib/toolbox-evm
+# @sequel/toolbox-evm
 
 ## Install:
 
 ```bash
-yarn add @thorswap-lib/toolbox-evm
+yarn add @sequel/toolbox-evm
 ```
 
 ## Links:

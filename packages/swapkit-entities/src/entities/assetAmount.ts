@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 import { BigNumber } from 'bignumber.js';
 
 import { Amount, AmountType, Rounding } from './amount.js';

@@ -1,6 +1,6 @@
 import { QuoteRoute } from '@thorswap-lib/swapkit-api';
-import { AssetAmount } from '@thorswap-lib/swapkit-entities';
-import { FeeOption } from '@thorswap-lib/types';
+import { AssetAmount } from '@sequel/swapkit-entities';
+import { FeeOption } from '@sequel/types';
 import { useCallback, useState } from 'react';
 
 import { SwapInputs } from './SwapInputs';

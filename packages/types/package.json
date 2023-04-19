@@ -22,7 +22,7 @@
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/types",
+  "name": "@sequel/types",
   "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"
@@ -37,5 +37,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.0-development.68"
+  "version": "0.0.1-development.1"
 }

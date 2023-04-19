@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 
 import { ApiClientParams, UTXOApiClient } from '../types/index.js';
 

@@ -1,5 +1,5 @@
-import { getProvider } from '@thorswap-lib/toolbox-evm';
-import { Chain, DerivationPathArray } from '@thorswap-lib/types';
+import { getProvider } from '@sequel/toolbox-evm';
+import { Chain, DerivationPathArray } from '@sequel/types';
 
 import { AvalancheLedger } from '../clients/avalanche.js';
 import { BinanceLedger } from '../clients/binance/index.js';

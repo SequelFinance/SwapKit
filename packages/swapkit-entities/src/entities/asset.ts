@@ -1,4 +1,4 @@
-import { AssetSymbol, BaseDecimal, Chain } from '@thorswap-lib/types';
+import { AssetSymbol, BaseDecimal, Chain } from '@sequel/types';
 
 import { getAssetType, getNetworkName } from '../helpers/index.js';
 

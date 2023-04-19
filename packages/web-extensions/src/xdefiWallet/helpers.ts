@@ -1,9 +1,7 @@
 import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
 import { BigNumber } from '@ethersproject/bignumber';
 import { Web3Provider } from '@ethersproject/providers';
-import { BinanceToolbox, GaiaToolbox, ThorchainToolbox } from '@thorswap-lib/toolbox-cosmos';
-import { AVAXToolbox, BSCToolbox, ETHToolbox } from '@thorswap-lib/toolbox-evm';
-import { BCHToolbox, BTCToolbox, DOGEToolbox, LTCToolbox } from '@thorswap-lib/toolbox-utxo';
+import { AVAXToolbox, BSCToolbox, ETHToolbox } from '@sequel/toolbox-evm';
 import {
   Chain,
   ChainId,
@@ -13,7 +11,9 @@ import {
   RPCUrl,
   TxHash,
   WalletTxParams,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
+import { BinanceToolbox, GaiaToolbox, ThorchainToolbox } from '@thorswap-lib/toolbox-cosmos';
+import { BCHToolbox, BTCToolbox, DOGEToolbox, LTCToolbox } from '@thorswap-lib/toolbox-utxo';
 
 import { prepareNetworkSwitch } from '../evmWallet/helpers.js';
 import { XDEFIConfig } from '../types.js';
