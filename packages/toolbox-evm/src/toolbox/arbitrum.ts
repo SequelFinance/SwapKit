@@ -2,9 +2,9 @@ import { Provider } from '@ethersproject/abstract-provider';
 import { Signer } from '@ethersproject/abstract-signer';
 import { BigNumber } from '@ethersproject/bignumber';
 import { Web3Provider } from '@ethersproject/providers';
+import { AssetEntity, getSignatureAssetFor } from '@sequel/swapkit-entities';
+import { Address, BaseDecimal, Chain, ChainId, RPCUrl, TxHistoryParams } from '@sequel/types';
 import { baseAmount } from '@thorswap-lib/helpers';
-import { AssetEntity, getSignatureAssetFor } from '@thorswap-lib/swapkit-entities';
-import { Address, BaseDecimal, Chain, ChainId, RPCUrl, TxHistoryParams } from '@thorswap-lib/types';
 
 import { BaseEVMToolbox, CovalentApi } from '../index.js';
 

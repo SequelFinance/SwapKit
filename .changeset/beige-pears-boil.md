@@ -1,6 +1,6 @@
 ---
 '@thorswap-lib/web-extensions': patch
-'@thorswap-lib/toolbox-evm': patch
+'@sequel/toolbox-evm': patch
 '@thorswap-lib/ledger': patch
 ---
 

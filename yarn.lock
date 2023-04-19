@@ -2306,6 +2306,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sequel/swapkit-entities@workspace:*, @sequel/swapkit-entities@workspace:packages/swapkit-entities":
+  version: 0.0.0-use.local
+  resolution: "@sequel/swapkit-entities@workspace:packages/swapkit-entities"
+  dependencies:
+    "@internal/config": "workspace:*"
+    "@sequel/types": "workspace:*"
+    "@vitest/coverage-c8": 0.29.7
+    bignumber.js: 9.1.1
+    tiny-invariant: 1.3.1
+    vite: 4.2.1
+    vitest: 0.29.7
+  peerDependencies:
+    bignumber.js: ^9.1.0
+  languageName: unknown
+  linkType: soft
+
+"@sequel/toolbox-evm@workspace:*, @sequel/toolbox-evm@workspace:packages/toolbox-evm":
+  version: 0.0.0-use.local
+  resolution: "@sequel/toolbox-evm@workspace:packages/toolbox-evm"
+  dependencies:
+    "@arbitrum/sdk": ^3.1.2
+    "@ethersproject/abstract-provider": 5.7.0
+    "@ethersproject/abstract-signer": 5.7.0
+    "@ethersproject/address": 5.7.0
+    "@ethersproject/bignumber": 5.7.0
+    "@ethersproject/bytes": 5.7.0
+    "@ethersproject/contracts": 5.7.0
+    "@ethersproject/providers": 5.7.2
+    "@ethersproject/strings": 5.7.0
+    "@ethersproject/units": 5.7.0
+    "@internal/config": "workspace:*"
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/types": "workspace:*"
+    "@thorswap-lib/helpers": "workspace:*"
+    "@vitest/coverage-c8": 0.29.7
+    avalanche: 3.16.0
+    vite: 4.2.1
+    vitest: 0.29.7
+  languageName: unknown
+  linkType: soft
+
+"@sequel/types@workspace:*, @sequel/types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@sequel/types@workspace:packages/types"
+  dependencies:
+    "@ethersproject/bignumber": 5.7.0
+    "@internal/config": "workspace:*"
+    "@types/node": 17.0.45
+    vite: 4.2.1
+  languageName: unknown
+  linkType: soft
+
 "@size-limit/file@npm:8.2.4":
   version: 8.2.4
   resolution: "@size-limit/file@npm:8.2.4"
@@ -2449,8 +2501,8 @@ __metadata:
   dependencies:
     "@ethersproject/bignumber": 5.7.0
     "@internal/config": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     bignumber.js: 9.1.1
     vite: 4.2.1
@@ -2473,12 +2525,12 @@ __metadata:
     "@ethersproject/wallet": 5.7.0
     "@internal/config": "workspace:*"
     "@ledgerhq/live-app-sdk": 0.8.2
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/toolbox-evm": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@types/uniqid": 5.3.2
     "@types/uuid": 9.0.1
     "@vitest/coverage-c8": 0.29.7
@@ -2494,8 +2546,8 @@ __metadata:
     "@ethersproject/bignumber": ^5.7.0
     "@ethersproject/contracts": ^5.7.0
     "@ethersproject/providers": ^5.7.0
+    "@sequel/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
     bip39: ^3.0.4
     bitcoinjs-lib: ^5.2.0
@@ -2520,12 +2572,12 @@ __metadata:
     "@ledgerhq/hw-app-eth": 6.32.1
     "@ledgerhq/hw-transport": 6.28.1
     "@ledgerhq/hw-transport-webusb": 6.27.12
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/toolbox-evm": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@types/bchaddrjs": 0.4.0
     "@types/bn.js": 5.1.1
     "@types/crypto-js": 4.1.1
@@ -2557,8 +2609,8 @@ __metadata:
     "@ethersproject/properties": ^5.7.0
     "@ethersproject/providers": ^5.7.0
     "@ethersproject/transactions": ^5.7.0
+    "@sequel/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
     "@types/bchaddrjs": 0.4.0
     bchaddrjs: 0.5.2
@@ -2574,7 +2626,7 @@ __metadata:
   resolution: "@thorswap-lib/swapkit-api@workspace:packages/swapkit-api"
   dependencies:
     "@internal/config": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@vitest/coverage-c8": 0.30.1
     vite: 4.2.1
     vitest: 0.30.1
@@ -2590,12 +2642,12 @@ __metadata:
     "@ethersproject/bytes": 5.7.0
     "@ethersproject/units": 5.7.0
     "@internal/config": "workspace:*"
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/toolbox-evm": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/cross-chain-api-sdk": 0.1.31
     "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
     "@thorswap-lib/swapkit-explorers": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@thorswap-lib/walletconnect": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     bignumber.js: 9.1.1
@@ -2606,28 +2658,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thorswap-lib/swapkit-entities@workspace:*, @thorswap-lib/swapkit-entities@workspace:packages/swapkit-entities":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/swapkit-entities@workspace:packages/swapkit-entities"
-  dependencies:
-    "@internal/config": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
-    "@vitest/coverage-c8": 0.29.7
-    bignumber.js: 9.1.1
-    tiny-invariant: 1.3.1
-    vite: 4.2.1
-    vitest: 0.29.7
-  peerDependencies:
-    bignumber.js: ^9.1.0
-  languageName: unknown
-  linkType: soft
-
 "@thorswap-lib/swapkit-explorers@workspace:*, @thorswap-lib/swapkit-explorers@workspace:packages/swapkit-explorers":
   version: 0.0.0-use.local
   resolution: "@thorswap-lib/swapkit-explorers@workspace:packages/swapkit-explorers"
   dependencies:
     "@internal/config": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     vite: 4.2.1
     vitest: 0.29.7
@@ -2640,9 +2676,9 @@ __metadata:
   dependencies:
     "@cosmos-client/core": 0.45.13
     "@internal/config": "workspace:*"
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@types/crypto-js": 4.1.1
     "@types/elliptic": 6.4.14
     "@types/tiny-secp256k1": 1.0.0
@@ -2666,40 +2702,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thorswap-lib/toolbox-evm@workspace:*, @thorswap-lib/toolbox-evm@workspace:packages/toolbox-evm":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/toolbox-evm@workspace:packages/toolbox-evm"
-  dependencies:
-    "@arbitrum/sdk": ^3.1.2
-    "@ethersproject/abstract-provider": 5.7.0
-    "@ethersproject/abstract-signer": 5.7.0
-    "@ethersproject/address": 5.7.0
-    "@ethersproject/bignumber": 5.7.0
-    "@ethersproject/bytes": 5.7.0
-    "@ethersproject/contracts": 5.7.0
-    "@ethersproject/providers": 5.7.2
-    "@ethersproject/strings": 5.7.0
-    "@ethersproject/units": 5.7.0
-    "@internal/config": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
-    "@vitest/coverage-c8": 0.29.7
-    avalanche: 3.16.0
-    vite: 4.2.1
-    vitest: 0.29.7
-  languageName: unknown
-  linkType: soft
-
 "@thorswap-lib/toolbox-utxo@workspace:*, @thorswap-lib/toolbox-utxo@workspace:packages/toolbox-utxo":
   version: 0.0.0-use.local
   resolution: "@thorswap-lib/toolbox-utxo@workspace:packages/toolbox-utxo"
   dependencies:
     "@internal/config": "workspace:*"
     "@psf/bitcoincashjs-lib": 4.0.3
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@types/bchaddrjs": 0.4.0
     "@types/tiny-secp256k1": 1.0.0
     "@types/uniqid": 5.3.2
@@ -2719,17 +2730,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thorswap-lib/types@workspace:*, @thorswap-lib/types@workspace:packages/types":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/types@workspace:packages/types"
-  dependencies:
-    "@ethersproject/bignumber": 5.7.0
-    "@internal/config": "workspace:*"
-    "@types/node": 17.0.45
-    vite: 4.2.1
-  languageName: unknown
-  linkType: soft
-
 "@thorswap-lib/walletconnect@workspace:*, @thorswap-lib/walletconnect@workspace:packages/walletconnect":
   version: 0.0.0-use.local
   resolution: "@thorswap-lib/walletconnect@workspace:packages/walletconnect"
@@ -2740,10 +2740,10 @@ __metadata:
     "@ethersproject/contracts": 5.7.0
     "@ethersproject/strings": 5.7.0
     "@internal/config": "workspace:*"
+    "@sequel/toolbox-evm": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/helpers": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     "@walletconnect/client": 1.8.0
     "@walletconnect/qrcode-modal": 1.8.0
@@ -2761,8 +2761,8 @@ __metadata:
     "@ethersproject/bytes": ^5.7.0
     "@ethersproject/contracts": ^5.7.0
     "@ethersproject/strings": ^5.7.0
+    "@sequel/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     cosmos-client: 0.39.2
   languageName: unknown
   linkType: soft
@@ -2779,12 +2779,12 @@ __metadata:
     "@ethersproject/providers": 5.7.2
     "@internal/config": "workspace:*"
     "@keplr-wallet/types": 0.11.49
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/toolbox-evm": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     vite: 4.2.1
     vitest: 0.29.7
@@ -2794,8 +2794,8 @@ __metadata:
     "@ethersproject/bytes": ^5.7.0
     "@ethersproject/contracts": ^5.7.0
     "@ethersproject/providers": ^5.7.0
+    "@sequel/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
   languageName: unknown
   linkType: soft
@@ -2804,16 +2804,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@thorswap/vite-playground@workspace:apps/vite-playground"
   dependencies:
+    "@sequel/swapkit-entities": "workspace:*"
+    "@sequel/toolbox-evm": "workspace:*"
+    "@sequel/types": "workspace:*"
     "@thorswap-lib/keystore": "workspace:*"
     "@thorswap-lib/ledger": "workspace:*"
     "@thorswap-lib/swapkit-api": "workspace:*"
     "@thorswap-lib/swapkit-core": "workspace:*"
-    "@thorswap-lib/swapkit-entities": "workspace:*"
     "@thorswap-lib/swapkit-explorers": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
-    "@thorswap-lib/types": "workspace:*"
     "@thorswap-lib/walletconnect": "workspace:*"
     "@thorswap-lib/web-extensions": "workspace:*"
     "@types/react": 18.0.34

@@ -19,7 +19,7 @@ const viteConfig = thorswapViteConfig(packageJson.name, {
         '@ethersproject/providers',
         '@ethersproject/transactions',
         '@thorswap-lib/toolbox-cosmos',
-        '@thorswap-lib/toolbox-evm',
+        '@sequel/toolbox-evm',
         '@thorswap-lib/toolbox-utxo',
         'bitcoinjs-lib',
         'coininfo',

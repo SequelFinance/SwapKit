@@ -1,4 +1,4 @@
-# @thorswap-lib/types
+# @sequel/types
 
 ## 1.0.0-development.66
 

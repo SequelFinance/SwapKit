@@ -1,7 +1,7 @@
 import BitcoinApp from '@ledgerhq/hw-app-btc';
 import CosmosApp from '@ledgerhq/hw-app-cosmos';
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb';
-import type { UTXO } from '@thorswap-lib/types';
+import type { UTXO } from '@sequel/types';
 import { toCashAddress } from 'bchaddrjs';
 import { type Network as BTCNetwork, networks, type Psbt } from 'bitcoinjs-lib';
 

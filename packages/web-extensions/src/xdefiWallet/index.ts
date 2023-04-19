@@ -1,5 +1,5 @@
-import { isDetected } from '@thorswap-lib/toolbox-evm';
-import { Chain, WalletOption } from '@thorswap-lib/types';
+import { isDetected } from '@sequel/toolbox-evm';
+import { Chain, WalletOption } from '@sequel/types';
 
 import { XDEFIConfig } from '../types.js';
 

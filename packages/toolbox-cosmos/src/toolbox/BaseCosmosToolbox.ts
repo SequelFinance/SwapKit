@@ -1,12 +1,12 @@
 import { proto } from '@cosmos-client/core';
-import { assetToString, baseAmount, getRequest } from '@thorswap-lib/helpers';
 import {
   Asset,
   ChainId,
   DerivationPath,
   ResourceWorkerGasPricesResponse,
   ResourceWorkerUrls,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
+import { assetToString, baseAmount, getRequest } from '@thorswap-lib/helpers';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';
 

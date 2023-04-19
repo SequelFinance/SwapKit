@@ -1,6 +1,8 @@
 import { HDNode } from '@ethersproject/hdnode';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { Wallet } from '@ethersproject/wallet';
+import { AVAXToolbox, BSCToolbox, ETHToolbox, getProvider } from '@sequel/toolbox-evm';
+import { Chain, RPCUrl, TxParams, WalletTxParams, Witness } from '@sequel/types';
 import { getTcChainId, getTcNodeUrl } from '@thorswap-lib/helpers';
 import {
   AssetAtom,
@@ -15,7 +17,6 @@ import {
   getThorchainDenom,
   ThorchainToolbox,
 } from '@thorswap-lib/toolbox-cosmos';
-import { AVAXToolbox, BSCToolbox, ETHToolbox, getProvider } from '@thorswap-lib/toolbox-evm';
 import {
   BCHToolbox,
   BTCToolbox,
@@ -23,7 +24,6 @@ import {
   LTCToolbox,
   UTXOTransferParams,
 } from '@thorswap-lib/toolbox-utxo';
-import { Chain, RPCUrl, TxParams, WalletTxParams, Witness } from '@thorswap-lib/types';
 import { Psbt } from 'bitcoinjs-lib';
 import Long from 'long';
 

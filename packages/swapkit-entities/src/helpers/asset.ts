@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 
 export const getAssetType = (chain: Chain, ticker: string, isSynth = false) => {
   if (isSynth) return 'Synth';

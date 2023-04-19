@@ -1,5 +1,5 @@
 import { QuoteRoute, SwapKitApi } from '@thorswap-lib/swapkit-api';
-import { Amount, AssetAmount } from '@thorswap-lib/swapkit-entities';
+import { Amount, AssetAmount } from '@sequel/swapkit-entities';
 import { useCallback, useState } from 'react';
 
 import { getSwapKitClient } from './swapKitClient';

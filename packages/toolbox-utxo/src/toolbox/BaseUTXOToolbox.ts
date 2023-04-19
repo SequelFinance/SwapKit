@@ -1,5 +1,4 @@
-import { assetAmount, assetToBase } from '@thorswap-lib/helpers';
-import { getSignatureAssetFor } from '@thorswap-lib/swapkit-entities';
+import { getSignatureAssetFor } from '@sequel/swapkit-entities';
 import {
   Balance,
   BaseDecimal,
@@ -12,7 +11,8 @@ import {
   TxsPage,
   TxType,
   UTXO,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
+import { assetAmount, assetToBase } from '@thorswap-lib/helpers';
 import { fromSeed } from 'bip32';
 import { address as btcLibAddress, payments, Psbt, PsbtTxOutput } from 'bitcoinjs-lib';
 import accumulative from 'coinselect/accumulative';

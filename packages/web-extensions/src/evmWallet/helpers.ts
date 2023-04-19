@@ -1,4 +1,4 @@
-import { ChainId, WalletOption } from '@thorswap-lib/types';
+import { ChainId, WalletOption } from '@sequel/types';
 
 type NetworkParams = {
   chainId: ChainId;

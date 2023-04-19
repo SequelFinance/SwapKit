@@ -1,4 +1,4 @@
-import { Address, Chain, TxHash } from '@thorswap-lib/types';
+import { Address, Chain, TxHash } from '@sequel/types';
 
 export interface BlockchairBaseParams {
   chain: Chain;

@@ -1,5 +1,5 @@
 ---
-'@thorswap-lib/swapkit-entities': patch
+'@sequel/swapkit-entities': patch
 ---
 
 use proper signature for THOR token

@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 
 export const getNetworkName = (chain: Chain, ticker: string) => {
   if (chain === Chain.Bitcoin) return 'Bitcoin';

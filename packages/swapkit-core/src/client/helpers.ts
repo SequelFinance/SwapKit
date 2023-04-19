@@ -1,6 +1,6 @@
+import { AssetEntity } from '@sequel/swapkit-entities';
+import { Asset as AssetType, Chain } from '@sequel/types';
 import { getRequest } from '@thorswap-lib/helpers';
-import { AssetEntity } from '@thorswap-lib/swapkit-entities';
-import { Asset as AssetType, Chain } from '@thorswap-lib/types';
 
 const MIDGARD_MAINNET_URL = 'https://midgard.thorswap.net/v2';
 const MIDGARD_STAGENET_URL = 'https://stagenet-midgard.ninerealms.com/v2';

@@ -1,4 +1,4 @@
-import { ErrorCode } from '@thorswap-lib/types';
+import { ErrorCode } from '@sequel/types';
 
 import { CLA, errorCodeToString, INS, PAYLOAD_TYPE, processErrorResponse } from './common.js';
 

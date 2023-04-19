@@ -1,5 +1,5 @@
 ---
-'@thorswap-lib/types': minor
+'@sequel/types': minor
 ---
 
 Add new error definitions

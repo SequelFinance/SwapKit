@@ -1,6 +1,5 @@
-import { QuoteRoute } from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
-import { AssetAmount, Percent, Pool } from '@thorswap-lib/swapkit-entities';
-import { ApproveParams, IsApprovedParams } from '@thorswap-lib/toolbox-evm';
+import { AssetAmount, Percent, Pool } from '@sequel/swapkit-entities';
+import { ApproveParams, IsApprovedParams } from '@sequel/toolbox-evm';
 import {
   AmountWithBaseDenom,
   Asset,
@@ -16,7 +15,8 @@ import {
   TxHistoryParams,
   WalletOption,
   WalletTxParams,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
+import { QuoteRoute } from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
 
 export type { TransactionDetails } from '@thorswap-lib/cross-chain-api-sdk';
 export type {

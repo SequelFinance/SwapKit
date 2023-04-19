@@ -1,4 +1,4 @@
-import { Chain, NetworkDerivationPath } from '@thorswap-lib/types';
+import { Chain, NetworkDerivationPath } from '@sequel/types';
 
 type Params = {
   index: number;

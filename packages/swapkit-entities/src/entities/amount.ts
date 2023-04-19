@@ -1,4 +1,4 @@
-import { BaseDecimal } from '@thorswap-lib/types';
+import { BaseDecimal } from '@sequel/types';
 import { BigNumber } from 'bignumber.js';
 
 import { BN_FORMAT } from './constants.js';

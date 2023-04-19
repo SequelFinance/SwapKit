@@ -3,7 +3,7 @@ import {
   type AmountWithAssetDenom,
   type AmountWithBaseDenom,
   Denomination,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 
 import { isBigNumberValue } from './bigNumber.js';
 
