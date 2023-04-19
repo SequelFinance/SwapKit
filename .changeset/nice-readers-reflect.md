@@ -4,4 +4,4 @@
 '@sequelfinance/types': patch
 ---
 
-First commit after fork from THORSwap
+Initial fork from THORSwap

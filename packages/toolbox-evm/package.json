@@ -12,7 +12,7 @@
     "@ethersproject/units": "5.7.0",
     "@sequelfinance/swapkit-entities": "workspace:*",
     "@sequelfinance/types": "workspace:*",
-    "@thorswap-lib/helpers": "workspace:*",
+    "@thorswap-lib/helpers": "0.0.0-development.61",
     "avalanche": "3.16.0"
   },
   "description": "Sequel toolbox-evm",
