@@ -1,5 +1,12 @@
 # @thorswap-lib/swapkit-explorers
 
+## 0.1.0-development.18
+
+### Patch Changes
+
+- Updated dependencies [[`ca6c39f`](https://github.com/thorswap/SwapKit/commit/ca6c39ff2a1da736ce15e50b5f579303a77eecc9)]:
+  - @sequel/types@0.0.1-development.2
+
 ## 0.1.0-development.17
 
 ### Patch Changes
