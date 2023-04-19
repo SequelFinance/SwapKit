@@ -9,7 +9,7 @@ import {
   postRequest,
   singleFee,
 } from '@thorswap-lib/helpers';
-import { AssetEntity, getSignatureAssetFor } from '@thorswap-lib/swapkit-entities';
+import { AssetEntity, getSignatureAssetFor } from '@sequel/swapkit-entities';
 import {
   Address,
   AmountWithBaseDenom,
@@ -19,7 +19,7 @@ import {
   DerivationPath,
   Tx,
   TxHistoryParams,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 import { bech32 } from 'bech32';
 
 import { BNBTransaction } from '../binanceUtils/transaction.js';

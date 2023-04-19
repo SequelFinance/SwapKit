@@ -1,4 +1,4 @@
-import { AssetAmount } from '@thorswap-lib/swapkit-entities';
+import { AssetAmount } from '@sequel/swapkit-entities';
 
 import { WalletDataType } from './types';
 

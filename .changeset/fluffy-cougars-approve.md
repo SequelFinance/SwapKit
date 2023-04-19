@@ -1,8 +1,8 @@
 ---
 '@thorswap-lib/swapkit-core': patch
 '@thorswap-lib/toolbox-utxo': patch
-'@thorswap-lib/toolbox-evm': patch
-'@thorswap-lib/types': patch
+'@sequel/toolbox-evm': patch
+'@sequel/types': patch
 ---
 
 Fixes utxo fee selection

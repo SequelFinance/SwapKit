@@ -1,9 +1,9 @@
-# @thorswap-lib/swapkit-entities
+# @sequel/swapkit-entities
 
 ## Install:
 
 ```bash
-yarn add @thorswap-lib/swapkit-entities
+yarn add @sequel/swapkit-entities
 ```
 
 ## Links:

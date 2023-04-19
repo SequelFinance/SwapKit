@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
+import { getSignatureAssetFor } from '@sequel/swapkit-entities';
+import { Balance, Chain, ChainId, Tx, TxsPage, TxType } from '@sequel/types';
 import { assetFromString, baseAmount, getRequest } from '@thorswap-lib/helpers';
-import { getSignatureAssetFor } from '@thorswap-lib/swapkit-entities';
-import { Balance, Chain, ChainId, Tx, TxsPage, TxType } from '@thorswap-lib/types';
 
 import { EvmApi } from '../types/Api.js';
 import { CovalentBalanceResponse, CovalentTransactionResponse } from '../types/covalentApiTypes.js';

@@ -5,7 +5,7 @@ import {
   Chain,
   Denomination,
   FixedNumberish,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 
 import { fixedBN, fixedNumber, isFixedNumberValue } from './bigNumber.js';
 

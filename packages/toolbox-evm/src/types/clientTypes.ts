@@ -11,7 +11,7 @@ import {
   FeeOption,
   Fees,
   Network,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 
 export enum EthNetwork {
   Test = 'goerli',

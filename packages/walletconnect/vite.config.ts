@@ -16,7 +16,7 @@ const viteConfig = thorswapViteConfig(packageJson.name, {
         '@ethersproject/contracts',
         '@ethersproject/strings',
         '@thorswap-lib/toolbox-cosmos',
-        '@thorswap-lib/toolbox-evm',
+        '@sequel/toolbox-evm',
         'bech32-buffer',
         'cosmos-client',
       ],

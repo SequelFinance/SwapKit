@@ -1,8 +1,8 @@
-# @thorswap-lib/types
+# @sequel/types
 
 ## Install:
 
 ```bash
-yarn add @thorswap-lib/types
+yarn add @sequel/types
 ```
 

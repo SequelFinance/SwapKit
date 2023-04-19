@@ -1,4 +1,4 @@
-import { Balance, Tx, TxsPage } from '@thorswap-lib/types';
+import { Balance, Tx, TxsPage } from '@sequel/types';
 
 export interface EvmApi<P> {
   getTxInfo(params: P): Promise<Tx>;

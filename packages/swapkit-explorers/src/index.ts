@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 
 const baseExplorerUrl: Record<Chain, string> = {
   [Chain.Arbitrum]: 'https://arbiscan.io',

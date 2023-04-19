@@ -6,7 +6,7 @@ import {
   DerivationPath,
   ResourceWorkerGasPricesResponse,
   ResourceWorkerUrls,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';
 

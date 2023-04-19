@@ -9,7 +9,7 @@ import {
   getTcRpcUrl,
   singleFee,
 } from '@thorswap-lib/helpers';
-import { Amount, AmountType, AssetAmount, AssetEntity } from '@thorswap-lib/swapkit-entities';
+import { Amount, AmountType, AssetAmount, AssetEntity } from '@sequel/swapkit-entities';
 import {
   Balance,
   BaseDecimal,
@@ -18,7 +18,7 @@ import {
   DerivationPath,
   Fees,
   TxHistoryParams,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 import { fromByteArray, toByteArray } from 'base64-js';
 import Long from 'long';
 

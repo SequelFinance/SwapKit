@@ -9,7 +9,7 @@ import {
   DerivationPath,
   FeeType,
   TxHistoryParams,
-} from '@thorswap-lib/types';
+} from '@sequel/types';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';
 import { AssetAtom, TransferParams } from '../types.js';

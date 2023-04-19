@@ -1,5 +1,5 @@
 ---
-'@thorswap-lib/swapkit-entities': patch
+'@sequel/swapkit-entities': patch
 ---
 
 chore: cache signature assets

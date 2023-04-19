@@ -1,4 +1,4 @@
-import { type AmountWithBaseDenom, FeeOption } from '@thorswap-lib/types';
+import { type AmountWithBaseDenom, FeeOption } from '@sequel/types';
 
 export const singleFee = (fee: AmountWithBaseDenom): Record<FeeOption, AmountWithBaseDenom> => ({
   [FeeOption.Average]: fee,

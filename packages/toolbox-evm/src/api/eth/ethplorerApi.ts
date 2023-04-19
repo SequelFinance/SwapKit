@@ -1,5 +1,5 @@
+import { TxType } from '@sequel/types';
 import { getRequest } from '@thorswap-lib/helpers';
-import { TxType } from '@thorswap-lib/types';
 
 import { AddressInfo, TransactionInfo, TransactionOperation } from '../../types/index.js';
 

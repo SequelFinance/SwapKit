@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequel/types';
 import { describe, expect, it } from 'vitest';
 
 import { getNetworkName } from '../network.js';

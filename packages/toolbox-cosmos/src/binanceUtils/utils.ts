@@ -1,5 +1,5 @@
 import { assetAmount, assetFromString, assetToBase } from '@thorswap-lib/helpers';
-import { Chain, Tx, TxType } from '@thorswap-lib/types';
+import { Chain, Tx, TxType } from '@sequel/types';
 
 import { DexFees, Fee, TransferFee, Tx as BinanceTx, TxType as BinanceTxType } from './types.js';
 
