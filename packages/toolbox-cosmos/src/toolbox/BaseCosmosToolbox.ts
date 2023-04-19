@@ -1,5 +1,4 @@
 import { proto } from '@cosmos-client/core';
-import { assetToString, baseAmount, getRequest } from '@thorswap-lib/helpers';
 import {
   Asset,
   ChainId,
@@ -7,6 +6,7 @@ import {
   ResourceWorkerGasPricesResponse,
   ResourceWorkerUrls,
 } from '@sequel/types';
+import { assetToString, baseAmount, getRequest } from '@thorswap-lib/helpers';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';
 

@@ -1,4 +1,3 @@
-import { baseAmount } from '@thorswap-lib/helpers';
 import {
   AmountWithBaseDenom,
   Chain,
@@ -9,6 +8,7 @@ import {
   FeeType,
   UTXO,
 } from '@sequel/types';
+import { baseAmount } from '@thorswap-lib/helpers';
 import * as bip39 from 'bip39';
 import { networks, opcodes, script } from 'bitcoinjs-lib';
 import coininfo from 'coininfo';
