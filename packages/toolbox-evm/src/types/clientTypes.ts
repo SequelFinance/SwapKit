@@ -121,7 +121,6 @@ type EthereumWindowProvider = import('@ethersproject/providers').ExternalProvide
 
 declare global {
   interface Window {
-    keplr: import('@keplr-wallet/types').Keplr;
     ethereum: EthereumWindowProvider;
     trustwallet: EthereumWindowProvider;
     coinbaseWalletExtension: EthereumWindowProvider;
