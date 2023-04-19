@@ -2,7 +2,7 @@
 '@thorswap-lib/web-extensions': patch
 '@thorswap-lib/walletconnect': patch
 '@thorswap-lib/swapkit-core': patch
-'@sequel/toolbox-evm': patch
+'@sequelfinance/toolbox-evm': patch
 '@thorswap-lib/keystore': patch
 '@thorswap-lib/ledger': patch
 ---

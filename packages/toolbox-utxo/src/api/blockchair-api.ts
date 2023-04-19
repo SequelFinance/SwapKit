@@ -1,4 +1,4 @@
-import { Chain, UTXO } from '@sequel/types';
+import { Chain, UTXO } from '@sequelfinance/types';
 import { getRequest } from '@thorswap-lib/helpers';
 
 import {

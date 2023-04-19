@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 
 import { BitcoinApi, BitcoincashApi, DogecoinApi, LitecoinApi } from '../api/index.js';
 

@@ -8,7 +8,7 @@ import {
   DerivationPath,
   FeeType,
   TxHistoryParams,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 import { baseAmount } from '@thorswap-lib/helpers';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';

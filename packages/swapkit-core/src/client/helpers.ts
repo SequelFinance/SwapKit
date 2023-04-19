@@ -1,5 +1,5 @@
-import { AssetEntity } from '@sequel/swapkit-entities';
-import { Asset as AssetType, Chain } from '@sequel/types';
+import { AssetEntity } from '@sequelfinance/swapkit-entities';
+import { Asset as AssetType, Chain } from '@sequelfinance/types';
 import { getRequest } from '@thorswap-lib/helpers';
 
 const MIDGARD_MAINNET_URL = 'https://midgard.thorswap.net/v2';

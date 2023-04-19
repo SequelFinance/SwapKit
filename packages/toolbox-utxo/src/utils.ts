@@ -7,7 +7,7 @@ import {
   Fees,
   FeeType,
   UTXO,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 import { baseAmount } from '@thorswap-lib/helpers';
 import * as bip39 from 'bip39';
 import { networks, opcodes, script } from 'bitcoinjs-lib';

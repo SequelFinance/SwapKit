@@ -1,4 +1,4 @@
-import { ChainId, WalletOption } from '@sequel/types';
+import { ChainId, WalletOption } from '@sequelfinance/types';
 
 type NetworkParams = {
   chainId: ChainId;

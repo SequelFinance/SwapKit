@@ -1,4 +1,4 @@
-import { AssetSymbol, BaseDecimal, Chain } from '@sequel/types';
+import { AssetSymbol, BaseDecimal, Chain } from '@sequelfinance/types';
 
 import { getAssetType, getNetworkName } from '../helpers/index.js';
 

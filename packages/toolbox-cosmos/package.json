@@ -1,8 +1,8 @@
 {
   "author": "thorswap",
   "dependencies": {
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "@thorswap-lib/helpers": "workspace:*",
     "base64-js": "1.5.1",
     "bech32": "2.0.0",

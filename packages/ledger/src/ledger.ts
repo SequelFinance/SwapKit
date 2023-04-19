@@ -1,5 +1,5 @@
 import { cosmosclient, proto, rest } from '@cosmos-client/core';
-import { AVAXToolbox, ETHToolbox, getProvider } from '@sequel/toolbox-evm';
+import { AVAXToolbox, ETHToolbox, getProvider } from '@sequelfinance/toolbox-evm';
 import {
   Chain,
   ChainId,
@@ -7,7 +7,7 @@ import {
   TxParams,
   WalletOption,
   WalletTxParams,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 import {
   BinanceToolbox,
   DepositParam,

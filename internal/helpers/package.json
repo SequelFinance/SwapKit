@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*"
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*"
   },
   "description": "THORSwap Lib - Helper library for THORSwap",
   "devDependencies": {

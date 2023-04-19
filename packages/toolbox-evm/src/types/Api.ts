@@ -1,4 +1,4 @@
-import { Balance, Tx, TxsPage } from '@sequel/types';
+import { Balance, Tx, TxsPage } from '@sequelfinance/types';
 
 export interface EvmApi<P> {
   getTxInfo(params: P): Promise<Tx>;

@@ -1,4 +1,4 @@
-import { Chain, Tx, TxType } from '@sequel/types';
+import { Chain, Tx, TxType } from '@sequelfinance/types';
 import { assetAmount, assetFromString, assetToBase } from '@thorswap-lib/helpers';
 
 import { DexFees, Fee, TransferFee, Tx as BinanceTx, TxType as BinanceTxType } from './types.js';

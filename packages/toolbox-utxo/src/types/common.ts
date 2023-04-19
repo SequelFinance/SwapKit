@@ -1,4 +1,4 @@
-import { AmountWithBaseDenom, Chain, TxParams, WalletTxParams } from '@sequel/types';
+import { AmountWithBaseDenom, Chain, TxParams, WalletTxParams } from '@sequelfinance/types';
 
 import { UTXOApiClientType } from './commonApiTypes.js';
 

@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 
 export const getNetworkName = (chain: Chain, ticker: string) => {
   if (chain === Chain.Bitcoin) return 'Bitcoin';

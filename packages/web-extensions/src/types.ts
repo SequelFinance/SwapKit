@@ -1,4 +1,4 @@
-import { Asset } from '@sequel/types';
+import { Asset } from '@sequelfinance/types';
 
 export enum WalletStatus {
   NotInstalled,

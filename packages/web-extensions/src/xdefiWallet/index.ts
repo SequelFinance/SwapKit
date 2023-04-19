@@ -1,5 +1,5 @@
-import { isDetected } from '@sequel/toolbox-evm';
-import { Chain, WalletOption } from '@sequel/types';
+import { isDetected } from '@sequelfinance/toolbox-evm';
+import { Chain, WalletOption } from '@sequelfinance/types';
 
 import { XDEFIConfig } from '../types.js';
 

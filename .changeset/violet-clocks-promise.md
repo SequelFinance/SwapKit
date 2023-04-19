@@ -1,5 +1,5 @@
 ---
-'@sequel/types': minor
+'@sequelfinance/types': minor
 ---
 
 Add new error definitions

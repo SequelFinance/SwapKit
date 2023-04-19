@@ -11,7 +11,7 @@ import {
   FeeOption,
   Fees,
   Network,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 
 export enum EthNetwork {
   Test = 'goerli',

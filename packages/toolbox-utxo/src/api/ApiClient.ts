@@ -1,4 +1,4 @@
-import { AmountWithBaseDenom, BaseDecimal, Chain } from '@sequel/types';
+import { AmountWithBaseDenom, BaseDecimal, Chain } from '@sequelfinance/types';
 import { baseAmount, postRequest } from '@thorswap-lib/helpers';
 import uniqid from 'uniqid';
 

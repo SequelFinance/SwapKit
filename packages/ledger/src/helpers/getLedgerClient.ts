@@ -1,5 +1,5 @@
-import { getProvider } from '@sequel/toolbox-evm';
-import { Chain, DerivationPathArray } from '@sequel/types';
+import { getProvider } from '@sequelfinance/toolbox-evm';
+import { Chain, DerivationPathArray } from '@sequelfinance/types';
 
 import { AvalancheLedger } from '../clients/avalanche.js';
 import { BinanceLedger } from '../clients/binance/index.js';

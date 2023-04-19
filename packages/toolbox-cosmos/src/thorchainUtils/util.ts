@@ -1,5 +1,5 @@
 import { cosmosclient, proto } from '@cosmos-client/core';
-import { AssetEntity } from '@sequel/swapkit-entities';
+import { AssetEntity } from '@sequelfinance/swapkit-entities';
 import {
   Address,
   AmountWithBaseDenom,
@@ -9,7 +9,7 @@ import {
   Chain,
   Fees,
   TxType,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 import {
   assetAmount,
   assetFromString,

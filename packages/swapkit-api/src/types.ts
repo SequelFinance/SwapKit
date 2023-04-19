@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 
 export type QuoteParams = {
   affiliateBasisPoints?: string;

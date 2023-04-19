@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 
 export const getAssetType = (chain: Chain, ticker: string, isSynth = false) => {
   if (isSynth) return 'Synth';

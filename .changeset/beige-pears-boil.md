@@ -1,6 +1,6 @@
 ---
 '@thorswap-lib/web-extensions': patch
-'@sequel/toolbox-evm': patch
+'@sequelfinance/toolbox-evm': patch
 '@thorswap-lib/ledger': patch
 ---
 

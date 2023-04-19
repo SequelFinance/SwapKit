@@ -1,5 +1,5 @@
 ---
-'@sequel/swapkit-entities': patch
+'@sequelfinance/swapkit-entities': patch
 ---
 
 use proper signature for THOR token

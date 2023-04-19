@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 import { BigNumber } from 'bignumber.js';
 
 import { Amount, AmountType, Rounding } from './amount.js';

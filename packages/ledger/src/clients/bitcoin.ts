@@ -1,4 +1,4 @@
-import { DerivationPathArray, NetworkDerivationPath } from '@sequel/types';
+import { DerivationPathArray, NetworkDerivationPath } from '@sequelfinance/types';
 import { networks } from 'bitcoinjs-lib';
 
 import { derivationPathToString, getWalletFormatFor } from '../helpers/derivationPath.js';

@@ -1,4 +1,4 @@
-import { AmountWithBaseDenom, Asset, Network, Tx } from '@sequel/types';
+import { AmountWithBaseDenom, Asset, Network, Tx } from '@sequelfinance/types';
 
 export type NodeUrl = {
   node: string;

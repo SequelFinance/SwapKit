@@ -1,5 +1,5 @@
 import { proto } from '@cosmos-client/core';
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 
 export type CosmosSDKClientParams = {
   server: string;

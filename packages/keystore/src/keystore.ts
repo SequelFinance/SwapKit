@@ -1,5 +1,5 @@
 import { HDNode } from '@ethersproject/hdnode';
-import { Chain, DerivationPath, WalletOption } from '@sequel/types';
+import { Chain, DerivationPath, WalletOption } from '@sequelfinance/types';
 
 import {
   avalancheWalletMethods,

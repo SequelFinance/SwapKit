@@ -10,8 +10,8 @@
     "@ethersproject/providers": "5.7.2",
     "@ethersproject/strings": "5.7.0",
     "@ethersproject/units": "5.7.0",
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "@thorswap-lib/helpers": "workspace:*",
     "avalanche": "3.16.0"
   },
@@ -38,7 +38,7 @@
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@sequel/toolbox-evm",
+  "name": "@sequelfinance/toolbox-evm",
   "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"

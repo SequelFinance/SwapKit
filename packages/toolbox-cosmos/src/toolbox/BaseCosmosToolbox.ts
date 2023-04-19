@@ -5,7 +5,7 @@ import {
   DerivationPath,
   ResourceWorkerGasPricesResponse,
   ResourceWorkerUrls,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 import { assetToString, baseAmount, getRequest } from '@thorswap-lib/helpers';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';

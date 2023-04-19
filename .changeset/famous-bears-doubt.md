@@ -1,7 +1,7 @@
 ---
 '@thorswap-lib/web-extensions': patch
-'@sequel/toolbox-evm': patch
-'@sequel/types': patch
+'@sequelfinance/toolbox-evm': patch
+'@sequelfinance/types': patch
 ---
 
 Adds support for coinbase web extension wallet

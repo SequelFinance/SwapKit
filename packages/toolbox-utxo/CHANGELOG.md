@@ -5,8 +5,8 @@
 ### Patch Changes
 
 - Updated dependencies [[`ca6c39f`](https://github.com/thorswap/SwapKit/commit/ca6c39ff2a1da736ce15e50b5f579303a77eecc9)]:
-  - @sequel/swapkit-entities@0.3.0-development.70
-  - @sequel/types@0.0.1-development.2
+  - @sequelfinance/swapkit-entities@0.3.0-development.70
+  - @sequelfinance/types@0.0.1-development.2
   - @thorswap-lib/helpers@0.0.0-development.62
 
 ## 0.1.0-development.85
@@ -22,16 +22,16 @@
 - [#29](https://github.com/thorswap/SwapKit/pull/29) [`3ff4f02`](https://github.com/thorswap/SwapKit/commit/3ff4f027d1064ecbf6c6c122c4eb6d950fce7562) Thanks [@towanTG](https://github.com/towanTG)! - Fixes utxo fee selection
 
 - Updated dependencies [[`3ff4f02`](https://github.com/thorswap/SwapKit/commit/3ff4f027d1064ecbf6c6c122c4eb6d950fce7562)]:
-  - @sequel/types@1.0.0-development.66
+  - @sequelfinance/types@1.0.0-development.66
   - @thorswap-lib/helpers@0.0.0-development.61
-  - @sequel/swapkit-entities@0.3.0-development.69
+  - @sequelfinance/swapkit-entities@0.3.0-development.69
 
 ## 0.1.0-development.83
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @sequel/swapkit-entities@0.3.0-development.68
+  - @sequelfinance/swapkit-entities@0.3.0-development.68
   - @thorswap-lib/helpers@0.0.0-development.60
 
 ## 0.1.0-development.82
@@ -39,7 +39,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`5a50af8`](https://github.com/thorswap/SwapKit/commit/5a50af87a3207426cc8dc9da2d7d751148fb89d1)]:
-  - @sequel/swapkit-entities@0.3.0-development.67
+  - @sequelfinance/swapkit-entities@0.3.0-development.67
   - @thorswap-lib/helpers@0.0.0-development.59
 
 ## 0.1.0-development.81
@@ -49,18 +49,18 @@
 - [`d014a19`](https://github.com/thorswap/SwapKit/commit/d014a193596511a1500b5851df78a734c86bb894) Thanks [@chillios-ts](https://github.com/chillios-ts)! - Refactoring, optimize dependencies & remove @binance-chain/javascript-sdk usage
 
 - Updated dependencies [[`d014a19`](https://github.com/thorswap/SwapKit/commit/d014a193596511a1500b5851df78a734c86bb894)]:
-  - @sequel/swapkit-entities@0.3.0-development.66
+  - @sequelfinance/swapkit-entities@0.3.0-development.66
   - @thorswap-lib/helpers@0.0.0-development.58
-  - @sequel/types@1.0.0-development.65
+  - @sequelfinance/types@1.0.0-development.65
 
 ## 0.1.0-development.80
 
 ### Patch Changes
 
 - Updated dependencies [[`2d16a48`](https://github.com/thorswap/SwapKit/commit/2d16a488511efc65385def9cf7a309e84bf4f62b)]:
-  - @sequel/types@1.0.0-development.64
+  - @sequelfinance/types@1.0.0-development.64
   - @thorswap-lib/helpers@0.0.0-development.57
-  - @sequel/swapkit-entities@0.3.0-development.65
+  - @sequelfinance/swapkit-entities@0.3.0-development.65
 
 ## 0.1.0-development.79
 
@@ -69,24 +69,24 @@
 - peerDependency caret range
 
 - Updated dependencies []:
-  - @sequel/swapkit-entities@0.3.0-development.64
+  - @sequelfinance/swapkit-entities@0.3.0-development.64
   - @thorswap-lib/helpers@0.0.0-development.56
-  - @sequel/types@1.0.0-development.63
+  - @sequelfinance/types@1.0.0-development.63
 
 ## 0.1.0-development.78
 
 ### Patch Changes
 
 - Updated dependencies [[`1fe5ac5`](https://github.com/thorswap/SwapKit/commit/1fe5ac5fe14eb1bb677c2d824578963622d176db)]:
-  - @sequel/types@1.0.0-development.62
+  - @sequelfinance/types@1.0.0-development.62
   - @thorswap-lib/helpers@0.0.0-development.55
-  - @sequel/swapkit-entities@0.3.0-development.63
+  - @sequelfinance/swapkit-entities@0.3.0-development.63
 
 ## 0.1.0-development.77
 
 ### Patch Changes
 
 - Updated dependencies [[`f4ad63c`](https://github.com/thorswap/SwapKit/commit/f4ad63cf5715bc198e44aad29d031acaeffd8434)]:
-  - @sequel/types@1.0.0-development.61
+  - @sequelfinance/types@1.0.0-development.61
   - @thorswap-lib/helpers@0.0.0-development.54
-  - @sequel/swapkit-entities@0.3.0-development.62
+  - @sequelfinance/swapkit-entities@0.3.0-development.62

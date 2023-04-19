@@ -1,4 +1,4 @@
-import { Address, AminoWrapping } from '@sequel/types';
+import { Address, AminoWrapping } from '@sequelfinance/types';
 
 /**
  * Balance

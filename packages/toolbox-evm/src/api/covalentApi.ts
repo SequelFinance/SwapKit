@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { getSignatureAssetFor } from '@sequel/swapkit-entities';
-import { Balance, Chain, ChainId, Tx, TxsPage, TxType } from '@sequel/types';
+import { getSignatureAssetFor } from '@sequelfinance/swapkit-entities';
+import { Balance, Chain, ChainId, Tx, TxsPage, TxType } from '@sequelfinance/types';
 import { assetFromString, baseAmount, getRequest } from '@thorswap-lib/helpers';
 
 import { EvmApi } from '../types/Api.js';

@@ -1,7 +1,7 @@
 import { Signer } from '@ethersproject/abstract-signer';
 import { Web3Provider } from '@ethersproject/providers';
-import { AVAXToolbox, BSCToolbox, ETHToolbox } from '@sequel/toolbox-evm';
-import { ChainId } from '@sequel/types';
+import { AVAXToolbox, BSCToolbox, ETHToolbox } from '@sequelfinance/toolbox-evm';
+import { ChainId } from '@sequelfinance/types';
 
 import { addEVMWalletNetwork, prepareNetworkSwitch } from './helpers.js';
 

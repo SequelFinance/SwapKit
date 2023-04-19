@@ -1,5 +1,5 @@
 ---
-'@sequel/toolbox-evm': patch
+'@sequelfinance/toolbox-evm': patch
 ---
 
 adjust `getETHDefaultWallet`

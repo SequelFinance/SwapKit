@@ -1,4 +1,4 @@
-import { Address, Chain, TxHash } from '@sequel/types';
+import { Address, Chain, TxHash } from '@sequelfinance/types';
 
 export interface BlockchairBaseParams {
   chain: Chain;

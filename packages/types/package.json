@@ -22,7 +22,7 @@
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@sequel/types",
+  "name": "@sequelfinance/types",
   "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"
