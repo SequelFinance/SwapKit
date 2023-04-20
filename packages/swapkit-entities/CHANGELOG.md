@@ -1,5 +1,14 @@
 []
 
+## 0.3.0-development.71
+
+### Patch Changes
+
+- [`4230229`](https://github.com/thorswap/SwapKit/commit/42302299f49d77145a8958a24cff1c913d1c8579) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Initial fork from THORSwap
+
+- Updated dependencies [[`4230229`](https://github.com/thorswap/SwapKit/commit/42302299f49d77145a8958a24cff1c913d1c8579)]:
+  - @sequelfinance/types@0.0.1-development.3
+
 ## 0.3.0-development.70
 
 ### Patch Changes

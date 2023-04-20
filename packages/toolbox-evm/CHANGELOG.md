@@ -1,5 +1,17 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.3
+
+### Patch Changes
+
+- [`4230229`](https://github.com/thorswap/SwapKit/commit/42302299f49d77145a8958a24cff1c913d1c8579) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Initial fork from THORSwap
+
+- [`d1c998d`](https://github.com/thorswap/SwapKit/commit/d1c998d675fbde67cee3029229801769ab29ed38) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Fixes bug with gas estimation for ERC20 tokens
+
+- Updated dependencies [[`4230229`](https://github.com/thorswap/SwapKit/commit/42302299f49d77145a8958a24cff1c913d1c8579)]:
+  - @sequelfinance/swapkit-entities@0.3.0-development.71
+  - @sequelfinance/types@0.0.1-development.3
+
 ## 0.0.1-development.2
 
 ### Patch Changes
