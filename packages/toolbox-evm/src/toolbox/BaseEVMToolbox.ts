@@ -530,8 +530,8 @@ export const BaseEVMToolbox = ({
   sendTransaction: sendTransaction({ provider, signer }),
   broadcastTransaction: provider.sendTransaction,
   estimateCall: (params: EstimateCallParams) => estimateCall(provider, { ...params, signer }),
-  estimateGasLimit: ({ asset, recipient, amount, memo }: WalletTxParams) =>
-    estimateGasLimit(provider, { asset, recipient, amount, memo }),
+  estimateGasLimit: ({ asset, recipient, amount, memo, from }: WalletTxParams) =>
+    estimateGasLimit(provider, { asset, recipient, amount, memo, from }),
   getFeeData: (feeOptionKey = FeeOption.Average) => getFeeData({ feeOptionKey, provider }),
   addAccountsChangedCallback,
 });
