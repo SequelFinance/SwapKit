@@ -1,5 +1,11 @@
 # @sequel/types
 
+## 0.0.1-development.3
+
+### Patch Changes
+
+- [`4230229`](https://github.com/thorswap/SwapKit/commit/42302299f49d77145a8958a24cff1c913d1c8579) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Initial fork from THORSwap
+
 ## 0.0.1-development.2
 
 ### Patch Changes

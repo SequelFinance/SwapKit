@@ -1,7 +1,12 @@
 {
   "changesets": [
+    "nice-readers-reflect",
+    "rich-crabs-shop"
   ],
   "initialVersions": {
+    "@sequelfinance/swapkit-entities": "0.3.0-development.70",
+    "@sequelfinance/toolbox-evm": "0.0.1-development.2",
+    "@sequelfinance/types": "0.0.1-development.2"
   },
   "mode": "pre",
   "tag": "development"
