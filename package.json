@@ -58,13 +58,13 @@
     "typeforce": "patch:typeforce@npm:1.18.0#.yarn/patches/typeforce-npm-1.18.0-372e34e2a2.patch"
   },
   "scripts": {
-    "build": "NODE_OPTIONS=--max_old_space_size=32768 turbo run build --cache-dir=./.turbo-cache",
+    "build": "NODE_OPTIONS=--max_old_space_size=32768 turbo run build --filter=types --filter=swapkit-entities --filter=toolbox-cosmos --filter=toolbox-evm --filter=toolbox-utxo --filter=swapkit-explorers --filter=helpers --cache-dir=./.turbo-cache",
     "bump:development": "yarn changeset && yarn changeset version",
     "bump:release": "yarn changeset pre exit && yarn changeset && yarn changeset version",
     "changelog": "yarn changeset",
     "dev:vite": "turbo run dev --concurrency=20",
     "generate": "yarn internal/generator generate",
-    "lint": "turbo run lint",
+    "lint": "turbo run lint --filter=types --filter=swapkit-entities --filter=toolbox-cosmos --filter=toolbox-evm --filter=toolbox-utxo --filter=swapkit-explorers --filter=helpers",
     "publish-packages": "turbo run build lint --cache-dir=./.turbo-cache && changeset version && changeset publish",
     "test": "turbo run test",
     "ci": "turbo run build lint test --cache-dir=./.turbo-cache",

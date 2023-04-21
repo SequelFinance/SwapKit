@@ -3,7 +3,7 @@ import {
   type AmountWithAssetDenom,
   type AmountWithBaseDenom,
   Denomination,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 
 import { isBigNumberValue } from './bigNumber.js';
 

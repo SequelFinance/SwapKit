@@ -1,6 +1,6 @@
 import { cosmosclient, proto } from '@cosmos-client/core';
-import { Asset, FeeType, Tx, TxFrom, TxTo, TxType } from '@sequel/types';
-import { assetToString, baseAmount } from '@thorswap-lib/helpers';
+import { assetToString, baseAmount } from '@sequelfinance/helpers';
+import { Asset, FeeType, Tx, TxFrom, TxTo, TxType } from '@sequelfinance/types';
 
 import { APIQueryParam, AssetAtom, AssetMuon, RawTxResponse, TxResponse } from './types.js';
 

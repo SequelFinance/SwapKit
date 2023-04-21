@@ -1,15 +1,4 @@
 import type { cosmosclient, proto } from '@cosmos-client/core';
-import { AssetEntity, getSignatureAssetFor } from '@sequel/swapkit-entities';
-import {
-  Address,
-  AmountWithBaseDenom,
-  BaseDecimal,
-  Chain,
-  ChainId,
-  DerivationPath,
-  Tx,
-  TxHistoryParams,
-} from '@sequel/types';
 import {
   assetAmount,
   assetFromString,
@@ -19,7 +8,18 @@ import {
   getRequest,
   postRequest,
   singleFee,
-} from '@thorswap-lib/helpers';
+} from '@sequelfinance/helpers';
+import { AssetEntity, getSignatureAssetFor } from '@sequelfinance/swapkit-entities';
+import {
+  Address,
+  AmountWithBaseDenom,
+  BaseDecimal,
+  Chain,
+  ChainId,
+  DerivationPath,
+  Tx,
+  TxHistoryParams,
+} from '@sequelfinance/types';
 import { bech32 } from 'bech32';
 
 import { BNBTransaction } from '../binanceUtils/transaction.js';

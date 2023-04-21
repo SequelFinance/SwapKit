@@ -1,4 +1,4 @@
-import { SwapKitCore } from '@thorswap-lib/swapkit-core';
+import { SwapKitCore } from '@sequelfinance/swapkit-core';
 
 export type WalletDataType = Awaited<
   ReturnType<InstanceType<typeof SwapKitCore>['getWalletByChain']>

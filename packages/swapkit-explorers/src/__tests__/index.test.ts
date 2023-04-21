@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 import { describe, test } from 'vitest';
 
 import { getExplorerAddressUrl, getExplorerTxUrl } from '../index.js';

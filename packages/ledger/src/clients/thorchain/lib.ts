@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  ******************************************************************************* */
-import { ErrorCode } from '@sequel/types';
+import { ErrorCode } from '@thorswap-lib/types';
 import { bech32 } from 'bech32';
 import crypto from 'crypto';
 import Ripemd160 from 'ripemd160';

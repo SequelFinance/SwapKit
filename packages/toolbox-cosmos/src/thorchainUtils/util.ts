@@ -1,5 +1,14 @@
 import { cosmosclient, proto } from '@cosmos-client/core';
-import { AssetEntity } from '@sequel/swapkit-entities';
+import {
+  assetAmount,
+  assetFromString,
+  assetToBase,
+  assetToString,
+  baseAmount,
+  getRequest,
+  singleFee,
+} from '@sequelfinance/helpers';
+import { AssetEntity } from '@sequelfinance/swapkit-entities';
 import {
   Address,
   AmountWithBaseDenom,
@@ -9,16 +18,7 @@ import {
   Chain,
   Fees,
   TxType,
-} from '@sequel/types';
-import {
-  assetAmount,
-  assetFromString,
-  assetToBase,
-  assetToString,
-  baseAmount,
-  getRequest,
-  singleFee,
-} from '@thorswap-lib/helpers';
+} from '@sequelfinance/types';
 import { decode } from 'bech32-buffer';
 import Long from 'long';
 

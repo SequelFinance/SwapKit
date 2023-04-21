@@ -1,4 +1,4 @@
-import { DerivationPathArray, NetworkDerivationPath } from '@sequel/types';
+import { DerivationPathArray, NetworkDerivationPath } from '@thorswap-lib/types';
 import { networks } from 'bitcoinjs-lib';
 
 import { derivationPathToString, getWalletFormatFor } from '../helpers/derivationPath.js';

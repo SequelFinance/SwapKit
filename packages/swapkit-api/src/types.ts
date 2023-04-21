@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@thorswap-lib/types';
 
 export type QuoteParams = {
   affiliateBasisPoints?: string;

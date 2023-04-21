@@ -1,5 +1,5 @@
-import { Chain } from '@sequel/types';
-import { getRequest } from '@thorswap-lib/helpers';
+import { getRequest } from '@sequelfinance/helpers';
+import { Chain } from '@sequelfinance/types';
 
 const getDefaultTxFeeByChain = (chain: Chain) => {
   switch (chain) {

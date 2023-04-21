@@ -5,7 +5,7 @@ import {
   Chain,
   Denomination,
   FixedNumberish,
-} from '@sequel/types';
+} from '@sequelfinance/types';
 
 import { fixedBN, fixedNumber, isFixedNumberValue } from './bigNumber.js';
 

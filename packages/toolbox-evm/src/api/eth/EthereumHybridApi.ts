@@ -1,8 +1,8 @@
 import { getAddress } from '@ethersproject/address';
 import { parseUnits } from '@ethersproject/units';
-import { getSignatureAssetFor } from '@sequel/swapkit-entities';
-import { Balance, Chain, Tx, TxType } from '@sequel/types';
-import { assetFromString, baseAmount } from '@thorswap-lib/helpers';
+import { assetFromString, baseAmount } from '@sequelfinance/helpers';
+import { getSignatureAssetFor } from '@sequelfinance/swapkit-entities';
+import { Balance, Chain, Tx, TxType } from '@sequelfinance/types';
 
 import {
   EvmApi,

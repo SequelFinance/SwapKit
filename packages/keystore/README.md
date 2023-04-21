@@ -28,9 +28,9 @@ client.extend({
 | LTC              | ✅     | [@thorswap-lib/toolbox-utxo](../toolbox-utxo/README.md)     |
 | BCH              | ✅     | [@thorswap-lib/toolbox-utxo](../toolbox-utxo/README.md)     |
 | DOGE             | ✅     | [@thorswap-lib/toolbox-utxo](../toolbox-utxo/README.md)     |
-| ETH              | ✅     | [@sequel/toolbox-evm](../toolbox-evm/README.md)       |
-| AVAX             | ✅     | [@sequel/toolbox-evm](../toolbox-evm/README.md)       |
-| BSC              | ⏳     | [@sequel/toolbox-evm](../toolbox-evm/README.md)       |
+| ETH              | ✅     | [@thorswap-lib/toolbox-evm](../toolbox-evm/README.md)       |
+| AVAX             | ✅     | [@thorswap-lib/toolbox-evm](../toolbox-evm/README.md)       |
+| BSC              | ⏳     | [@thorswap-lib/toolbox-evm](../toolbox-evm/README.md)       |
 | COSMOS (ATOM)    | ✅     | [@thorswap-lib/toolbox-cosmos](../toolbox-cosmos/README.md) |
 | BNB              | ✅     | [@thorswap-lib/toolbox-cosmos](../toolbox-cosmos/README.md) |
 | THORCHAIN (RUNE) | ✅     | [@thorswap-lib/toolbox-cosmos](../toolbox-cosmos/README.md) |

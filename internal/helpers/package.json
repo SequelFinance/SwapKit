@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*"
+    "@sequelfinance/types": "workspace:*",
+    "@thorswap-lib/swapkit-entities": "0.3.0-development.71"
   },
-  "description": "THORSwap Lib - Helper library for THORSwap",
+  "description": "Fork of THORSwap Lib - Helper library for SwapKit",
   "devDependencies": {
     "@ethersproject/bignumber": "5.7.0",
     "@internal/config": "workspace:*",
@@ -15,10 +15,10 @@
   "files": [
     "src/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./src/index.ts",
-  "name": "@thorswap-lib/helpers",
+  "name": "@sequelfinance/helpers",
   "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "@ethersproject/bignumber": "^5.7.0",
@@ -32,5 +32,5 @@
     "test:coverage": "echo 'vitest run --coverage'"
   },
   "type": "module",
-  "version": "0.0.0-development.63"
+  "version": "0.0.1-development.0"
 }

@@ -1,4 +1,4 @@
-import type { UTXO } from '@sequel/types';
+import type { UTXO } from '@thorswap-lib/types';
 import { type Psbt, Transaction } from 'bitcoinjs-lib';
 
 import { CreateTransactionArg } from './types.js';

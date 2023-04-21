@@ -1,9 +1,9 @@
-# @sequel/toolbox-evm
+# @sequelfinance/toolbox-evm
 
 ## Install:
 
 ```bash
-yarn add @sequel/toolbox-evm
+yarn add @sequelfinance/toolbox-evm
 ```
 
 ## Links:

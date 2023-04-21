@@ -1,9 +1,9 @@
-# @sequel/swapkit-entities
+# @sequelfinance/swapkit-entities
 
 ## Install:
 
 ```bash
-yarn add @sequel/swapkit-entities
+yarn add @sequelfinance/swapkit-entities
 ```
 
 ## Links:

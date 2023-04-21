@@ -2,9 +2,9 @@
   "author": "thorswap",
   "dependencies": {
     "@cosmjs/stargate": "0.29.5",
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*",
-    "@thorswap-lib/helpers": "workspace:*"
+    "@thorswap-lib/helpers": "0.0.0-development.63",
+    "@thorswap-lib/swapkit-entities": "0.3.0-development.71",
+    "@thorswap-lib/types": "1.0.0-development.68"
   },
   "description": "THORSwap Lib web-extensions",
   "devDependencies": {
@@ -15,9 +15,9 @@
     "@ethersproject/providers": "5.7.2",
     "@internal/config": "workspace:*",
     "@keplr-wallet/types": "0.11.49",
-    "@sequel/toolbox-evm": "workspace:*",
-    "@thorswap-lib/toolbox-cosmos": "workspace:*",
-    "@thorswap-lib/toolbox-utxo": "workspace:*",
+    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
+    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
+    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87",
     "@vitest/coverage-c8": "0.29.7",
     "vite": "4.2.1",
     "vitest": "0.29.7"
@@ -45,9 +45,9 @@
     "@ethersproject/bytes": "^5.7.0",
     "@ethersproject/contracts": "^5.7.0",
     "@ethersproject/providers": "^5.7.0",
-    "@sequel/toolbox-evm": "workspace:*",
-    "@thorswap-lib/toolbox-cosmos": "workspace:*",
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
+    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
+    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
+    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87"
   },
   "publishConfig": {
     "access": "public"

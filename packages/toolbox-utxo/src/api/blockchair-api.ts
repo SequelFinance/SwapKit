@@ -1,5 +1,5 @@
-import { Chain, UTXO } from '@sequel/types';
-import { getRequest } from '@thorswap-lib/helpers';
+import { getRequest } from '@sequelfinance/helpers';
+import { Chain, UTXO } from '@sequelfinance/types';
 
 import {
   BlockchairAddressesParams,

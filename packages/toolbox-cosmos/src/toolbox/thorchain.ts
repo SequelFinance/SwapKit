@@ -1,14 +1,4 @@
 import { cosmosclient, proto, rest } from '@cosmos-client/core';
-import { Amount, AmountType, AssetAmount, AssetEntity } from '@sequel/swapkit-entities';
-import {
-  Balance,
-  BaseDecimal,
-  Chain,
-  ChainId,
-  DerivationPath,
-  Fees,
-  TxHistoryParams,
-} from '@sequel/types';
 import {
   assetAmount,
   assetToBase,
@@ -18,7 +8,17 @@ import {
   getTcNodeUrl,
   getTcRpcUrl,
   singleFee,
-} from '@thorswap-lib/helpers';
+} from '@sequelfinance/helpers';
+import { Amount, AmountType, AssetAmount, AssetEntity } from '@sequelfinance/swapkit-entities';
+import {
+  Balance,
+  BaseDecimal,
+  Chain,
+  ChainId,
+  DerivationPath,
+  Fees,
+  TxHistoryParams,
+} from '@sequelfinance/types';
 import { fromByteArray, toByteArray } from 'base64-js';
 import Long from 'long';
 

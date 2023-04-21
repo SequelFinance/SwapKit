@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 import { describe, expect, it } from 'vitest';
 
 import { getMemoFor, MemoType } from '../memo.js';

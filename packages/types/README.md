@@ -1,8 +1,8 @@
-# @sequel/types
+# @sequelfinance/types
 
 ## Install:
 
 ```bash
-yarn add @sequel/types
+yarn add @sequelfinance/types
 ```
 

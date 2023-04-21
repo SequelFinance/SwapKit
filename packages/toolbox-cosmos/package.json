@@ -1,9 +1,9 @@
 {
-  "author": "thorswap",
+  "author": "sequel",
   "dependencies": {
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*",
-    "@thorswap-lib/helpers": "workspace:*",
+    "@sequelfinance/helpers": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "base64-js": "1.5.1",
     "bech32": "2.0.0",
     "bech32-buffer": "0.2.1",
@@ -17,7 +17,7 @@
     "protocol-buffers-encodings": "1.2.0",
     "tiny-secp256k1": "1.1.6"
   },
-  "description": "THORSwap Lib toolbox-cosmos",
+  "description": "Fork of THORSwap Lib toolbox-cosmos",
   "devDependencies": {
     "@cosmos-client/core": "0.45.13",
     "@internal/config": "workspace:*",
@@ -39,11 +39,11 @@
     "src/",
     "dist/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/toolbox-cosmos",
+  "name": "@sequelfinance/toolbox-cosmos",
   "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "@cosmos-client/core": "^0.45.13"
@@ -52,7 +52,7 @@
     "access": "public"
   },
   "react-native": "./src/index.ts",
-  "repository": "https://github.com/thorswap/SwapKit.git",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
   "scripts": {
     "build": "yarn clean; echo 'Build toolbox-cosmos 🛠'; vite build && echo 'Build succeeded toolbox-cosmos ✅\n'",
     "clean": "rm -rf dist",
@@ -63,5 +63,5 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "typings": "./dist/index.d.ts",
-  "version": "0.1.0-development.84"
+  "version": "0.0.1-development.0"
 }

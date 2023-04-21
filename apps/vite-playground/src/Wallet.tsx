@@ -1,4 +1,4 @@
-import { AssetAmount } from '@sequel/swapkit-entities';
+import { AssetAmount } from '@sequelfinance/swapkit-entities';
 
 import { WalletDataType } from './types';
 

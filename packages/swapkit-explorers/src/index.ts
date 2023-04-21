@@ -1,4 +1,4 @@
-import { Chain } from '@sequel/types';
+import { Chain } from '@sequelfinance/types';
 
 const baseExplorerUrl: Record<Chain, string> = {
   [Chain.Arbitrum]: 'https://arbiscan.io',

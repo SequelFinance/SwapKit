@@ -1,6 +1,6 @@
 import { Signer } from '@ethersproject/abstract-signer';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ETHToolbox, getProvider } from '@sequel/toolbox-evm';
+import { ETHToolbox, getProvider } from '@thorswap-lib/toolbox-evm';
 import {
   Chain,
   ChainId,
@@ -8,7 +8,7 @@ import {
   NetworkId,
   WalletOption,
   WalletTxParams,
-} from '@sequel/types';
+} from '@thorswap-lib/types';
 import { getTcChainId } from '@thorswap-lib/helpers';
 import {
   BinanceToolbox,

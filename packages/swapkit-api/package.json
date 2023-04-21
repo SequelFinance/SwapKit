@@ -1,7 +1,7 @@
 {
   "author": "thorswap",
   "dependencies": {
-    "@sequel/types": "workspace:*"
+    "@thorswap-lib/types": "1.0.0-development.68"
   },
   "description": "THORSwap Lib swapkit-api",
   "devDependencies": {

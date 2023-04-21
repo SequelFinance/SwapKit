@@ -1,5 +1,5 @@
-import { TxType } from '@sequel/types';
-import { getRequest } from '@thorswap-lib/helpers';
+import { getRequest } from '@sequelfinance/helpers';
+import { TxType } from '@sequelfinance/types';
 
 import { AddressInfo, TransactionInfo, TransactionOperation } from '../../types/index.js';
 

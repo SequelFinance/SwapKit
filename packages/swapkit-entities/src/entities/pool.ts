@@ -1,4 +1,4 @@
-import { BaseDecimal } from '@sequel/types';
+import { BaseDecimal } from '@sequelfinance/types';
 
 import { Amount } from './amount.js';
 import { AssetEntity as Asset } from './asset.js';

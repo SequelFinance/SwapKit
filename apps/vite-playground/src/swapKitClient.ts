@@ -1,6 +1,6 @@
-import { ledgerWallet } from '@thorswap-lib/ledger';
-import { SwapKitCore } from '@thorswap-lib/swapkit-core';
-import { evmWallet, xdefiWallet } from '@thorswap-lib/web-extensions';
+import { ledgerWallet } from '@sequelfinance/ledger';
+import { SwapKitCore } from '@sequelfinance/swapkit-core';
+import { evmWallet, xdefiWallet } from '@sequelfinance/web-extensions';
 
 let skClient: SwapKitCore;
 

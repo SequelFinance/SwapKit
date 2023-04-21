@@ -1,5 +1,16 @@
 import { isHexString } from '@ethersproject/bytes';
 import { parseUnits } from '@ethersproject/units';
+import type {
+  CalldataSwapIn,
+  CalldataSwapOut,
+  CalldataTcToTc,
+} from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
+import {
+  baseAmount,
+  createAssetObjFromAsset,
+  gasFeeMultiplier,
+  throwWalletError,
+} from '@thorswap-lib/helpers';
 import {
   Amount,
   AmountType,
@@ -12,7 +23,8 @@ import {
   MemoType,
   Percent,
   ThornameRegisterParam,
-} from '@sequel/swapkit-entities';
+} from '@thorswap-lib/swapkit-entities';
+import { getExplorerAddressUrl, getExplorerTxUrl } from '@thorswap-lib/swapkit-explorers';
 import {
   AmountWithBaseDenom,
   Chain,
@@ -23,19 +35,7 @@ import {
   TCAvalancheDepositABI,
   TCEthereumVaultAbi,
   TxHistoryParams,
-} from '@sequel/types';
-import type {
-  CalldataSwapIn,
-  CalldataSwapOut,
-  CalldataTcToTc,
-} from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
-import {
-  baseAmount,
-  createAssetObjFromAsset,
-  gasFeeMultiplier,
-  throwWalletError,
-} from '@thorswap-lib/helpers';
-import { getExplorerAddressUrl, getExplorerTxUrl } from '@thorswap-lib/swapkit-explorers';
+} from '@thorswap-lib/types';
 import { type WalletConnectOption } from '@thorswap-lib/walletconnect';
 
 import {
@@ -119,7 +119,7 @@ export class SwapKitCore {
       case QuoteMode.AVAX_TO_TC_SUPPORTED:
       case QuoteMode.ETH_TO_AVAX:
       case QuoteMode.ETH_TO_TC_SUPPORTED: {
-        const { getProvider, toChecksumAddress } = await import('@sequel/toolbox-evm');
+        const { getProvider, toChecksumAddress } = await import('@thorswap-lib/toolbox-evm');
         const walletMethods = this.connectedWallets[evmChain];
         const from = this.getAddress(evmChain);
 
@@ -261,7 +261,9 @@ export class SwapKitCore {
     if (isL1Deposit) return walletInstance.deposit(params);
 
     if (isEVMDeposit) {
-      const { getBigNumberFrom, getChecksumAddressFromAsset } = await import('@sequel/toolbox-evm');
+      const { getBigNumberFrom, getChecksumAddressFromAsset } = await import(
+        '@thorswap-lib/toolbox-evm'
+      );
 
       const { asset } = assetAmount;
       const abi = chain === Chain.Avalanche ? TCAvalancheDepositABI : TCEthereumVaultAbi;
@@ -581,7 +583,7 @@ export class SwapKitCore {
       throw new Error(`Wallet not connected for ${asset.L1Chain}`);
     }
 
-    const { getTokenAddress } = await import('@sequel/toolbox-evm');
+    const { getTokenAddress } = await import('@thorswap-lib/toolbox-evm');
     const assetAddress = getTokenAddress(asset, asset.L1Chain as EVMChain);
     // TODO: I dont think we need this @towan
     const from = this.getAddress(asset.L1Chain as SupportedChain);

@@ -1,10 +1,10 @@
 {
-  "author": "thorswap",
+  "author": "sequel",
   "dependencies": {
     "@psf/bitcoincashjs-lib": "4.0.3",
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/types": "workspace:*",
-    "@thorswap-lib/helpers": "workspace:*",
+    "@sequelfinance/helpers": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "bchaddrjs": "0.5.2",
     "bip32": "2.0.6",
     "bitcoinjs-lib": "5.2.0",
@@ -14,7 +14,7 @@
     "tiny-secp256k1": "1.1.6",
     "uniqid": "5.4.0"
   },
-  "description": "THORSwap toolbox-utxo",
+  "description": "Fork of THORSwap toolbox-utxo",
   "devDependencies": {
     "@internal/config": "workspace:*",
     "@types/bchaddrjs": "0.4.0",
@@ -35,11 +35,11 @@
     "src/",
     "dist/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/toolbox-utxo",
+  "name": "@sequelfinance/toolbox-utxo",
   "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "bip39": "^3.0.4"
@@ -48,7 +48,7 @@
     "access": "public"
   },
   "react-native": "./src/index.ts",
-  "repository": "https://github.com/thorswap/SwapKit.git",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
   "scripts": {
     "build": "yarn clean; echo 'Build toolbox-utxo 🛠'; vite build && echo 'Build succeeded toolbox-utxo ✅\n'",
     "clean": "rm -rf dist",
@@ -58,5 +58,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.1.0-development.87"
+  "version": "0.0.1-development.0"
 }

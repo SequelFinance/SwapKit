@@ -2306,12 +2306,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sequel/swapkit-entities@workspace:*, @sequel/swapkit-entities@workspace:packages/swapkit-entities":
+"@sequelfinance/helpers@workspace:*, @sequelfinance/helpers@workspace:internal/helpers":
   version: 0.0.0-use.local
-  resolution: "@sequel/swapkit-entities@workspace:packages/swapkit-entities"
+  resolution: "@sequelfinance/helpers@workspace:internal/helpers"
+  dependencies:
+    "@ethersproject/bignumber": 5.7.0
+    "@internal/config": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@vitest/coverage-c8": 0.29.7
+    bignumber.js: 9.1.1
+    vite: 4.2.1
+    vitest: 0.29.7
+  peerDependencies:
+    "@ethersproject/bignumber": ^5.7.0
+    bignumber.js: ^9.1.1
+  languageName: unknown
+  linkType: soft
+
+"@sequelfinance/swapkit-entities@workspace:*, @sequelfinance/swapkit-entities@workspace:packages/swapkit-entities":
+  version: 0.0.0-use.local
+  resolution: "@sequelfinance/swapkit-entities@workspace:packages/swapkit-entities"
   dependencies:
     "@internal/config": "workspace:*"
-    "@sequel/types": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     bignumber.js: 9.1.1
     tiny-invariant: 1.3.1
@@ -2322,9 +2340,53 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@sequel/toolbox-evm@workspace:*, @sequel/toolbox-evm@workspace:packages/toolbox-evm":
+"@sequelfinance/swapkit-explorers@workspace:*, @sequelfinance/swapkit-explorers@workspace:packages/swapkit-explorers":
   version: 0.0.0-use.local
-  resolution: "@sequel/toolbox-evm@workspace:packages/toolbox-evm"
+  resolution: "@sequelfinance/swapkit-explorers@workspace:packages/swapkit-explorers"
+  dependencies:
+    "@internal/config": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
+    "@vitest/coverage-c8": 0.29.7
+    vite: 4.2.1
+    vitest: 0.29.7
+  languageName: unknown
+  linkType: soft
+
+"@sequelfinance/toolbox-cosmos@workspace:*, @sequelfinance/toolbox-cosmos@workspace:packages/toolbox-cosmos":
+  version: 0.0.0-use.local
+  resolution: "@sequelfinance/toolbox-cosmos@workspace:packages/toolbox-cosmos"
+  dependencies:
+    "@cosmos-client/core": 0.45.13
+    "@internal/config": "workspace:*"
+    "@sequelfinance/helpers": "workspace:*"
+    "@sequelfinance/swapkit-entities": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
+    "@types/crypto-js": 4.1.1
+    "@types/elliptic": 6.4.14
+    "@types/tiny-secp256k1": 1.0.0
+    "@vitest/coverage-c8": 0.29.7
+    base64-js: 1.5.1
+    bech32: 2.0.0
+    bech32-buffer: 0.2.1
+    bip32: 2.0.6
+    bip39: 3.1.0
+    bn.js: 5.2.1
+    crypto-js: 4.1.1
+    elliptic: 6.5.4
+    long: 4.0.0
+    protobufjs: 7.2.2
+    protocol-buffers-encodings: 1.2.0
+    tiny-secp256k1: 1.1.6
+    vite: 4.2.1
+    vitest: 0.29.7
+  peerDependencies:
+    "@cosmos-client/core": ^0.45.13
+  languageName: unknown
+  linkType: soft
+
+"@sequelfinance/toolbox-evm@workspace:*, @sequelfinance/toolbox-evm@workspace:packages/toolbox-evm":
+  version: 0.0.0-use.local
+  resolution: "@sequelfinance/toolbox-evm@workspace:packages/toolbox-evm"
   dependencies:
     "@arbitrum/sdk": ^3.1.2
     "@ethersproject/abstract-provider": 5.7.0
@@ -2337,9 +2399,9 @@ __metadata:
     "@ethersproject/strings": 5.7.0
     "@ethersproject/units": 5.7.0
     "@internal/config": "workspace:*"
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
+    "@sequelfinance/helpers": "workspace:*"
+    "@sequelfinance/swapkit-entities": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     avalanche: 3.16.0
     vite: 4.2.1
@@ -2347,13 +2409,67 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@sequel/types@workspace:*, @sequel/types@workspace:packages/types":
+"@sequelfinance/toolbox-utxo@workspace:*, @sequelfinance/toolbox-utxo@workspace:packages/toolbox-utxo":
   version: 0.0.0-use.local
-  resolution: "@sequel/types@workspace:packages/types"
+  resolution: "@sequelfinance/toolbox-utxo@workspace:packages/toolbox-utxo"
+  dependencies:
+    "@internal/config": "workspace:*"
+    "@psf/bitcoincashjs-lib": 4.0.3
+    "@sequelfinance/helpers": "workspace:*"
+    "@sequelfinance/swapkit-entities": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
+    "@types/bchaddrjs": 0.4.0
+    "@types/tiny-secp256k1": 1.0.0
+    "@types/uniqid": 5.3.2
+    "@vitest/coverage-c8": 0.29.7
+    bchaddrjs: 0.5.2
+    bip32: 2.0.6
+    bitcoinjs-lib: 5.2.0
+    coininfo: 5.2.1
+    coinselect: 3.1.13
+    ecpair: 2.0.1
+    tiny-secp256k1: 1.1.6
+    uniqid: 5.4.0
+    vite: 4.2.1
+    vitest: 0.29.7
+  peerDependencies:
+    bip39: ^3.0.4
+  languageName: unknown
+  linkType: soft
+
+"@sequelfinance/types@workspace:*, @sequelfinance/types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@sequelfinance/types@workspace:packages/types"
   dependencies:
     "@ethersproject/bignumber": 5.7.0
     "@internal/config": "workspace:*"
     "@types/node": 17.0.45
+    vite: 4.2.1
+  languageName: unknown
+  linkType: soft
+
+"@sequelfinance/vite-playground@workspace:apps/vite-playground":
+  version: 0.0.0-use.local
+  resolution: "@sequelfinance/vite-playground@workspace:apps/vite-playground"
+  dependencies:
+    "@sequelfinance/swapkit-entities": "workspace:*"
+    "@sequelfinance/swapkit-explorers": "workspace:*"
+    "@sequelfinance/toolbox-cosmos": "workspace:*"
+    "@sequelfinance/toolbox-evm": "workspace:*"
+    "@sequelfinance/toolbox-utxo": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
+    "@thorswap-lib/keystore": "workspace:*"
+    "@thorswap-lib/ledger": "workspace:*"
+    "@thorswap-lib/swapkit-api": "workspace:*"
+    "@thorswap-lib/swapkit-core": "workspace:*"
+    "@thorswap-lib/walletconnect": "workspace:*"
+    "@thorswap-lib/web-extensions": "workspace:*"
+    "@types/react": 18.0.34
+    "@types/react-dom": 18.0.11
+    "@vitejs/plugin-react": 3.1.0
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 5.0.4
     vite: 4.2.1
   languageName: unknown
   linkType: soft
@@ -2369,90 +2485,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-darwin-arm64@npm:1.3.52"
+"@swc/core-darwin-arm64@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-darwin-arm64@npm:1.3.53"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-darwin-x64@npm:1.3.52"
+"@swc/core-darwin-x64@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-darwin-x64@npm:1.3.53"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.52"
+"@swc/core-linux-arm-gnueabihf@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.53"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.52"
+"@swc/core-linux-arm64-gnu@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.53"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-linux-arm64-musl@npm:1.3.52"
+"@swc/core-linux-arm64-musl@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.53"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-linux-x64-gnu@npm:1.3.52"
+"@swc/core-linux-x64-gnu@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.53"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-linux-x64-musl@npm:1.3.52"
+"@swc/core-linux-x64-musl@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.53"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.52"
+"@swc/core-win32-arm64-msvc@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.53"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.52"
+"@swc/core-win32-ia32-msvc@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.53"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.3.52":
-  version: 1.3.52
-  resolution: "@swc/core-win32-x64-msvc@npm:1.3.52"
+"@swc/core-win32-x64-msvc@npm:1.3.53":
+  version: 1.3.53
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.53"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
 "@swc/core@npm:^1.3.10":
-  version: 1.3.52
-  resolution: "@swc/core@npm:1.3.52"
+  version: 1.3.53
+  resolution: "@swc/core@npm:1.3.53"
   dependencies:
-    "@swc/core-darwin-arm64": 1.3.52
-    "@swc/core-darwin-x64": 1.3.52
-    "@swc/core-linux-arm-gnueabihf": 1.3.52
-    "@swc/core-linux-arm64-gnu": 1.3.52
-    "@swc/core-linux-arm64-musl": 1.3.52
-    "@swc/core-linux-x64-gnu": 1.3.52
-    "@swc/core-linux-x64-musl": 1.3.52
-    "@swc/core-win32-arm64-msvc": 1.3.52
-    "@swc/core-win32-ia32-msvc": 1.3.52
-    "@swc/core-win32-x64-msvc": 1.3.52
+    "@swc/core-darwin-arm64": 1.3.53
+    "@swc/core-darwin-x64": 1.3.53
+    "@swc/core-linux-arm-gnueabihf": 1.3.53
+    "@swc/core-linux-arm64-gnu": 1.3.53
+    "@swc/core-linux-arm64-musl": 1.3.53
+    "@swc/core-linux-x64-gnu": 1.3.53
+    "@swc/core-linux-x64-musl": 1.3.53
+    "@swc/core-win32-arm64-msvc": 1.3.53
+    "@swc/core-win32-ia32-msvc": 1.3.53
+    "@swc/core-win32-x64-msvc": 1.3.53
   peerDependencies:
     "@swc/helpers": ^0.5.0
   dependenciesMeta:
@@ -2479,7 +2595,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: ae92657347b223ddbcc47d995966517356bbd600f775fcd74805c95eb8b10e80d0db1def315c710675fa40cae3c89cf26c413bccf1ea884066ba435f65425864
+  checksum: b446aaee4db7e1febf18a4f8490ac9fc8af39cea9e9eed436ec0ec9910e15bd8c4efa88b0a8a1abd95c1bc01ac5cffede1cb0b027371d6879071c2b038bc0e81
   languageName: node
   linkType: hard
 
@@ -2495,23 +2611,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thorswap-lib/helpers@workspace:*, @thorswap-lib/helpers@workspace:internal/helpers":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/helpers@workspace:internal/helpers"
+"@thorswap-lib/helpers@npm:0.0.0-development.63":
+  version: 0.0.0-development.63
+  resolution: "@thorswap-lib/helpers@npm:0.0.0-development.63"
   dependencies:
-    "@ethersproject/bignumber": 5.7.0
-    "@internal/config": "workspace:*"
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@vitest/coverage-c8": 0.29.7
-    bignumber.js: 9.1.1
-    vite: 4.2.1
-    vitest: 0.29.7
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/types": 1.0.0-development.68
   peerDependencies:
     "@ethersproject/bignumber": ^5.7.0
     bignumber.js: ^9.1.1
-  languageName: unknown
-  linkType: soft
+  checksum: 640c3d0aaf4f152d4c02908cbb411039d22aeb0b0b9398b999437cc8d6af2dae0549aa64b851b7558c880e7f21569c5c3396b866c760c17b3ee7f4a55e6bd124
+  languageName: node
+  linkType: hard
 
 "@thorswap-lib/keystore@workspace:*, @thorswap-lib/keystore@workspace:packages/keystore":
   version: 0.0.0-use.local
@@ -2525,12 +2636,12 @@ __metadata:
     "@ethersproject/wallet": 5.7.0
     "@internal/config": "workspace:*"
     "@ledgerhq/live-app-sdk": 0.8.2
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/toolbox-evm": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/toolbox-utxo": 0.1.0-development.87
+    "@thorswap-lib/types": 1.0.0-development.68
     "@types/uniqid": 5.3.2
     "@types/uuid": 9.0.1
     "@vitest/coverage-c8": 0.29.7
@@ -2546,8 +2657,8 @@ __metadata:
     "@ethersproject/bignumber": ^5.7.0
     "@ethersproject/contracts": ^5.7.0
     "@ethersproject/providers": ^5.7.0
-    "@sequel/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-cosmos": "workspace:*"
+    "@thorswap-lib/toolbox-evm": "workspace:*"
     "@thorswap-lib/toolbox-utxo": "workspace:*"
     bip39: ^3.0.4
     bitcoinjs-lib: ^5.2.0
@@ -2572,12 +2683,12 @@ __metadata:
     "@ledgerhq/hw-app-eth": 6.32.1
     "@ledgerhq/hw-transport": 6.28.1
     "@ledgerhq/hw-transport-webusb": 6.27.12
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/toolbox-evm": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/toolbox-utxo": 0.1.0-development.87
+    "@thorswap-lib/types": 1.0.0-development.68
     "@types/bchaddrjs": 0.4.0
     "@types/bn.js": 5.1.1
     "@types/crypto-js": 4.1.1
@@ -2609,9 +2720,9 @@ __metadata:
     "@ethersproject/properties": ^5.7.0
     "@ethersproject/providers": ^5.7.0
     "@ethersproject/transactions": ^5.7.0
-    "@sequel/toolbox-evm": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/toolbox-utxo": 0.1.0-development.87
     "@types/bchaddrjs": 0.4.0
     bchaddrjs: 0.5.2
     bitcoinjs-lib: 5.2.0
@@ -2626,7 +2737,7 @@ __metadata:
   resolution: "@thorswap-lib/swapkit-api@workspace:packages/swapkit-api"
   dependencies:
     "@internal/config": "workspace:*"
-    "@sequel/types": "workspace:*"
+    "@thorswap-lib/types": 1.0.0-development.68
     "@vitest/coverage-c8": 0.30.1
     vite: 4.2.1
     vitest: 0.30.1
@@ -2642,12 +2753,12 @@ __metadata:
     "@ethersproject/bytes": 5.7.0
     "@ethersproject/units": 5.7.0
     "@internal/config": "workspace:*"
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/toolbox-evm": "workspace:*"
-    "@sequel/types": "workspace:*"
     "@thorswap-lib/cross-chain-api-sdk": 0.1.31
-    "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/swapkit-explorers": "workspace:*"
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/swapkit-explorers": 0.1.0-development.19
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/types": 1.0.0-development.68
     "@thorswap-lib/walletconnect": "workspace:*"
     "@vitest/coverage-c8": 0.29.7
     bignumber.js: 9.1.1
@@ -2658,31 +2769,34 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thorswap-lib/swapkit-explorers@workspace:*, @thorswap-lib/swapkit-explorers@workspace:packages/swapkit-explorers":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/swapkit-explorers@workspace:packages/swapkit-explorers"
+"@thorswap-lib/swapkit-entities@npm:0.3.0-development.71":
+  version: 0.3.0-development.71
+  resolution: "@thorswap-lib/swapkit-entities@npm:0.3.0-development.71"
   dependencies:
-    "@internal/config": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@vitest/coverage-c8": 0.29.7
-    vite: 4.2.1
-    vitest: 0.29.7
-  languageName: unknown
-  linkType: soft
+    "@thorswap-lib/types": 1.0.0-development.68
+    tiny-invariant: 1.3.1
+  peerDependencies:
+    bignumber.js: ^9.1.0
+  checksum: b7db9db3652afc67e27df5c4cd331c96ddb8e78ef206ce5eaf278cbdf3c46c699dce3e279968ee3722cc37eb776a0a960a5872f6656bd30c77e7a9f5aca34e8f
+  languageName: node
+  linkType: hard
 
-"@thorswap-lib/toolbox-cosmos@workspace:*, @thorswap-lib/toolbox-cosmos@workspace:packages/toolbox-cosmos":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/toolbox-cosmos@workspace:packages/toolbox-cosmos"
+"@thorswap-lib/swapkit-explorers@npm:0.1.0-development.19":
+  version: 0.1.0-development.19
+  resolution: "@thorswap-lib/swapkit-explorers@npm:0.1.0-development.19"
   dependencies:
-    "@cosmos-client/core": 0.45.13
-    "@internal/config": "workspace:*"
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@types/crypto-js": 4.1.1
-    "@types/elliptic": 6.4.14
-    "@types/tiny-secp256k1": 1.0.0
-    "@vitest/coverage-c8": 0.29.7
+    "@thorswap-lib/types": 1.0.0-development.68
+  checksum: c065892a7fe6ee81976db6562d2e2915fe9796ef646ae98fe8b4bab8f0947cbf5740f19b153d9cc4af38d90b658587759abed0fb5c262e6cb4026ed749f746cf
+  languageName: node
+  linkType: hard
+
+"@thorswap-lib/toolbox-cosmos@npm:0.1.0-development.84":
+  version: 0.1.0-development.84
+  resolution: "@thorswap-lib/toolbox-cosmos@npm:0.1.0-development.84"
+  dependencies:
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/types": 1.0.0-development.68
     base64-js: 1.5.1
     bech32: 2.0.0
     bech32-buffer: 0.2.1
@@ -2695,26 +2809,41 @@ __metadata:
     protobufjs: 7.2.2
     protocol-buffers-encodings: 1.2.0
     tiny-secp256k1: 1.1.6
-    vite: 4.2.1
-    vitest: 0.29.7
   peerDependencies:
     "@cosmos-client/core": ^0.45.13
-  languageName: unknown
-  linkType: soft
+  checksum: 52dd0f2c68db3afc328dd54b30b027c54a03a894205d92ca6f78a858979915b8f262528c701a6d550a47f42b30d273d42d984fcad47e679a689c2cf3a4baea0d
+  languageName: node
+  linkType: hard
 
-"@thorswap-lib/toolbox-utxo@workspace:*, @thorswap-lib/toolbox-utxo@workspace:packages/toolbox-utxo":
-  version: 0.0.0-use.local
-  resolution: "@thorswap-lib/toolbox-utxo@workspace:packages/toolbox-utxo"
+"@thorswap-lib/toolbox-evm@npm:0.1.0-development.101":
+  version: 0.1.0-development.101
+  resolution: "@thorswap-lib/toolbox-evm@npm:0.1.0-development.101"
   dependencies:
-    "@internal/config": "workspace:*"
+    "@ethersproject/abstract-provider": 5.7.0
+    "@ethersproject/abstract-signer": 5.7.0
+    "@ethersproject/address": 5.7.0
+    "@ethersproject/bignumber": 5.7.0
+    "@ethersproject/bytes": 5.7.0
+    "@ethersproject/contracts": 5.7.0
+    "@ethersproject/providers": 5.7.2
+    "@ethersproject/strings": 5.7.0
+    "@ethersproject/units": 5.7.0
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/types": 1.0.0-development.68
+    avalanche: 3.16.0
+  checksum: 25e2a51ca529b3c703e56d07f4a5e538883847d6bf12b96de3af0b4bf5bd53116212e27ee6312e2bb2782cbfc79ffb7a58e5705038b8bead3e426f5a7cb60026
+  languageName: node
+  linkType: hard
+
+"@thorswap-lib/toolbox-utxo@npm:0.1.0-development.87":
+  version: 0.1.0-development.87
+  resolution: "@thorswap-lib/toolbox-utxo@npm:0.1.0-development.87"
+  dependencies:
     "@psf/bitcoincashjs-lib": 4.0.3
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@types/bchaddrjs": 0.4.0
-    "@types/tiny-secp256k1": 1.0.0
-    "@types/uniqid": 5.3.2
-    "@vitest/coverage-c8": 0.29.7
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/types": 1.0.0-development.68
     bchaddrjs: 0.5.2
     bip32: 2.0.6
     bitcoinjs-lib: 5.2.0
@@ -2723,12 +2852,18 @@ __metadata:
     ecpair: 2.0.1
     tiny-secp256k1: 1.1.6
     uniqid: 5.4.0
-    vite: 4.2.1
-    vitest: 0.29.7
   peerDependencies:
     bip39: ^3.0.4
-  languageName: unknown
-  linkType: soft
+  checksum: 32918b753d367031f2fb417d25d0258da1cb225ba763c9c1d0ebc5e437fbcf54cfcc06cf7f681b8230f738a34a8781b6f5717a8444c93e8a2841c91ce06f95fd
+  languageName: node
+  linkType: hard
+
+"@thorswap-lib/types@npm:1.0.0-development.68":
+  version: 1.0.0-development.68
+  resolution: "@thorswap-lib/types@npm:1.0.0-development.68"
+  checksum: 91d826dd642918c2a6016f03ebe7165d781c1d6e164a42a11ecd6f2df439b6a1641701593296ed2a9c292df1386d23343c0637fa84016f8a6aaa1d3190aa9c2b
+  languageName: node
+  linkType: hard
 
 "@thorswap-lib/walletconnect@workspace:*, @thorswap-lib/walletconnect@workspace:packages/walletconnect":
   version: 0.0.0-use.local
@@ -2740,10 +2875,10 @@ __metadata:
     "@ethersproject/contracts": 5.7.0
     "@ethersproject/strings": 5.7.0
     "@internal/config": "workspace:*"
-    "@sequel/toolbox-evm": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/types": 1.0.0-development.68
     "@vitest/coverage-c8": 0.29.7
     "@walletconnect/client": 1.8.0
     "@walletconnect/qrcode-modal": 1.8.0
@@ -2761,8 +2896,8 @@ __metadata:
     "@ethersproject/bytes": ^5.7.0
     "@ethersproject/contracts": ^5.7.0
     "@ethersproject/strings": ^5.7.0
-    "@sequel/toolbox-evm": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
     cosmos-client: 0.39.2
   languageName: unknown
   linkType: soft
@@ -2779,12 +2914,12 @@ __metadata:
     "@ethersproject/providers": 5.7.2
     "@internal/config": "workspace:*"
     "@keplr-wallet/types": 0.11.49
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/toolbox-evm": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/helpers": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
+    "@thorswap-lib/helpers": 0.0.0-development.63
+    "@thorswap-lib/swapkit-entities": 0.3.0-development.71
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/toolbox-utxo": 0.1.0-development.87
+    "@thorswap-lib/types": 1.0.0-development.68
     "@vitest/coverage-c8": 0.29.7
     vite: 4.2.1
     vitest: 0.29.7
@@ -2794,35 +2929,9 @@ __metadata:
     "@ethersproject/bytes": ^5.7.0
     "@ethersproject/contracts": ^5.7.0
     "@ethersproject/providers": ^5.7.0
-    "@sequel/toolbox-evm": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@thorswap/vite-playground@workspace:apps/vite-playground":
-  version: 0.0.0-use.local
-  resolution: "@thorswap/vite-playground@workspace:apps/vite-playground"
-  dependencies:
-    "@sequel/swapkit-entities": "workspace:*"
-    "@sequel/toolbox-evm": "workspace:*"
-    "@sequel/types": "workspace:*"
-    "@thorswap-lib/keystore": "workspace:*"
-    "@thorswap-lib/ledger": "workspace:*"
-    "@thorswap-lib/swapkit-api": "workspace:*"
-    "@thorswap-lib/swapkit-core": "workspace:*"
-    "@thorswap-lib/swapkit-explorers": "workspace:*"
-    "@thorswap-lib/toolbox-cosmos": "workspace:*"
-    "@thorswap-lib/toolbox-utxo": "workspace:*"
-    "@thorswap-lib/walletconnect": "workspace:*"
-    "@thorswap-lib/web-extensions": "workspace:*"
-    "@types/react": 18.0.34
-    "@types/react-dom": 18.0.11
-    "@vitejs/plugin-react": 3.1.0
-    react: 18.2.0
-    react-dom: 18.2.0
-    typescript: 5.0.4
-    vite: 4.2.1
+    "@thorswap-lib/toolbox-cosmos": 0.1.0-development.84
+    "@thorswap-lib/toolbox-evm": 0.1.0-development.101
+    "@thorswap-lib/toolbox-utxo": 0.1.0-development.87
   languageName: unknown
   linkType: soft
 
@@ -3016,9 +3125,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:>=13.7.0":
-  version: 18.15.11
-  resolution: "@types/node@npm:18.15.11"
-  checksum: 977b4ad04708897ff0eb049ecf82246d210939c82461922d20f7d2dcfd81bbc661582ba3af28869210f7e8b1934529dcd46bff7d448551400f9d48b9d3bddec3
+  version: 18.15.13
+  resolution: "@types/node@npm:18.15.13"
+  checksum: 79cc5a2b5f98e8973061a4260a781425efd39161a0e117a69cd089603964816c1a14025e1387b4590c8e82d05133b7b4154fa53a7dffb3877890a66145e76515
   languageName: node
   linkType: hard
 
@@ -4992,9 +5101,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001449":
-  version: 1.0.30001480
-  resolution: "caniuse-lite@npm:1.0.30001480"
-  checksum: c0b40f02f45ee99c73f732a3118028b2ab1544962d473d84f2afcb898a5e3099bd4c45f316ebc466fb1dbda904e86b72695578ca531a0bfa9d6337e7aad1ee2a
+  version: 1.0.30001481
+  resolution: "caniuse-lite@npm:1.0.30001481"
+  checksum: 8200a043c191b4fd4fe0beda37a58fd61869c895ab93f87bdd0420e5927453f48434d716ce9da8552ff6c3ecc4dcd1366354cda3a134f3cc844af741574a7cab
   languageName: node
   linkType: hard
 
@@ -5950,9 +6059,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.284":
-  version: 1.4.368
-  resolution: "electron-to-chromium@npm:1.4.368"
-  checksum: b8ec4128a81c86c287cb2d677504c64d50f30c3c1d6dd9700a93797c6311f9f94b1c49a3e5112f5cfb3987a9bbade0133f9ec9898dae592db981059d5c2abdbb
+  version: 1.4.369
+  resolution: "electron-to-chromium@npm:1.4.369"
+  checksum: de31f3c765e8ab7096da252fecd4cdf717bceb0a027aa29db26450822535f745b09cc9f1dbb27a9e8767ef3730d35cbe7269e030ccf4421c2e3e2435a966ea86
   languageName: node
   linkType: hard
 
@@ -10115,13 +10224,13 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8.4.21":
-  version: 8.4.22
-  resolution: "postcss@npm:8.4.22"
+  version: 8.4.23
+  resolution: "postcss@npm:8.4.23"
   dependencies:
     nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 7473dfb7ac5b4cb03576c39d687d7fc02c826ab08af97df15b5d3970662532d44a18a0994f392a9c3658ee17c292e7a55990e586b90ca0afcc9f36df13e07029
+  checksum: 8bb9d1b2ea6e694f8987d4f18c94617971b2b8d141602725fedcc2222fdc413b776a6e1b969a25d627d7b2681ca5aabb56f59e727ef94072e1b6ac8412105a2f
   languageName: node
   linkType: hard
 
@@ -10819,9 +10928,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.18.0":
-  version: 3.20.6
-  resolution: "rollup@npm:3.20.6"
+"rollup@npm:^3.18.0, rollup@npm:^3.20.2":
+  version: 3.20.7
+  resolution: "rollup@npm:3.20.7"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -10829,7 +10938,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: fa30f1e1d214b8c62e631d3c181a75d61bc9c20fca38220d6f938bb3bf734a874e407cd641c90f550dc2b127df5029dfb3108be08934a654f1f40b50f368b0c2
+  checksum: 443f26aa6e42b94b4b137fbc3a07c78254cafc4ae53e0547bf5a94337b0658ca100d4e1c7e24870e399e5c7068a419cc0d367bfd35f4b1552d0b5e6d3482c517
   languageName: node
   linkType: hard
 
@@ -12462,14 +12571,13 @@ __metadata:
   linkType: hard
 
 "vite@npm:^3.0.0 || ^4.0.0":
-  version: 4.2.2
-  resolution: "vite@npm:4.2.2"
+  version: 4.3.1
+  resolution: "vite@npm:4.3.1"
   dependencies:
     esbuild: ^0.17.5
     fsevents: ~2.3.2
     postcss: ^8.4.21
-    resolve: ^1.22.1
-    rollup: ^3.18.0
+    rollup: ^3.20.2
   peerDependencies:
     "@types/node": ">= 14"
     less: "*"
@@ -12495,7 +12603,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 7fff9d046f6091c02e030aa5f45e68939b9bec1dd15d4e2c3c084d82ec185300295f3db26f537daf2e19f9ad191be260bf70e5fe0e2d9054f174a7ad457623f8
+  checksum: e58ba33ec10af6167686c1c43c61f31fcbc6b3b6a1f16ed03fb6cc8278700c6edaf4ff394ef454291ee35924054c7772feac159f1acf3af1a33d289fe8494d9c
   languageName: node
   linkType: hard
 
@@ -12700,9 +12808,9 @@ __metadata:
   linkType: hard
 
 "which-module@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "which-module@npm:2.0.0"
-  checksum: 809f7fd3dfcb2cdbe0180b60d68100c88785084f8f9492b0998c051d7a8efe56784492609d3f09ac161635b78ea29219eb1418a98c15ce87d085bce905705c9c
+  version: 2.0.1
+  resolution: "which-module@npm:2.0.1"
+  checksum: 1967b7ce17a2485544a4fdd9063599f0f773959cca24176dbe8f405e55472d748b7c549cd7920ff6abb8f1ab7db0b0f1b36de1a21c57a8ff741f4f1e792c52be
   languageName: node
   linkType: hard
 

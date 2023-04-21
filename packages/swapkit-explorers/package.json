@@ -1,9 +1,9 @@
 {
-  "author": "thorswap",
+  "author": "sequel",
   "dependencies": {
-    "@sequel/types": "workspace:*"
+    "@sequelfinance/types": "workspace:*"
   },
-  "description": "THORSwap Lib swapkit-explorers",
+  "description": "Fork of THORSwap Lib swapkit-explorers",
   "devDependencies": {
     "@internal/config": "workspace:*",
     "@vitest/coverage-c8": "0.29.7",
@@ -21,17 +21,17 @@
     "src/",
     "dist/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/swapkit-explorers",
+  "name": "@sequelfinance/swapkit-explorers",
   "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"
   },
   "react-native": "./src/index.ts",
-  "repository": "https://github.com/thorswap/SwapKit.git",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
   "scripts": {
     "build": "yarn clean; echo 'Build swapkit-explorers 🛠'; vite build && echo 'Build succeeded swapkit-explorers ✅\n'",
     "clean": "rm -rf dist",
@@ -41,5 +41,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.1.0-development.19"
+  "version": "0.0.1-development.0"
 }

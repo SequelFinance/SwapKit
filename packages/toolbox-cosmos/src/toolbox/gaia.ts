@@ -1,4 +1,5 @@
 import { cosmosclient, proto } from '@cosmos-client/core';
+import { baseAmount } from '@sequelfinance/helpers';
 import {
   AmountWithBaseDenom,
   Asset,
@@ -8,8 +9,7 @@ import {
   DerivationPath,
   FeeType,
   TxHistoryParams,
-} from '@sequel/types';
-import { baseAmount } from '@thorswap-lib/helpers';
+} from '@sequelfinance/types';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';
 import { AssetAtom, TransferParams } from '../types.js';

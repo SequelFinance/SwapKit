@@ -183,6 +183,12 @@ export const ChainIdToChain: Record<ChainId, Chain> = {
   [ChainId.Litecoin]: Chain.Litecoin,
   [ChainId.Thorchain]: Chain.THORChain,
   [ChainId.ThorchainStagenet]: Chain.THORChain,
+  [ChainId.Polygon]: Chain.Polygon,
+  [ChainId.PolygonHex]: Chain.Polygon,
+  [ChainId.Optimism]: Chain.Optimism,
+  [ChainId.OptimismHex]: Chain.Optimism,
+  [ChainId.Arbitrum]: Chain.Arbitrum,
+  [ChainId.ArbitrumHex]: Chain.Arbitrum,
 };
 
 export interface ResourceWorkerGasPricesResponse {

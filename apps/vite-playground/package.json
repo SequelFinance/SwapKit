@@ -1,15 +1,15 @@
 {
   "dependencies": {
-    "@sequel/swapkit-entities": "workspace:*",
-    "@sequel/toolbox-evm": "workspace:*",
-    "@sequel/types": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/swapkit-explorers": "workspace:*",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "@thorswap-lib/keystore": "workspace:*",
     "@thorswap-lib/ledger": "workspace:*",
     "@thorswap-lib/swapkit-api": "workspace:*",
     "@thorswap-lib/swapkit-core": "workspace:*",
-    "@thorswap-lib/swapkit-explorers": "workspace:*",
-    "@thorswap-lib/toolbox-cosmos": "workspace:*",
-    "@thorswap-lib/toolbox-utxo": "workspace:*",
     "@thorswap-lib/walletconnect": "workspace:*",
     "@thorswap-lib/web-extensions": "workspace:*",
     "react": "18.2.0",
@@ -27,7 +27,7 @@
       "thorswap"
     ]
   },
-  "name": "@thorswap/vite-playground",
+  "name": "@sequelfinance/vite-playground",
   "private": true,
   "scripts": {
     "build-playground": "vite build",
