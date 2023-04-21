@@ -1,5 +1,16 @@
 # @thorswap-lib/toolbox-utxo
 
+## 0.0.1-development.1
+
+### Patch Changes
+
+- [`e85dfc6`](https://github.com/thorswap/SwapKit/commit/e85dfc6d7ec5096d0c2b3d8af0262889c94dda96) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Initial release of all sequel packages
+
+- Updated dependencies [[`e85dfc6`](https://github.com/thorswap/SwapKit/commit/e85dfc6d7ec5096d0c2b3d8af0262889c94dda96)]:
+  - @sequelfinance/swapkit-entities@0.0.1-development.5
+  - @sequelfinance/helpers@0.0.1-development.1
+  - @sequelfinance/types@0.0.1-development.5
+
 ## 0.1.0-development.87
 
 ### Patch Changes

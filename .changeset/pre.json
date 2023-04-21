@@ -1,5 +1,6 @@
 {
   "changesets": [
+    "dirty-radios-appear"
   ],
   "initialVersions": {
     "@sequelfinance/helpers": "0.0.1-development.0",
@@ -14,7 +15,13 @@
     "@sequelfinance/types": "0.0.1-development.1",
     "@sequelfinance/walletconnect": "1.0.0-development.105",
     "@sequelfinance/web-extensions": "1.0.0-development.118",
-    "@sequelfinance/swapkit-api": "0.0.0"
+    "@sequelfinance/swapkit-api": "0.0.0",
+    "@thorswap-lib/keystore": "1.0.0-development.136",
+    "@thorswap-lib/ledger": "1.0.0-development.153",
+    "@thorswap-lib/swapkit-api": "0.0.1-development.1",
+    "@thorswap-lib/swapkit-core": "1.0.0-development.142",
+    "@thorswap-lib/walletconnect": "1.0.0-development.126",
+    "@thorswap-lib/web-extensions": "1.0.0-development.141"
   },
   "mode": "pre",
   "tag": "development"
