@@ -15,7 +15,7 @@
     "@sequelfinance/types": "0.0.1-development.1",
     "@sequelfinance/walletconnect": "1.0.0-development.105",
     "@sequelfinance/web-extensions": "1.0.0-development.118",
-    "@sequelfinance/swapkit-api": "0.0.0",
+    "@sequelfinance/swapkit-api": "0.0.1-development.0"
   },
   "mode": "pre",
   "tag": "development"
