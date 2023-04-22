@@ -1,5 +1,16 @@
 import { isHexString } from '@ethersproject/bytes';
 import { parseUnits } from '@ethersproject/units';
+import {
+  AmountWithBaseDenom,
+  Chain,
+  EVMChain,
+  EVMWalletOptions,
+  FeeOption,
+  SupportedChain,
+  TCAvalancheDepositABI,
+  TCEthereumVaultAbi,
+  TxHistoryParams,
+} from '@sequelfinance/types';
 import type {
   CalldataSwapIn,
   CalldataSwapOut,
@@ -25,17 +36,6 @@ import {
   ThornameRegisterParam,
 } from '@thorswap-lib/swapkit-entities';
 import { getExplorerAddressUrl, getExplorerTxUrl } from '@thorswap-lib/swapkit-explorers';
-import {
-  AmountWithBaseDenom,
-  Chain,
-  EVMChain,
-  EVMWalletOptions,
-  FeeOption,
-  SupportedChain,
-  TCAvalancheDepositABI,
-  TCEthereumVaultAbi,
-  TxHistoryParams,
-} from '@thorswap-lib/types';
 import { type WalletConnectOption } from '@thorswap-lib/walletconnect';
 
 import {
