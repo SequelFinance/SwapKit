@@ -1,5 +1,16 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.6
+
+### Patch Changes
+
+- [`9f18c70`](https://github.com/thorswap/SwapKit/commit/9f18c705c19c50bad4cd1ff39bda6945358551ef) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Moved to sequel organisation
+
+- Updated dependencies [[`9f18c70`](https://github.com/thorswap/SwapKit/commit/9f18c705c19c50bad4cd1ff39bda6945358551ef)]:
+  - @sequelfinance/swapkit-entities@0.0.1-development.6
+  - @sequelfinance/helpers@0.0.1-development.2
+  - @sequelfinance/types@0.0.1-development.6
+
 ## 0.0.1-development.5
 
 ### Patch Changes
