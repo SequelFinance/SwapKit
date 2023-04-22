@@ -1,10 +1,5 @@
 import { isHexString } from '@ethersproject/bytes';
 import { parseUnits } from '@ethersproject/units';
-import type {
-  CalldataSwapIn,
-  CalldataSwapOut,
-  CalldataTcToTc,
-} from '@sequelfinance/cross-chain-api-sdk/lib/entities';
 import {
   baseAmount,
   createAssetObjFromAsset,
@@ -37,6 +32,11 @@ import {
   TxHistoryParams,
 } from '@sequelfinance/types';
 import { type WalletConnectOption } from '@sequelfinance/walletconnect';
+import type {
+  CalldataSwapIn,
+  CalldataSwapOut,
+  CalldataTcToTc,
+} from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
 
 import {
   AGG_CONTRACT_ADDRESS,

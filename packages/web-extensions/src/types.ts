@@ -1,4 +1,4 @@
-import { Asset } from '@thorswap-lib/types';
+import { Asset } from '@sequelfinance/types';
 
 export enum WalletStatus {
   NotInstalled,

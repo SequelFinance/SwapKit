@@ -1,7 +1,7 @@
 import { Signer } from '@ethersproject/abstract-signer';
 import { Web3Provider } from '@ethersproject/providers';
-import { getETHDefaultWallet, getProvider, isDetected } from '@thorswap-lib/toolbox-evm';
-import { Chain, EVMChain, EVMWalletOptions, WalletOption } from '@thorswap-lib/types';
+import { getETHDefaultWallet, getProvider, isDetected } from '@sequelfinance/toolbox-evm';
+import { Chain, EVMChain, EVMWalletOptions, WalletOption } from '@sequelfinance/types';
 
 import { EVMWalletConfig } from '../types.js';
 

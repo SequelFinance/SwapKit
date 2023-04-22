@@ -8,8 +8,8 @@ yarn add @thorswap-lib/web-extensions
 To use the browser extensions you need to [extend core](packages/swapkit-core#swapkitcore-api) and install the corresponding package for the chain you want to use.
 
 ```ts
-import { SwapKitCore } from '@thorswap-lib/swapkit-core';
-import { evmWallet, keplrWallet, xdefiWallet } from '@thorswap-lib/web-extensions';
+import { SwapKitCore } from '@sequelfinance/swapkit-core';
+import { evmWallet, keplrWallet, xdefiWallet } from '@sequelfinance/web-extensions';
 
 const client = new SwapKitCore();
 

@@ -1,6 +1,6 @@
 import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
-import { Chain, ChainId, RPCUrl, WalletOption, WalletTxParams } from '@thorswap-lib/types';
-import { GaiaToolbox } from '@thorswap-lib/toolbox-cosmos';
+import { GaiaToolbox } from '@sequelfinance/toolbox-cosmos';
+import { Chain, ChainId, RPCUrl, WalletOption, WalletTxParams } from '@sequelfinance/types';
 
 import { KeplrConfig, WalletStatus } from './types.js';
 

@@ -1,4 +1,3 @@
-import { QuoteRoute } from '@sequelfinance/cross-chain-api-sdk/lib/entities';
 import { AssetAmount, Percent, Pool } from '@sequelfinance/swapkit-entities';
 import { ApproveParams, IsApprovedParams } from '@sequelfinance/toolbox-evm';
 import {
@@ -17,8 +16,9 @@ import {
   WalletOption,
   WalletTxParams,
 } from '@sequelfinance/types';
+import { QuoteRoute } from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
 
-export type { TransactionDetails } from '@sequelfinance/cross-chain-api-sdk';
+export type { TransactionDetails } from '@thorswap-lib/cross-chain-api-sdk';
 export type {
   Calldata,
   CalldataSwapIn,
@@ -31,7 +31,7 @@ export type {
   QuoteSwap,
   Token,
   TokenList,
-} from '@sequelfinance/cross-chain-api-sdk/lib/entities';
+} from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
 
 export type CoreTxParams = {
   assetAmount: AssetAmount;
