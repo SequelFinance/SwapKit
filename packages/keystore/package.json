@@ -1,26 +1,26 @@
 {
-  "author": "thorswap",
+  "author": "sequel",
   "dependencies": {
     "@ethersproject/hdnode": "5.7.0",
     "@ethersproject/wallet": "5.7.0",
     "@ledgerhq/live-app-sdk": "0.8.2",
-    "@thorswap-lib/helpers": "0.0.0-development.63",
-    "@thorswap-lib/swapkit-entities": "0.3.0-development.71",
-    "@thorswap-lib/types": "1.0.0-development.68",
+    "@sequelfinance/helpers": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "blakejs": "1.2.1",
     "long": "4.0.0",
     "uuid": "9.0.0"
   },
-  "description": "THORSwap Lib keystore",
+  "description": "Fork of THORSwap Lib keystore",
   "devDependencies": {
     "@ethersproject/abstract-provider": "5.7.0",
     "@ethersproject/bignumber": "5.7.0",
     "@ethersproject/contracts": "5.7.0",
     "@ethersproject/providers": "5.7.2",
     "@internal/config": "workspace:*",
-    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
-    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
-    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
     "@types/uniqid": "5.3.2",
     "@types/uuid": "9.0.1",
     "@vitest/coverage-c8": "0.29.7",
@@ -40,20 +40,20 @@
     "src/",
     "dist/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/keystore",
+  "name": "@sequelfinance/keystore",
   "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "@ethersproject/abstract-provider": "^5.7.0",
     "@ethersproject/bignumber": "^5.7.0",
     "@ethersproject/contracts": "^5.7.0",
     "@ethersproject/providers": "^5.7.0",
-    "@thorswap-lib/toolbox-cosmos": "workspace:*",
-    "@thorswap-lib/toolbox-evm": "workspace:*",
-    "@thorswap-lib/toolbox-utxo": "workspace:*",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
     "bip39": "^3.0.4",
     "bitcoinjs-lib": "^5.2.0"
   },
@@ -61,7 +61,7 @@
     "access": "public"
   },
   "react-native": "./src/index.ts",
-  "repository": "https://github.com/thorswap/SwapKit.git",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
   "scripts": {
     "build": "yarn clean; echo 'Build keystore 🛠'; vite build && echo 'Build succeeded keystore ✅\n'",
     "clean": "rm -rf dist",
@@ -71,5 +71,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.0-development.136"
+  "version": "0.0.1-development.0"
 }

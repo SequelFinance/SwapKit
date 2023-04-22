@@ -1,6 +1,13 @@
 import { Signer } from '@ethersproject/abstract-signer';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ETHToolbox, getProvider } from '@thorswap-lib/toolbox-evm';
+import { getTcChainId } from '@sequelfinance/helpers';
+import {
+  BinanceToolbox,
+  DepositParam,
+  getDenomWithChain,
+  ThorchainToolbox,
+} from '@sequelfinance/toolbox-cosmos';
+import { ETHToolbox, getProvider } from '@sequelfinance/toolbox-evm';
 import {
   Chain,
   ChainId,
@@ -8,14 +15,7 @@ import {
   NetworkId,
   WalletOption,
   WalletTxParams,
-} from '@thorswap-lib/types';
-import { getTcChainId } from '@thorswap-lib/helpers';
-import {
-  BinanceToolbox,
-  DepositParam,
-  getDenomWithChain,
-  ThorchainToolbox,
-} from '@thorswap-lib/toolbox-cosmos';
+} from '@sequelfinance/types';
 import WalletConnect from '@walletconnect/client';
 import QRCodeModal from '@walletconnect/qrcode-modal';
 import type { IConnector, IWalletConnectOptions } from '@walletconnect/types';

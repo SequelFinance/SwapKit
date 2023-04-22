@@ -1,14 +1,14 @@
 {
-  "author": "thorswap",
+  "author": "sequel",
   "dependencies": {
     "@ledgerhq/hw-app-btc": "8.1.1",
     "@ledgerhq/hw-app-cosmos": "6.27.12",
     "@ledgerhq/hw-app-eth": "6.32.1",
     "@ledgerhq/hw-transport": "6.28.1",
     "@ledgerhq/hw-transport-webusb": "6.27.12",
-    "@thorswap-lib/helpers": "0.0.0-development.63",
-    "@thorswap-lib/swapkit-entities": "0.3.0-development.71",
-    "@thorswap-lib/types": "1.0.0-development.68",
+    "@sequelfinance/helpers": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
     "base64-js": "1.5.1",
     "bech32": "2.0.0",
     "bn.js": "5.2.1",
@@ -18,7 +18,7 @@
     "secp256k1": "5.0.0",
     "sort-keys": "5.0.0"
   },
-  "description": "THORSwap Lib ledger",
+  "description": "Fork of THORSwap Lib ledger",
   "devDependencies": {
     "@cosmos-client/core": "0.45.13",
     "@ethersproject/abstract-signer": "5.7.0",
@@ -29,9 +29,9 @@
     "@ethersproject/providers": "5.7.2",
     "@ethersproject/transactions": "5.7.0",
     "@internal/config": "workspace:*",
-    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
-    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
-    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
     "@types/bchaddrjs": "0.4.0",
     "@types/bn.js": "5.1.1",
     "@types/crypto-js": "4.1.1",
@@ -58,11 +58,11 @@
     "src/",
     "dist/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/ledger",
+  "name": "@sequelfinance/ledger",
   "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "@cosmos-client/core": "0.45.13",
@@ -73,9 +73,9 @@
     "@ethersproject/properties": "^5.7.0",
     "@ethersproject/providers": "^5.7.0",
     "@ethersproject/transactions": "^5.7.0",
-    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
-    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
-    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
     "@types/bchaddrjs": "0.4.0",
     "bchaddrjs": "0.5.2",
     "bitcoinjs-lib": "5.2.0",
@@ -87,7 +87,7 @@
     "access": "public"
   },
   "react-native": "./src/index.ts",
-  "repository": "https://github.com/thorswap/SwapKit.git",
+  "repository": "https://github.com/SequqlFinance/SwapKit.git",
   "scripts": {
     "build": "yarn clean; echo 'Build ledger 🛠'; vite build; echo 'Build succeeded ledger ✅\n'",
     "clean": "rm -rf dist",
@@ -97,5 +97,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.0-development.153"
+  "version": "0.0.1-development.0"
 }

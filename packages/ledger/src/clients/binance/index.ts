@@ -1,4 +1,4 @@
-import { DerivationPathArray, NetworkDerivationPath } from '@thorswap-lib/types';
+import { DerivationPathArray, NetworkDerivationPath } from '@sequelfinance/types';
 
 import { CommonLedgerInterface } from '../../interfaces/LedgerInterfaces.js';
 

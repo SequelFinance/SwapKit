@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequelfinance/types';
 
 import { CosmosLedgerClients, EVMLedgerClients, UTXOLedgerClients } from '../types.js';
 

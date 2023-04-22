@@ -1,6 +1,6 @@
+import { getRequest } from '@sequelfinance/helpers';
+import { AssetEntity } from '@sequelfinance/swapkit-entities';
 import { Asset as AssetType, Chain } from '@sequelfinance/types';
-import { getRequest } from '@thorswap-lib/helpers';
-import { AssetEntity } from '@thorswap-lib/swapkit-entities';
 
 const THORNODE_MAINNET_URL = 'https://thornode.thorswap.net';
 const THORNODE_STAGENET_URL = 'https://stagenet-thornode.ninerealms.com';

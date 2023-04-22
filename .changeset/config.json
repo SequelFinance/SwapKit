@@ -11,8 +11,7 @@
   "commit": false,
   "fixed": [],
   "ignore": [
-    "@sequelfinance/vite-playground",
-    "@thorswap-lib/*"
+    "@sequelfinance/vite-playground"
   ],
   "linked": [],
   "updateInternalDependencies": "patch"

@@ -5,7 +5,7 @@ import { resolveProperties } from '@ethersproject/properties';
 import { serialize, UnsignedTransaction } from '@ethersproject/transactions';
 import EthereumApp, { ledgerService } from '@ledgerhq/hw-app-eth';
 import TransportWebUSB from '@ledgerhq/hw-transport-webusb';
-import { ChainId } from '@thorswap-lib/types';
+import { ChainId } from '@sequelfinance/types';
 import { BN } from 'bn.js';
 
 export abstract class EthereumLikeLedgerInterface extends Signer {

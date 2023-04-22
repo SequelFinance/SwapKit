@@ -1,2 +1,2 @@
 export * from './client/index.js';
-export * from '@thorswap-lib/swapkit-entities';
+export * from '@sequelfinance/swapkit-entities';

@@ -1,17 +1,17 @@
 {
   "dependencies": {
+    "@sequelfinance/keystore": "workspace:*",
+    "@sequelfinance/ledger": "workspace:*",
+    "@sequelfinance/swapkit-api": "workspace:*",
+    "@sequelfinance/swapkit-core": "workspace:*",
     "@sequelfinance/swapkit-entities": "workspace:*",
     "@sequelfinance/swapkit-explorers": "workspace:*",
     "@sequelfinance/toolbox-cosmos": "workspace:*",
     "@sequelfinance/toolbox-evm": "workspace:*",
     "@sequelfinance/toolbox-utxo": "workspace:*",
     "@sequelfinance/types": "workspace:*",
-    "@thorswap-lib/keystore": "workspace:*",
-    "@thorswap-lib/ledger": "workspace:*",
-    "@thorswap-lib/swapkit-api": "workspace:*",
-    "@thorswap-lib/swapkit-core": "workspace:*",
-    "@thorswap-lib/walletconnect": "workspace:*",
-    "@thorswap-lib/web-extensions": "workspace:*",
+    "@sequelfinance/walletconnect": "workspace:*",
+    "@sequelfinance/web-extensions": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

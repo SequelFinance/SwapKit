@@ -1,4 +1,4 @@
-import { Chain, NetworkId } from '@thorswap-lib/types';
+import { Chain, NetworkId } from '@sequelfinance/types';
 
 export const THORCHAIN_SEND_GAS_FEE = '500000000';
 export const THORCHAIN_DEPOSIT_GAS_FEE = '500000000';

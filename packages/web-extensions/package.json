@@ -1,12 +1,12 @@
 {
-  "author": "thorswap",
+  "author": "sequel",
   "dependencies": {
     "@cosmjs/stargate": "0.29.5",
-    "@thorswap-lib/helpers": "0.0.0-development.63",
-    "@thorswap-lib/swapkit-entities": "0.3.0-development.71",
-    "@thorswap-lib/types": "1.0.0-development.68"
+    "@sequelfinance/helpers": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*"
   },
-  "description": "THORSwap Lib web-extensions",
+  "description": "Fork of THORSwap Lib web-extensions",
   "devDependencies": {
     "@ethersproject/abstract-signer": "5.7.0",
     "@ethersproject/bignumber": "5.7.0",
@@ -15,9 +15,9 @@
     "@ethersproject/providers": "5.7.2",
     "@internal/config": "workspace:*",
     "@keplr-wallet/types": "0.11.49",
-    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
-    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
-    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
     "@vitest/coverage-c8": "0.29.7",
     "vite": "4.2.1",
     "vitest": "0.29.7"
@@ -33,11 +33,11 @@
     "src/",
     "dist/"
   ],
-  "homepage": "https://github.com/thorswap/SwapKit",
+  "homepage": "https://github.com/SequelFinance/SwapKit",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "module": "./dist/index.es.js",
-  "name": "@thorswap-lib/web-extensions",
+  "name": "@sequelfinance/web-extensions",
   "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "@ethersproject/abstract-signer": "^5.7.0",
@@ -45,15 +45,15 @@
     "@ethersproject/bytes": "^5.7.0",
     "@ethersproject/contracts": "^5.7.0",
     "@ethersproject/providers": "^5.7.0",
-    "@thorswap-lib/toolbox-cosmos": "0.1.0-development.84",
-    "@thorswap-lib/toolbox-evm": "0.1.0-development.101",
-    "@thorswap-lib/toolbox-utxo": "0.1.0-development.87"
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
   },
   "react-native": "./src/index.ts",
-  "repository": "https://github.com/thorswap/SwapKit.git",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
   "scripts": {
     "build": "yarn clean; echo 'Build web-extensions 🛠'; vite build && echo 'Build succeeded web-extensions ✅\n'",
     "clean": "rm -rf dist",
@@ -63,5 +63,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.0-development.141"
+  "version": "0.0.1-development.0"
 }

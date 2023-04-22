@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@sequelfinance/types": "workspace:*",
-    "@thorswap-lib/swapkit-entities": "0.3.0-development.71"
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/types": "workspace:*"
   },
   "description": "Fork of THORSwap Lib - Helper library for SwapKit",
   "devDependencies": {
@@ -25,7 +25,7 @@
     "bignumber.js": "^9.1.1"
   },
   "scripts": {
-    "build": "yarn clean; echo 'Build @thorswap-lib/helpers 🛠'; vite build && echo 'Build succeeded @thorswap-lib/helpers ✅\n';",
+    "build": "yarn clean; echo 'Build @sequelfinance/helpers 🛠'; vite build && echo 'Build succeeded @thorswap-lib/helpers ✅\n';",
     "clean": "rm -rf dist",
     "lint": "eslint --ext .ts,.tsx --fix; tsc --noEmit",
     "test": "echo 'vitest'",

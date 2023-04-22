@@ -3,7 +3,7 @@ import {
   ErrorCode,
   GetAddressAndPubKeyResponse,
   NetworkDerivationPath,
-} from '@thorswap-lib/types';
+} from '@sequelfinance/types';
 import { fromByteArray } from 'base64-js';
 
 import { CommonLedgerInterface } from '../../interfaces/LedgerInterfaces.js';

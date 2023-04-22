@@ -1,4 +1,4 @@
-import { ChainId, WalletTxParams } from '@thorswap-lib/types';
+import { ChainId, WalletTxParams } from '@sequelfinance/types';
 import type { IConnector } from '@walletconnect/types';
 import { fromByteArray } from 'base64-js';
 import { decode } from 'bech32-buffer';

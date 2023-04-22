@@ -6,15 +6,15 @@ import {
   getDenom,
   getDenomWithChain,
   ThorchainToolbox,
-} from '@thorswap-lib/toolbox-cosmos';
-import { AVAXToolbox, ETHToolbox, getProvider } from '@thorswap-lib/toolbox-evm';
+} from '@sequelfinance/toolbox-cosmos';
+import { AVAXToolbox, ETHToolbox, getProvider } from '@sequelfinance/toolbox-evm';
 import {
   BCHToolbox,
   BTCToolbox,
   DOGEToolbox,
   LTCToolbox,
   UTXOBuildTxParams,
-} from '@thorswap-lib/toolbox-utxo';
+} from '@sequelfinance/toolbox-utxo';
 import {
   Chain,
   ChainId,
@@ -22,7 +22,7 @@ import {
   TxParams,
   WalletOption,
   WalletTxParams,
-} from '@thorswap-lib/types';
+} from '@sequelfinance/types';
 import { auth, StdTx } from 'cosmos-client/x/auth/index.js';
 import Long from 'long';
 import secp256k1 from 'secp256k1';

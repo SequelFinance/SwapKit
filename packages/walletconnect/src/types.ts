@@ -1,4 +1,4 @@
-import { Chain } from '@thorswap-lib/types';
+import { Chain } from '@sequelfinance/types';
 import type { ITxData, IWalletConnectOptions } from '@walletconnect/types';
 
 export type TWSupportedChain = Chain.THORChain | Chain.Binance | Chain.Ethereum;
