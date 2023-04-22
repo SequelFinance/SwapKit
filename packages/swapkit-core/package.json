@@ -3,10 +3,10 @@
   "dependencies": {
     "@ethersproject/bytes": "5.7.0",
     "@ethersproject/units": "5.7.0",
+    "@sequelfinance/types": "workspace:*",
     "@thorswap-lib/helpers": "0.0.0-development.63",
     "@thorswap-lib/swapkit-entities": "0.3.0-development.71",
     "@thorswap-lib/swapkit-explorers": "0.1.0-development.19",
-    "@thorswap-lib/types": "1.0.0-development.68",
     "bignumber.js": "9.1.1"
   },
   "description": "THORSwap Lib swapkit-core",
