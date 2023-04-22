@@ -1,5 +1,19 @@
 # @thorswap-lib/ledger
 
+## 0.0.1-development.1
+
+### Patch Changes
+
+- [`9f18c70`](https://github.com/thorswap/SwapKit/commit/9f18c705c19c50bad4cd1ff39bda6945358551ef) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Moved to sequel organisation
+
+- Updated dependencies [[`9f18c70`](https://github.com/thorswap/SwapKit/commit/9f18c705c19c50bad4cd1ff39bda6945358551ef)]:
+  - @sequelfinance/swapkit-entities@0.0.1-development.6
+  - @sequelfinance/toolbox-cosmos@0.0.1-development.2
+  - @sequelfinance/toolbox-utxo@0.0.1-development.2
+  - @sequelfinance/toolbox-evm@0.0.1-development.6
+  - @sequelfinance/helpers@0.0.1-development.2
+  - @sequelfinance/types@0.0.1-development.6
+
 ## 1.0.0-development.153
 
 ### Patch Changes
