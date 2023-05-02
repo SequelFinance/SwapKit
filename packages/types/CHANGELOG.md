@@ -1,5 +1,11 @@
 # @sequel/types
 
+## 0.0.1-development.7
+
+### Patch Changes
+
+- [`63ab26a`](https://github.com/thorswap/SwapKit/commit/63ab26a16b0c64fc2180f0072dfd42434213dd1a) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Pulls latest updates from upstream
+
 ## 0.0.1-development.6
 
 ### Patch Changes

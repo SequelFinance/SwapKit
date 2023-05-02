@@ -1,7 +1,8 @@
 {
   "changesets": [
     "cyan-coats-wash",
-    "dirty-radios-appear"
+    "dirty-radios-appear",
+    "fresh-frogs-kick"
   ],
   "initialVersions": {
     "@sequelfinance/helpers": "0.0.1-development.0",
@@ -16,7 +17,9 @@
     "@sequelfinance/types": "0.0.1-development.1",
     "@sequelfinance/walletconnect": "1.0.0-development.105",
     "@sequelfinance/web-extensions": "1.0.0-development.118",
-    "@sequelfinance/swapkit-api": "0.0.1-development.0"
+    "@sequelfinance/swapkit-api": "0.0.1-development.0",
+    "@sequelfinance/trezor": "0.0.1-development.0",
+    "@sequelfinance/trustwallet": "0.0.1-development.0"
   },
   "mode": "pre",
   "tag": "development"
