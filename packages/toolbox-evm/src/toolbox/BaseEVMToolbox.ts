@@ -24,11 +24,12 @@ import {
 } from '@sequelfinance/types';
 
 import {
+  ApprovedParams,
   ApproveParams,
   CallParams,
   EstimateCallParams,
   IsApprovedParams,
-  SendTransactionParams,
+  TransferParams,
 } from '../types/index.js';
 
 const MAX_APPROVAL = BigNumber.from('2').pow('256').sub('1');
@@ -69,6 +70,7 @@ const getAssetEntity = (asset: AssetType | undefined) =>
     : getSignatureAssetFor(Chain.Ethereum);
 
 type WithSigner<T> = T & { signer?: Signer };
+
 /**
  * @info call contract function
  * When using this method to make a non state changing call to the blockchain, like a isApproved call,
@@ -130,20 +132,34 @@ const estimateCall = async (
     : contract.estimateGas[funcName](...funcParams);
 };
 
-const isApproved = async (
+const approvedAmount = async (
   provider: Provider,
   { assetAddress, spenderAddress, from }: IsApprovedParams,
 ) =>
-  await call<BigNumberish>(provider, {
-    contractAddress: assetAddress,
-    abi: erc20ABI,
-    funcName: 'allowance',
-    funcParams: [from, spenderAddress],
-  });
+  BigNumber.from(
+    await call<BigNumberish>(provider, {
+      contractAddress: assetAddress,
+      abi: erc20ABI,
+      funcName: 'allowance',
+      funcParams: [from, spenderAddress],
+    }),
+  ).toString();
+
+const isApproved = async (
+  provider: Provider,
+  { assetAddress, spenderAddress, from, amount = baseAmount('1') }: IsApprovedParams,
+) =>
+  BigNumber.from(
+    await call<BigNumberish>(provider, {
+      contractAddress: assetAddress,
+      abi: erc20ABI,
+      funcName: 'allowance',
+      funcParams: [from, spenderAddress],
+    }),
+  ).gte(amount.amount());
 
 const approve = async (
   provider: Provider,
-  signer: Signer,
   {
     assetAddress,
     spenderAddress,
@@ -154,6 +170,7 @@ const approve = async (
     from,
     nonce,
   }: ApproveParams,
+  signer?: Signer,
 ) => {
   const { maxFeePerGas, maxPriorityFeePerGas } = await getFeeData({
     provider,
@@ -197,19 +214,8 @@ const approve = async (
   });
 };
 
-export type TransferParams = WalletTxParams & {
-  gasPrice?: AmountWithBaseDenom;
-  gasLimit?: BigNumber;
-  maxFeePerGas?: BigNumber;
-  maxPriorityFeePerGas?: BigNumber;
-  data?: string;
-  from: string;
-  nonce?: number;
-};
-
 const transfer = async (
   provider: Provider | Web3Provider,
-  signer: Signer,
   {
     asset,
     memo,
@@ -223,17 +229,17 @@ const transfer = async (
     from,
     nonce,
   }: TransferParams,
+  signer?: Signer,
 ) => {
+  if (!signer) throw new Error('Signer is not defined');
   // TODO: create a method that creates the base tx object! @towan
   const txAmount = amount.amount();
   const parsedAsset: AssetEntity = getAssetEntity(asset);
   const chain = parsedAsset.L1Chain as EVMChain;
+  const chainId = (await provider.getNetwork()).chainId;
   const assetAddress = getTokenAddress(parsedAsset, chain);
   const isGasAddress = assetAddress === ContractAddress[chain];
-  const chainId = (await provider.getNetwork()).chainId;
-
   const gasFees = await getFeeData({ provider, feeOptionKey: feeOptionKey });
-
   const overrides = {
     type: 2,
     gasLimit:
@@ -244,7 +250,6 @@ const transfer = async (
     from,
   };
 
-  let txObject;
   if (assetAddress && !isGasAddress) {
     // Transfer ERC20
     return call(provider, {
@@ -254,25 +259,18 @@ const transfer = async (
       funcName: 'transfer',
       funcParams: [recipient, txAmount, overrides],
     });
-  } else {
-    // Transfer ETH
-    txObject = Object.assign(
-      { to: recipient, value: txAmount, from, chainId },
-      {
-        ...overrides,
-        data: data || (memo ? hexlify(toUtf8Bytes(memo)) : undefined),
-      },
-    );
   }
 
-  if (isWeb3Provider(provider)) {
-    return EIP1193SendTransaction(provider, txObject);
-  }
+  // Transfer ETH
+  const txObject = {
+    to: recipient,
+    value: txAmount,
+    chainId,
+    data: data || (memo ? hexlify(toUtf8Bytes(memo)) : undefined),
+    ...overrides,
+  };
 
-  const signedTx = await signer.signTransaction(txObject);
-  const txResult = await provider.sendTransaction(signedTx);
-
-  return txResult.hash;
+  return sendTransaction(provider, txObject, feeOptionKey, signer);
 };
 
 const estimateGasPrices = async (provider: Provider) => {
@@ -385,45 +383,55 @@ const getFeeData = async ({
   };
 };
 
-const sendTransaction =
-  ({ provider, signer }: SendTransactionParams) =>
-  async (tx: EIP1559TxParams, feeOptionKey: FeeOption) => {
-    const address = await signer.getAddress();
-    const feeData = await getFeeData({ feeOptionKey, provider });
-    const nonce = tx.nonce || (await provider.getTransactionCount(address));
-    const chainId = (await provider.getNetwork()).chainId;
+const sendTransaction = async (
+  provider: Provider,
+  tx: EIP1559TxParams,
+  feeOptionKey: FeeOption = FeeOption.Fast,
+  signer?: Signer,
+) => {
+  if (!signer) throw new Error('Signer not defined');
+  const address = tx.from || (await signer.getAddress());
+  const nonce = tx.nonce || (await provider.getTransactionCount(address));
+  const chainId = (await provider.getNetwork()).chainId;
 
-    let gasLimit: BigNumber;
-    try {
-      gasLimit = (await provider.estimateGas(tx)).mul(110).div(100);
-    } catch (error) {
-      throw new Error(`Error estimating gas limit: ${JSON.stringify(error)}`);
+  const { maxFeePerGas, maxPriorityFeePerGas } = tx;
+  const feeData = await getFeeData({ feeOptionKey, provider });
+
+  let gasLimit: BigNumber;
+  try {
+    gasLimit = tx.gasLimit
+      ? BigNumber.from(tx.gasLimit)
+      : (await provider.estimateGas(tx)).mul(110).div(100);
+  } catch (error) {
+    throw new Error(`Error estimating gas limit: ${JSON.stringify(error)}`);
+  }
+  try {
+    const { value, ...transaction } = tx;
+    const txObject = {
+      ...transaction,
+      chainId,
+      type: 2,
+      maxFeePerGas: BigNumber.from(maxFeePerGas || feeData.maxFeePerGas).toHexString(),
+      maxPriorityFeePerGas: BigNumber.from(
+        maxPriorityFeePerGas || feeData.maxPriorityFeePerGas,
+      ).toHexString(),
+      gasLimit: gasLimit.toHexString(),
+      nonce,
+      ...(value && !BigNumber.from(value).isZero() ? { value } : {}),
+    };
+
+    if (isWeb3Provider(provider)) {
+      return await EIP1193SendTransaction(provider, txObject);
     }
-    try {
-      const { value, ...transaction } = tx;
-      const txObject = {
-        ...transaction,
-        chainId,
-        type: 2,
-        gasLimit: gasLimit.toHexString(),
-        maxFeePerGas: feeData.maxFeePerGas.toHexString(),
-        maxPriorityFeePerGas: feeData.maxPriorityFeePerGas.toHexString(),
-        nonce,
-        ...(value && !BigNumber.from(value).isZero() ? { value } : {}),
-      };
 
-      if (isWeb3Provider(provider)) {
-        return await EIP1193SendTransaction(provider, txObject);
-      }
+    const txHex = await signer.signTransaction(txObject);
+    const response = await provider.sendTransaction(txHex);
 
-      const txHex = await signer.signTransaction(txObject);
-      const response = await provider.sendTransaction(txHex);
-
-      return typeof response?.hash === 'string' ? response.hash : response;
-    } catch (error) {
-      throw new Error(`Error sending transaction: ${JSON.stringify(error)}`);
-    }
-  };
+    return typeof response?.hash === 'string' ? response.hash : response;
+  } catch (error) {
+    throw new Error(`Error sending transaction: ${JSON.stringify(error)}`);
+  }
+};
 
 const listWeb3EVMWallets = () => {
   const metamaskEnabled = window?.ethereum && !window.ethereum?.isBraveWallet;
@@ -510,7 +518,7 @@ export const BaseEVMToolbox = ({
   provider,
   signer,
 }: {
-  signer: Signer;
+  signer?: Signer;
   provider: Provider | Web3Provider;
 }) => ({
   isDetected,
@@ -520,14 +528,16 @@ export const BaseEVMToolbox = ({
   createContract,
   EIP1193SendTransaction: (tx: EIP1559TxParams) => EIP1193SendTransaction(provider, tx),
   createContractTxObject: (params: CallParams) => createContractTxObject(provider, params),
-  approve: (params: ApproveParams) => approve(provider, signer, params),
-  transfer: (params: TransferParams) => transfer(provider, signer, params),
+  approve: (params: ApproveParams) => approve(provider, params, signer),
+  transfer: (params: TransferParams) => transfer(provider, params, signer),
   call: (params: CallParams) => call(provider, { ...params, signer }),
   estimateGasPrices: () => estimateGasPrices(provider),
   getFees: (params?: WalletTxParams) => getFees(provider, params),
   isApproved: (params: IsApprovedParams) => isApproved(provider, params),
+  approvedAmount: (params: ApprovedParams) => approvedAmount(provider, params),
   validateAddress,
-  sendTransaction: sendTransaction({ provider, signer }),
+  sendTransaction: (params: EIP1559TxParams, feeOption: FeeOption) =>
+    sendTransaction(provider, params, feeOption, signer),
   broadcastTransaction: provider.sendTransaction,
   estimateCall: (params: EstimateCallParams) => estimateCall(provider, { ...params, signer }),
   estimateGasLimit: ({ asset, recipient, amount, memo, from }: WalletTxParams) =>

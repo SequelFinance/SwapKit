@@ -1,5 +1,7 @@
+import { keystoreWallet } from '@sequelfinance/keystore';
 import { ledgerWallet } from '@sequelfinance/ledger';
 import { SwapKitCore } from '@sequelfinance/swapkit-core';
+import { trezorWallet } from '@sequelfinance/trezor';
 import { evmWallet, xdefiWallet } from '@sequelfinance/web-extensions';
 
 let skClient: SwapKitCore;
@@ -15,7 +17,7 @@ export const getSwapKitClient = () => {
       covalentApiKey: '',
       utxoApiKey: 'freekey',
     },
-    wallets: [xdefiWallet, evmWallet, ledgerWallet],
+    wallets: [xdefiWallet, evmWallet, ledgerWallet, keystoreWallet, trezorWallet],
   });
 
   skClient = client;

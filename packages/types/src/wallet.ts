@@ -30,6 +30,7 @@ export enum WalletOption {
   'XDEFI' = 'XDEFI',
   'METAMASK' = 'METAMASK',
   'COINBASE_WEB' = 'COINBASE_WEB',
+  'TREZOR' = 'TREZOR',
   'TRUSTWALLET' = 'TRUSTWALLET',
   'TRUSTWALLET_WEB' = 'TRUSTWALLET_WEB',
   'LEDGER' = 'LEDGER',
@@ -62,4 +63,8 @@ export type Keystore = {
   id: string;
   version: number;
   meta: string;
+};
+
+export type BaseWalletMethods = {
+  getAddress: () => Promise<string> | string;
 };

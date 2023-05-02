@@ -1,14 +1,10 @@
-import { proto } from '@cosmos-client/core';
-import { assetToString, baseAmount, getRequest } from '@sequelfinance/helpers';
-import {
-  Asset,
-  ChainId,
-  DerivationPath,
-  ResourceWorkerGasPricesResponse,
-  ResourceWorkerUrls,
-} from '@sequelfinance/types';
+import type { proto } from '@cosmos-client/core';
+import { assetToString, baseAmount } from '@sequelfinance/helpers';
+import { SwapKitApi } from '@sequelfinance/swapkit-api';
+import { Asset, ChainId, DerivationPath } from '@sequelfinance/types';
 
 import { CosmosSDKClient } from '../cosmosSdkClient.js';
+import { BaseCosmosToolboxType } from '../index.js';
 
 type Params = {
   sdk: CosmosSDKClient;
@@ -18,25 +14,17 @@ type Params = {
 };
 
 export const getFeeRateFromThorswap = async (chainId: ChainId) => {
-  const response = await getRequest<ResourceWorkerGasPricesResponse>(
-    ResourceWorkerUrls.ALL_GAS_PRICES,
-  );
-  const gasPrice = response.result.find((gasPrice) => gasPrice.chainId === chainId)?.gas;
+  const response = await SwapKitApi.getGasRates();
 
-  if (gasPrice) {
-    return gasPrice;
-  }
-
-  return;
+  return response.find((gas) => gas.chainId === chainId)?.gas;
 };
 
-// TODO: figure out how to type this without error on inference
-export const BaseCosmosToolbox: any = ({
+export const BaseCosmosToolbox = ({
   decimal,
   derivationPath,
   getAsset,
   sdk: cosmosClientSdk,
-}: Params) => ({
+}: Params): BaseCosmosToolboxType => ({
   sdk: cosmosClientSdk.sdk,
   transfer: cosmosClientSdk.transfer,
   buildSendTxBody: cosmosClientSdk.buildSendTxBody,

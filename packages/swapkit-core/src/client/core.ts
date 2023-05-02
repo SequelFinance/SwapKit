@@ -20,9 +20,13 @@ import {
   ThornameRegisterParam,
 } from '@sequelfinance/swapkit-entities';
 import { getExplorerAddressUrl, getExplorerTxUrl } from '@sequelfinance/swapkit-explorers';
+import { AVAXToolbox, BSCToolbox, ETHToolbox } from '@sequelfinance/toolbox-evm';
+import { type WalletConnectOption } from '@sequelfinance/trustwallet';
 import {
   AmountWithBaseDenom,
   Chain,
+  ChainId,
+  ChainToChainId,
   EVMChain,
   EVMWalletOptions,
   FeeOption,
@@ -31,12 +35,6 @@ import {
   TCEthereumVaultAbi,
   TxHistoryParams,
 } from '@sequelfinance/types';
-import { type WalletConnectOption } from '@sequelfinance/walletconnect';
-import type {
-  CalldataSwapIn,
-  CalldataSwapOut,
-  CalldataTcToTc,
-} from '@thorswap-lib/cross-chain-api-sdk/lib/entities';
 
 import {
   AGG_CONTRACT_ADDRESS,
@@ -48,12 +46,16 @@ import { getAssetForBalance, getInboundData, getMimirData } from './helpers.js';
 import {
   AddChainWalletParams,
   AddLiquidityParams,
-  BaseEVMWallet,
+  CalldataSwapIn,
+  CalldataSwapOut,
+  CalldataTcToTc,
   CoreTxParams,
   CreateLiquidityParams,
+  EVMWallet,
   ExtendParams,
   QuoteMode,
   SwapParams,
+  ThorchainWallet,
   UpgradeParams,
   Wallet,
   WalletMethods,
@@ -158,7 +160,18 @@ export class SwapKitCore {
           : undefined;
 
         return walletMethods.sendTransaction(
-          { value, data, from, to: to.toLowerCase() },
+          {
+            value,
+            data,
+            from,
+            to: to.toLowerCase(),
+            chainId: parseInt(
+              ChainToChainId[evmChain] as
+                | ChainId.AvalancheHex
+                | ChainId.EthereumHex
+                | ChainId.BinanceSmartChain,
+            ),
+          },
           feeOptionKey,
         );
       }
@@ -187,10 +200,10 @@ export class SwapKitCore {
 
   getWallet = (chain: SupportedChain) => this.connectedWallets[chain];
 
-  isAssetApproved = (asset: AssetEntity) => this._approve({ asset }, 'checkOnly');
+  isAssetApproved = (asset: AssetEntity) => this._approve<boolean>({ asset }, 'checkOnly');
 
   isAssetApprovedForContract = (asset: AssetEntity, contractAddress: string) =>
-    this._approve({ asset, contractAddress }, 'checkOnly');
+    this._approve<boolean>({ asset, contractAddress }, 'checkOnly');
 
   validateAddress = ({ address, chain }: { address: string; chain: SupportedChain }) =>
     this.getWallet(chain)?.validateAddress?.(address);
@@ -211,7 +224,8 @@ export class SwapKitCore {
     return { ...(this.connectedChains[chain] || {}), balance };
   };
 
-  getTransactions = (chain: SupportedChain, params?: TxHistoryParams) => {
+  getTransactions = (chain: Chain, params: TxHistoryParams) => {
+    //@ts-expect-error
     const walletMethods = this.connectedWallets[chain];
     if (!walletMethods) throw new Error(`Chain ${chain} is not connected`);
 
@@ -221,6 +235,15 @@ export class SwapKitCore {
   getTransactionData = (chain: SupportedChain, txHash: string) => {
     const address = this.getAddress(chain);
     if (!address) throw new Error(`Chain ${chain} is not connected`);
+
+    if (
+      chain === Chain.Bitcoin ||
+      chain === Chain.BitcoinCash ||
+      chain === Chain.Litecoin ||
+      chain === Chain.Doge
+    ) {
+      throw new Error(`Chain ${chain} does not support getTransactionData`);
+    }
 
     return this.connectedWallets[chain]?.getTransactionData(txHash, address);
   };
@@ -232,7 +255,8 @@ export class SwapKitCore {
     if (!walletInstance) throw new Error('Chain is not connected');
 
     const txParams = this._prepareTxParams(params);
-    return walletInstance.transfer(txParams);
+    // TODO: fix type
+    return walletInstance.transfer(txParams) as Promise<string>;
   };
 
   deposit = async ({
@@ -241,13 +265,9 @@ export class SwapKitCore {
     router,
     ...rest
   }: CoreTxParams & { router?: string }) => {
-    const chain = assetAmount.asset.L1Chain as SupportedChain;
-
-    const isL1Deposit = chain === Chain.THORChain && recipient === '';
-    const isEVMDeposit = [Chain.Avalanche, Chain.Ethereum].includes(chain);
-
+    const chain = assetAmount.asset.L1Chain;
+    //@ts-expect-error
     const walletInstance = this.connectedWallets[chain];
-
     if (!walletInstance) throw new Error(`Chain ${chain} is not connected`);
 
     const params = this._prepareTxParams({
@@ -257,39 +277,46 @@ export class SwapKitCore {
       ...rest,
     });
 
-    //@ts-ignore
-    if (isL1Deposit) return walletInstance.deposit(params);
+    switch (chain) {
+      case Chain.THORChain:
+        return recipient === ''
+          ? (walletInstance as ThorchainWallet).deposit(params)
+          : (walletInstance as ThorchainWallet).transfer(params);
+      case Chain.Ethereum:
+      case Chain.BinanceSmartChain:
+      case Chain.Avalanche: {
+        const { getBigNumberFrom, getChecksumAddressFromAsset } = await import(
+          '@sequelfinance/toolbox-evm'
+        );
 
-    if (isEVMDeposit) {
-      const { getBigNumberFrom, getChecksumAddressFromAsset } = await import(
-        '@sequelfinance/toolbox-evm'
-      );
+        const { asset } = assetAmount;
+        const abi = chain === Chain.Avalanche ? TCAvalancheDepositABI : TCEthereumVaultAbi;
 
-      const { asset } = assetAmount;
-      const abi = chain === Chain.Avalanche ? TCAvalancheDepositABI : TCEthereumVaultAbi;
-
-      return (walletInstance as BaseEVMWallet).call({
-        abi,
-        contractAddress:
-          router || ((await this._getInboundDataByChain(chain as EVMChain)).router as string),
-        funcName: 'depositWithExpiry',
-        funcParams: [
-          recipient,
-          getChecksumAddressFromAsset(asset, asset?.chain as EVMChain),
-          params.amount.amount().toString(),
-          params.memo,
-          new Date().setMinutes(new Date().getMinutes() + 10),
-          {
-            from: params.from,
-            value: getBigNumberFrom(
-              isGasAsset(assetAmount.asset) ? params.amount.amount().toString() : 0,
-            ).toHexString(),
-          },
-        ],
-      }) as Promise<string>;
+        return (
+          walletInstance as EVMWallet<typeof AVAXToolbox | typeof ETHToolbox | typeof BSCToolbox>
+        ).call({
+          abi,
+          contractAddress:
+            router || ((await this._getInboundDataByChain(chain as EVMChain)).router as string),
+          funcName: 'depositWithExpiry',
+          funcParams: [
+            recipient,
+            getChecksumAddressFromAsset(asset, asset?.chain as EVMChain),
+            params.amount.amount().toString(),
+            params.memo,
+            new Date().setMinutes(new Date().getMinutes() + 10),
+            {
+              from: params.from,
+              value: getBigNumberFrom(
+                isGasAsset(assetAmount.asset) ? params.amount.amount().toString() : 0,
+              ).toHexString(),
+            },
+          ],
+        }) as Promise<string>;
+      }
+      default:
+        return walletInstance.transfer(params) as Promise<string>;
     }
-
-    return walletInstance.transfer(params);
   };
 
   /**
@@ -346,13 +373,15 @@ export class SwapKitCore {
 
     const includeRuneAddress = isPendingSymmAsset || runeTransfer;
     const runeAddress = includeRuneAddress ? runeAddr || this.getAddress(Chain.THORChain) : '';
+    //@ts-expect-error
+    const assetAddress = isSym || mode === 'asset' ? assetAddr || this.getAddress(chain) : '';
 
     const { address, gas_rate, router } = await this._getInboundDataByChain(chain);
     const feeRate = (parseInt(gas_rate) || 0) * gasFeeMultiplier[FeeOption.Fast];
     const runeMemo = getMemoFor(MemoType.DEPOSIT, {
       chain,
       symbol,
-      address: assetAddr || this.getAddress(chain as SupportedChain),
+      address: assetAddress,
     });
     const assetMemo = getMemoFor(MemoType.DEPOSIT, {
       chain,
@@ -374,6 +403,7 @@ export class SwapKitCore {
         });
       } catch (error) {
         console.error(error);
+        runeTx = 'failed';
       }
     }
 
@@ -388,6 +418,7 @@ export class SwapKitCore {
         });
       } catch (error) {
         console.error(error);
+        assetTx = 'failed';
       }
     }
 
@@ -494,6 +525,9 @@ export class SwapKitCore {
   connectLedger = async (_chains: Chain, _derivationPath: number[]) => {
     throwWalletError('connectLedger', 'ledger');
   };
+  connectTrezor = async (_chains: Chain, _derivationPath: number[]) => {
+    throwWalletError('connectTrezor', 'trezor');
+  };
   connectKeplr = async () => {
     throwWalletError('connectKeplr', 'web-extensions');
   };
@@ -504,6 +538,7 @@ export class SwapKitCore {
 
   extend = ({ wallets, config }: ExtendParams) => {
     wallets.forEach((wallet) => {
+      // @ts-expect-error
       this[wallet.connectMethodName] = wallet.connect({
         addChain: this._addConnectedChain,
         config: config || {},
@@ -562,7 +597,7 @@ export class SwapKitCore {
     this.connectedWallets[chain] = walletMethods;
   };
 
-  private _approve = async (
+  private _approve = async <T = string>(
     {
       asset,
       contractAddress,
@@ -597,7 +632,7 @@ export class SwapKitCore {
       from,
       spenderAddress:
         contractAddress || ((await this._getInboundDataByChain(asset.L1Chain)).router as string),
-    });
+    }) as Promise<T>;
   };
 
   private _transferToPool = async ({
@@ -640,7 +675,9 @@ export class SwapKitCore {
 
     return {
       ...restTxParams,
-      from: this.getAddress(asset.L1Chain as SupportedChain),
+      memo: restTxParams.memo || '',
+      //@ts-expect-error
+      from: this.getAddress(asset.L1Chain),
       amount: amountWithBaseDenom,
       asset: createAssetObjFromAsset(asset),
     };

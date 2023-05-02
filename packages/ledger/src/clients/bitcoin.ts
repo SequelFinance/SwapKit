@@ -1,7 +1,8 @@
+import { derivationPathToString } from '@sequelfinance/helpers';
 import { DerivationPathArray, NetworkDerivationPath } from '@sequelfinance/types';
 import { networks } from 'bitcoinjs-lib';
 
-import { derivationPathToString, getWalletFormatFor } from '../helpers/derivationPath.js';
+import { getWalletFormatFor } from '../helpers/derivationPath.js';
 import { UTXOLedgerInterface } from '../interfaces/LedgerInterfaces.js';
 
 export class BitcoinLedger extends UTXOLedgerInterface {

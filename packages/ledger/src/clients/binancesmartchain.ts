@@ -1,8 +1,8 @@
 import { defineReadOnly } from '@ethersproject/properties';
 import { Provider } from '@ethersproject/providers';
+import { derivationPathToString } from '@sequelfinance/helpers';
 import { ChainId, DerivationPathArray, NetworkDerivationPath } from '@sequelfinance/types';
 
-import { derivationPathToString } from '../helpers/derivationPath.js';
 import { EthereumLikeLedgerInterface } from '../interfaces/EthereumLikeLedgerInterface.js';
 
 export class BSCLedger extends EthereumLikeLedgerInterface {

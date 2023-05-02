@@ -21,8 +21,14 @@ evm:
 utxo:
 - packages/toolbox-utxo/**/*
 
+trezor:
+- packages/trezor/**/*
+
 types:
 - packages/types/**/*
+
+tw:
+- packages/trustwallet/**/*
 
 wc:
 - packages/walletconnect/**/*

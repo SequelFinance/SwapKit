@@ -1,5 +1,3 @@
-[]
-
 ## 0.0.1-development.6
 
 ### Patch Changes

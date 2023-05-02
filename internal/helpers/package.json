@@ -7,10 +7,10 @@
   "devDependencies": {
     "@ethersproject/bignumber": "5.7.0",
     "@internal/config": "workspace:*",
-    "@vitest/coverage-c8": "0.29.7",
+    "@vitest/coverage-c8": "0.30.1",
     "bignumber.js": "9.1.1",
-    "vite": "4.2.1",
-    "vitest": "0.29.7"
+    "vite": "4.3.3",
+    "vitest": "0.30.1"
   },
   "files": [
     "src/"
@@ -25,7 +25,7 @@
     "bignumber.js": "^9.1.1"
   },
   "scripts": {
-    "build": "yarn clean; echo 'Build @sequelfinance/helpers 🛠'; vite build && echo 'Build succeeded @thorswap-lib/helpers ✅\n';",
+    "build": "yarn clean; echo 'Build @sequelfinance/helpers 🛠'; vite build && echo 'Build succeeded @sequelfinance/helpers ✅\n';",
     "clean": "rm -rf dist",
     "lint": "eslint --ext .ts,.tsx --fix; tsc --noEmit",
     "test": "echo 'vitest'",

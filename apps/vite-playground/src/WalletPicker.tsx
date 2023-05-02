@@ -10,7 +10,7 @@ type Props = {
 };
 
 const walletOptions = Object.values(WalletOption).filter(
-  (o) => ![WalletOption.KEYSTORE, WalletOption.KEPLR, WalletOption.TRUSTWALLET].includes(o),
+  (o) => ![WalletOption.KEPLR, WalletOption.TRUSTWALLET].includes(o),
 );
 
 const AllChainsSupported = [
@@ -33,6 +33,15 @@ export const availableChainsByWallet: Record<WalletOption, Chain[]> = {
   [WalletOption.KEPLR]: [Chain.Cosmos],
   [WalletOption.KEYSTORE]: AllChainsSupported,
   [WalletOption.LEDGER]: AllChainsSupported,
+  [WalletOption.TREZOR]: [
+    Chain.Bitcoin,
+    Chain.BitcoinCash,
+    Chain.Litecoin,
+    Chain.Doge,
+    Chain.Ethereum,
+    Chain.Avalanche,
+    Chain.BinanceSmartChain,
+  ],
   [WalletOption.METAMASK]: EVMChainsSupported,
   [WalletOption.TRUSTWALLET_WEB]: EVMChainsSupported,
   [WalletOption.TRUSTWALLET]: [Chain.THORChain, Chain.Ethereum, Chain.Binance],
@@ -43,7 +52,6 @@ export const WalletPicker = ({ setWallet }: Props) => {
   const skClient = getSwapKitClient();
   const [loading, setLoading] = useState(false);
   const [chains, setChains] = useState<Chain[]>([]);
-
   const connectWallet = useCallback(
     async (option: WalletOption) => {
       if (!skClient) return alert('client is not ready');
@@ -61,11 +69,42 @@ export const WalletPicker = ({ setWallet }: Props) => {
           return skClient.connectLedger(chains[0], derivationPath);
         }
 
+        case WalletOption.TREZOR: {
+          const derivationPath = getDerivationPathFor({ chain: chains[0], index: 0 });
+          return skClient.connectTrezor(chains[0], derivationPath);
+        }
         default:
           break;
       }
     },
     [chains, skClient],
+  );
+
+  const handleKeystoreConnection = useCallback(
+    async ({ target }: any) => {
+      if (!skClient) return alert('client is not ready');
+      setLoading(true);
+
+      const keystoreFile = await target.files[0].text();
+
+      setTimeout(async () => {
+        const password = prompt('Enter password');
+
+        if (!password) return alert('password is required');
+        try {
+          const phrases = await decryptFromKeystore(JSON.parse(keystoreFile), password);
+
+          await skClient.connectKeystore(chains, phrases);
+          const walletDataArray = await Promise.all(chains.map(skClient.getWalletByChain));
+
+          setWallet(walletDataArray.filter(Boolean));
+          setLoading(false);
+        } catch (e) {
+          alert(e);
+        }
+      }, 500);
+    },
+    [chains, setWallet, skClient],
   );
 
   const handleConnection = useCallback(
@@ -113,13 +152,28 @@ export const WalletPicker = ({ setWallet }: Props) => {
       <div>
         {walletOptions.map((option) => (
           <div key={option} style={{ padding: '8px' }}>
-            <button
-              disabled={!chains.length || isWalletDisabled(option)}
-              onClick={() => handleConnection(option)}
-              type="button"
-            >
-              {option}
-            </button>
+            {option === WalletOption.KEYSTORE ? (
+              <label className="label">
+                <input
+                  accept=".txt"
+                  disabled={!chains.length || isWalletDisabled(option)}
+                  id="keystoreFile"
+                  name={option}
+                  onChange={handleKeystoreConnection}
+                  title="asdf"
+                  type="file"
+                />
+                <span>{option}</span>
+              </label>
+            ) : (
+              <button
+                disabled={!chains.length || isWalletDisabled(option)}
+                onClick={() => handleConnection(option)}
+                type="button"
+              >
+                {option}
+              </button>
+            )}
           </div>
         ))}
       </div>

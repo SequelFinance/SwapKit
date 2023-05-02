@@ -12,6 +12,38 @@
 
 - [`e85dfc6`](https://github.com/thorswap/SwapKit/commit/e85dfc6d7ec5096d0c2b3d8af0262889c94dda96) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Initial release of all sequel packages
 
+## 1.0.0-development.73
+
+### Patch Changes
+
+- [#61](https://github.com/thorswap/SwapKit/pull/61) [`6bebf50`](https://github.com/thorswap/SwapKit/commit/6bebf50ee8f39e0aa48a56f2f5a8ac4a5b0ce50a) Thanks [@towanTG](https://github.com/towanTG)! - Adds Trezor support and fixes small bugs
+
+- [#62](https://github.com/thorswap/SwapKit/pull/62) [`aef5622`](https://github.com/thorswap/SwapKit/commit/aef5622f547640867b7f335bac3a0b33e75d03c1) Thanks [@chillios-ts](https://github.com/chillios-ts)! - Bump packages
+
+## 1.0.0-development.72
+
+### Patch Changes
+
+- Bump because of NPM issues again
+
+## 1.0.0-development.71
+
+### Patch Changes
+
+- [#57](https://github.com/thorswap/SwapKit/pull/57) [`9d84996`](https://github.com/thorswap/SwapKit/commit/9d84996dae68cb74bd74a359eaf53f84a13c2e8d) Thanks [@towanTG](https://github.com/towanTG)! - Re release because of npm error
+
+## 1.0.0-development.70
+
+### Patch Changes
+
+- Bump all for test
+
+## 1.0.0-development.69
+
+### Patch Changes
+
+- [#55](https://github.com/thorswap/SwapKit/pull/55) [`6c87541`](https://github.com/thorswap/SwapKit/commit/6c87541d5dfaf7e91b644564053258a8bbc28d1f) Thanks [@towanTG](https://github.com/towanTG)! - Improves typing for wallets and adds improved approval checks for EVM
+
 ## 1.0.0-development.68
 
 ### Patch Changes

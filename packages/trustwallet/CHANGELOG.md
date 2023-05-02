@@ -1,4 +1,94 @@
-# @thorswap-lib/walletconnect
+# @thorswap-lib/trustwallet
+
+## 1.0.0-development.135
+
+### Patch Changes
+
+- [#62](https://github.com/thorswap/SwapKit/pull/62) [`aef5622`](https://github.com/thorswap/SwapKit/commit/aef5622f547640867b7f335bac3a0b33e75d03c1) Thanks [@chillios-ts](https://github.com/chillios-ts)! - Bump packages
+
+- Updated dependencies [[`6bebf50`](https://github.com/thorswap/SwapKit/commit/6bebf50ee8f39e0aa48a56f2f5a8ac4a5b0ce50a), [`aef5622`](https://github.com/thorswap/SwapKit/commit/aef5622f547640867b7f335bac3a0b33e75d03c1)]:
+  - @thorswap-lib/helpers@0.0.0-development.69
+  - @thorswap-lib/types@1.0.0-development.73
+  - @thorswap-lib/toolbox-cosmos@1.0.0-development.92
+  - @thorswap-lib/toolbox-evm@1.0.0-development.108
+
+## 1.0.0-development.134
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @thorswap-lib/toolbox-cosmos@1.0.0-development.91
+
+## 1.0.0-development.133
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @thorswap-lib/toolbox-cosmos@0.1.0-development.90
+
+## 1.0.0-development.132
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @thorswap-lib/helpers@0.0.0-development.68
+  - @thorswap-lib/toolbox-cosmos@0.1.0-development.89
+  - @thorswap-lib/toolbox-evm@0.1.0-development.107
+
+## 1.0.0-development.131
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @thorswap-lib/toolbox-evm@0.1.0-development.106
+
+## 1.0.0-development.130
+
+### Patch Changes
+
+- Bump because of NPM issues again
+
+- Updated dependencies []:
+  - @thorswap-lib/toolbox-cosmos@0.1.0-development.88
+  - @thorswap-lib/toolbox-evm@0.1.0-development.105
+  - @thorswap-lib/helpers@0.0.0-development.67
+  - @thorswap-lib/types@1.0.0-development.72
+
+## 1.0.0-development.129
+
+### Patch Changes
+
+- [#57](https://github.com/thorswap/SwapKit/pull/57) [`9d84996`](https://github.com/thorswap/SwapKit/commit/9d84996dae68cb74bd74a359eaf53f84a13c2e8d) Thanks [@towanTG](https://github.com/towanTG)! - Re release because of npm error
+
+- Updated dependencies [[`9d84996`](https://github.com/thorswap/SwapKit/commit/9d84996dae68cb74bd74a359eaf53f84a13c2e8d)]:
+  - @thorswap-lib/toolbox-cosmos@0.1.0-development.87
+  - @thorswap-lib/toolbox-evm@0.1.0-development.104
+  - @thorswap-lib/helpers@0.0.0-development.66
+  - @thorswap-lib/types@1.0.0-development.71
+
+## 1.0.0-development.128
+
+### Patch Changes
+
+- Bump all for test
+
+- Updated dependencies []:
+  - @thorswap-lib/toolbox-cosmos@0.1.0-development.86
+  - @thorswap-lib/toolbox-evm@0.1.0-development.103
+  - @thorswap-lib/helpers@0.0.0-development.65
+  - @thorswap-lib/types@1.0.0-development.70
+
+## 1.0.0-development.127
+
+### Patch Changes
+
+- [#55](https://github.com/thorswap/SwapKit/pull/55) [`6c87541`](https://github.com/thorswap/SwapKit/commit/6c87541d5dfaf7e91b644564053258a8bbc28d1f) Thanks [@towanTG](https://github.com/towanTG)! - Improves typing for wallets and adds improved approval checks for EVM
+
+- Updated dependencies [[`6c87541`](https://github.com/thorswap/SwapKit/commit/6c87541d5dfaf7e91b644564053258a8bbc28d1f)]:
+  - @thorswap-lib/toolbox-cosmos@0.1.0-development.85
+  - @thorswap-lib/toolbox-evm@0.1.0-development.102
+  - @thorswap-lib/types@1.0.0-development.69
+  - @thorswap-lib/helpers@0.0.0-development.64
 
 ## 0.0.1-development.1
 

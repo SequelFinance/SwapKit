@@ -19,9 +19,9 @@
   "devDependencies": {
     "@arbitrum/sdk": "^3.1.2",
     "@internal/config": "workspace:*",
-    "@vitest/coverage-c8": "0.29.7",
-    "vite": "4.2.1",
-    "vitest": "0.29.7"
+    "@vitest/coverage-c8": "0.30.1",
+    "vite": "4.3.3",
+    "vitest": "0.30.1"
   },
   "exports": {
     ".": {

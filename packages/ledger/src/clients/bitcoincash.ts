@@ -1,8 +1,9 @@
+import { derivationPathToString } from '@sequelfinance/helpers';
 import { DerivationPathArray, NetworkDerivationPath } from '@sequelfinance/types';
 // @ts-expect-error
 import coininfo from 'coininfo';
 
-import { derivationPathToString, getWalletFormatFor } from '../helpers/derivationPath.js';
+import { getWalletFormatFor } from '../helpers/derivationPath.js';
 import { UTXOLedgerInterface } from '../interfaces/LedgerInterfaces.js';
 
 export class BitcoinCashLedger extends UTXOLedgerInterface {

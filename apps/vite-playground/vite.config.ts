@@ -11,6 +11,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      crypto: 'crypto-browserify',
+      http: 'stream-http',
+      https: 'https-browserify',
+      os: 'os-browserify/browser',
+      stream: 'readable-stream',
+      util: 'util',
+      url: 'url',
+
       '@sequelfinance/keystore': resolve('../../packages/keystore/src'),
       '@sequelfinance/ledger': resolve('../../packages/ledger/src'),
       '@sequelfinance/swapkit-core': resolve('../../packages/swapkit-core/src'),

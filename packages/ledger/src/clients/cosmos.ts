@@ -1,6 +1,6 @@
+import { derivationPathToString } from '@sequelfinance/helpers';
 import { DerivationPathArray, NetworkDerivationPath } from '@sequelfinance/types';
 
-import { derivationPathToString } from '../helpers/derivationPath.js';
 import { CommonLedgerInterface } from '../interfaces/LedgerInterfaces.js';
 
 export class CosmosLedger extends CommonLedgerInterface {
