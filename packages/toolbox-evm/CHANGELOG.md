@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.8
+
+### Patch Changes
+
+- [`a292aa6`](https://github.com/thorswap/SwapKit/commit/a292aa666d39bf6a4699d6f6166f9f8390863f71) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Fixes Optimism fees
+
 ## 0.0.1-development.7
 
 ### Patch Changes
