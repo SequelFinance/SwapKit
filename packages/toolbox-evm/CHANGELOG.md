@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.9
+
+### Patch Changes
+
+- [`3b58ab3`](https://github.com/thorswap/SwapKit/commit/3b58ab345afc0954c45a454c88938cf4422bef3c) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Exposes opt gas estimation methods
+
 ## 0.0.1-development.8
 
 ### Patch Changes
