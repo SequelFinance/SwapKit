@@ -1,4 +1,9 @@
-import { estimateTotalGasCost, getL1GasPrice } from '@eth-optimism/sdk';
+import {
+  estimateL1GasCost,
+  estimateL2GasCost,
+  estimateTotalGasCost,
+  getL1GasPrice,
+} from '@eth-optimism/sdk';
 import { Provider } from '@ethersproject/abstract-provider';
 import { Signer } from '@ethersproject/abstract-signer';
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
@@ -93,7 +98,7 @@ export const OPToolbox = ({
 
   const estimateGasPrices = async (provider: Provider) => {
     try {
-      const gasPrice = (await provider.getGasPrice()).add(await getL1GasPrice(provider));
+      const gasPrice = await provider.getGasPrice();
 
       if (!gasPrice) throw new Error('No fee data available');
 
@@ -270,7 +275,10 @@ export const OPToolbox = ({
   return {
     ...baseToolbox,
     estimateTotalGasCost,
+    estimateL1GasCost,
+    estimateL2GasCost,
     getL1GasPrice,
+    estimateGasPrices: () => estimateGasPrices(provider),
     transfer: (params: TransferParams) => transfer(provider, params, signer),
     approve: (params: ApproveParams) => approve(provider, params, signer),
     sendTransaction: (tx: EIP1559TxParams & { gasPrice: BigNumberish }, feeOptionKey: FeeOption) =>
