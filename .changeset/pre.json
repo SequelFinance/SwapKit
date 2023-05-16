@@ -2,7 +2,8 @@
   "changesets": [
     "cyan-coats-wash",
     "dirty-radios-appear",
-    "fresh-frogs-kick"
+    "fresh-frogs-kick",
+    "tricky-radios-clap"
   ],
   "initialVersions": {
     "@sequelfinance/helpers": "0.0.1-development.0",
