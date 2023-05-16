@@ -144,7 +144,7 @@ declare global {
 export type TxFormatter<T> = (tx: EIP1559TxParams<BigNumberish>) => EIP1559TxParams<T>;
 
 export type TransferParams = WalletTxParams & {
-  gasPrice?: AmountWithBaseDenom;
+  gasPrice?: BigNumber;
   gasLimit?: BigNumber;
   maxFeePerGas?: BigNumber;
   maxPriorityFeePerGas?: BigNumber;

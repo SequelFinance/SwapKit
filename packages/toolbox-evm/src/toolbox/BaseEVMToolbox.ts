@@ -32,7 +32,7 @@ import {
   TransferParams,
 } from '../types/index.js';
 
-const MAX_APPROVAL = BigNumber.from('2').pow('256').sub('1');
+export const MAX_APPROVAL = BigNumber.from('2').pow('256').sub('1');
 
 const baseAssetAddress: Record<EVMChain, string> = {
   [Chain.Ethereum]: ContractAddress.ETH,
@@ -43,11 +43,11 @@ const baseAssetAddress: Record<EVMChain, string> = {
   [Chain.Polygon]: ContractAddress.MATIC,
 };
 
-const isWeb3Provider = (provider: any) => provider?.constructor?.name === 'Web3Provider';
-const createContract = (address: string, abi: any, provider: Provider) =>
+export const isWeb3Provider = (provider: any) => provider?.constructor?.name === 'Web3Provider';
+export const createContract = (address: string, abi: any, provider: Provider) =>
   new Contract(address, abi, provider);
 
-const validateAddress = (address: Address): boolean => {
+export const validateAddress = (address: Address): boolean => {
   try {
     getAddress(address);
     return true;
@@ -64,7 +64,7 @@ const getFee = ({
   gasLimit: BigNumber;
 }) => baseAmount(maxGasPrice.amount().mul(gasLimit.toString()), BaseDecimal.ETH);
 
-const getAssetEntity = (asset: AssetType | undefined) =>
+export const getAssetEntity = (asset: AssetType | undefined) =>
   asset
     ? new AssetEntity(asset.chain, asset.symbol, asset.synth, asset.ticker)
     : getSignatureAssetFor(Chain.Ethereum);
@@ -275,20 +275,24 @@ const transfer = async (
 
 const estimateGasPrices = async (provider: Provider) => {
   try {
-    const { maxFeePerGas, maxPriorityFeePerGas } = await provider.getFeeData();
+    const { maxFeePerGas, maxPriorityFeePerGas, gasPrice } = await provider.getFeeData();
 
-    if (!maxFeePerGas || !maxPriorityFeePerGas) throw new Error('No fee data available');
+    if (!maxFeePerGas || !maxPriorityFeePerGas || !gasPrice)
+      throw new Error('No fee data available');
 
     return {
       [FeeOption.Average]: {
+        gasPrice: baseAmount(gasPrice, BaseDecimal.ETH),
         maxFeePerGas: baseAmount(maxFeePerGas, BaseDecimal.ETH),
         maxPriorityFeePerGas: baseAmount(maxPriorityFeePerGas, BaseDecimal.ETH),
       },
       [FeeOption.Fast]: {
+        gasPrice: baseAmount(gasPrice.mul(3).div(2), BaseDecimal.ETH),
         maxFeePerGas: baseAmount(maxFeePerGas.mul(3).div(2), BaseDecimal.ETH),
         maxPriorityFeePerGas: baseAmount(maxPriorityFeePerGas, BaseDecimal.ETH),
       },
       [FeeOption.Fastest]: {
+        gasPrice: baseAmount(gasPrice.mul(2), BaseDecimal.ETH),
         maxFeePerGas: baseAmount(maxFeePerGas.mul(2), BaseDecimal.ETH),
         maxPriorityFeePerGas: baseAmount(maxPriorityFeePerGas, BaseDecimal.ETH),
       },
