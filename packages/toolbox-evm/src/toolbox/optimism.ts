@@ -134,7 +134,7 @@ export const OPToolbox = ({
     }: ApproveParams,
     signer?: Signer,
   ) => {
-    const { gasPrice } = (await estimateGasPrices(provider))[feeOptionKey];
+    const gasPrice = (await estimateGasPrices(provider))[feeOptionKey].gasPrice.amount();
 
     const funcParams = [spenderAddress, amount?.amount() || MAX_APPROVAL, { from }];
 
@@ -200,7 +200,7 @@ export const OPToolbox = ({
       type: 0,
       gasLimit:
         gasLimit || (await baseToolbox.estimateGasLimit({ asset, recipient, amount, memo, from })),
-      gasPrice: gasPrice || gasFees.gasPrice,
+      gasPrice: gasPrice || gasFees.gasPrice.amount(),
       nonce: nonce || (await provider.getTransactionCount(from)),
       from,
     };
@@ -255,7 +255,7 @@ export const OPToolbox = ({
         ...transaction,
         type: 0,
         chainId,
-        gasPrice: BigNumber.from(gasPrice || feeData.gasPrice).toHexString(),
+        gasPrice: BigNumber.from(gasPrice || feeData.gasPrice.amount()).toHexString(),
         gasLimit: gasLimit.toHexString(),
         nonce,
         ...(value && !BigNumber.from(value).isZero() ? { value } : {}),
