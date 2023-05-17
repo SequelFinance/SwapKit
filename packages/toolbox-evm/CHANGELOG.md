@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.13
+
+### Patch Changes
+
+- [`25e5a84`](https://github.com/thorswap/SwapKit/commit/25e5a84c2807e309190034cdd060f567b7cd384d) Thanks [@damian-sequel](https://github.com/damian-sequel)! - fix sendTransaction for bsc and op
+
 ## 0.0.1-development.12
 
 ### Patch Changes
