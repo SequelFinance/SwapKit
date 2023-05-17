@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.12
+
+### Patch Changes
+
+- [`2b9081c`](https://github.com/thorswap/SwapKit/commit/2b9081cb22673faf885b82d7bf36b6560fa66704) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Fixes gasPrice in bsc an op
+
 ## 0.0.1-development.11
 
 ### Patch Changes
