@@ -85,8 +85,8 @@ export class EthereumApi implements EvmApi<RequestParams> {
 
 const mapTxInfoToTx = ({ hash, from, to, value }: TransactionInfo): Tx => ({
   hash,
-  from: [{ from, amount: baseAmount(parseUnits(value.toString(), 'ether')) }],
-  to: [{ to, amount: baseAmount(parseUnits(value.toString(), 'ether')) }],
+  from: [{ from, amount: baseAmount(parseUnits(value.toFixed(18).toString(), 'ether'), 18) }],
+  to: [{ to, amount: baseAmount(parseUnits(value.toFixed(18).toString(), 'ether'), 18) }],
   asset: getSignatureAssetFor(Chain.Ethereum),
   type: TxType.Transfer,
   date: new Date(),
