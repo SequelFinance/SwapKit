@@ -224,7 +224,7 @@ export const OPToolbox = ({
       ...overrides,
     };
 
-    return baseToolbox.sendTransaction(txObject, feeOptionKey);
+    return sendTransaction(provider, txObject, feeOptionKey);
   };
 
   const sendTransaction = async (

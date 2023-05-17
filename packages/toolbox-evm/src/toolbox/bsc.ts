@@ -218,7 +218,7 @@ export const BSCToolbox = ({
       ...overrides,
     };
 
-    return baseToolbox.sendTransaction(txObject, feeOptionKey);
+    return sendTransaction(provider, txObject, feeOptionKey);
   };
 
   const sendTransaction = async (

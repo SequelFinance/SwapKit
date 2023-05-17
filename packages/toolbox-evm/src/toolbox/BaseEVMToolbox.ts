@@ -275,24 +275,20 @@ const transfer = async (
 
 const estimateGasPrices = async (provider: Provider) => {
   try {
-    const { maxFeePerGas, maxPriorityFeePerGas, gasPrice } = await provider.getFeeData();
+    const { maxFeePerGas, maxPriorityFeePerGas } = await provider.getFeeData();
 
-    if (!maxFeePerGas || !maxPriorityFeePerGas || !gasPrice)
-      throw new Error('No fee data available');
+    if (!maxFeePerGas || !maxPriorityFeePerGas) throw new Error('No fee data available');
 
     return {
       [FeeOption.Average]: {
-        gasPrice: baseAmount(gasPrice, BaseDecimal.ETH),
         maxFeePerGas: baseAmount(maxFeePerGas, BaseDecimal.ETH),
         maxPriorityFeePerGas: baseAmount(maxPriorityFeePerGas, BaseDecimal.ETH),
       },
       [FeeOption.Fast]: {
-        gasPrice: baseAmount(gasPrice.mul(3).div(2), BaseDecimal.ETH),
         maxFeePerGas: baseAmount(maxFeePerGas.mul(3).div(2), BaseDecimal.ETH),
         maxPriorityFeePerGas: baseAmount(maxPriorityFeePerGas, BaseDecimal.ETH),
       },
       [FeeOption.Fastest]: {
-        gasPrice: baseAmount(gasPrice.mul(2), BaseDecimal.ETH),
         maxFeePerGas: baseAmount(maxFeePerGas.mul(2), BaseDecimal.ETH),
         maxPriorityFeePerGas: baseAmount(maxPriorityFeePerGas, BaseDecimal.ETH),
       },
