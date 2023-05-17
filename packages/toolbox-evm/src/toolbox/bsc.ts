@@ -191,6 +191,7 @@ export const BSCToolbox = ({
     const isGasAddress = assetAddress === ContractAddress[chain];
     const gasFees = (await estimateGasPrices(provider))[feeOptionKey];
     const overrides = {
+      type: 0,
       gasLimit:
         gasLimit || (await baseToolbox.estimateGasLimit({ asset, recipient, amount, memo, from })),
       gasPrice: gasPrice || gasFees.gasPrice,
@@ -246,6 +247,7 @@ export const BSCToolbox = ({
       const { value, ...transaction } = tx;
       const txObject = {
         ...transaction,
+        type: 0,
         chainId,
         gasPrice: BigNumber.from(gasPrice || feeData.gasPrice).toHexString(),
         gasLimit: gasLimit.toHexString(),
