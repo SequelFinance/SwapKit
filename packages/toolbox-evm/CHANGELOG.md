@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.14
+
+### Patch Changes
+
+- [`fab5c31`](https://github.com/thorswap/SwapKit/commit/fab5c313c7946a77b5fa9eab300d64df8a21fe9d) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Uses signer for sendTransaction
+
 ## 0.0.1-development.13
 
 ### Patch Changes

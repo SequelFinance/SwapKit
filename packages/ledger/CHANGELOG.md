@@ -1,5 +1,12 @@
 # @thorswap-lib/ledger
 
+## 0.0.1-development.9
+
+### Patch Changes
+
+- Updated dependencies [[`fab5c31`](https://github.com/thorswap/SwapKit/commit/fab5c313c7946a77b5fa9eab300d64df8a21fe9d)]:
+  - @sequelfinance/toolbox-evm@0.0.1-development.14
+
 ## 0.0.1-development.8
 
 ### Patch Changes
