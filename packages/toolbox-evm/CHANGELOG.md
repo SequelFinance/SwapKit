@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.15
+
+### Patch Changes
+
+- [`2ccaec3`](https://github.com/thorswap/SwapKit/commit/2ccaec3664a3c130fadc3121123d7cf8bc71f72d) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Fixes handling of scientific noted numbers when requesting transactions for ETH
+
 ## 0.0.1-development.14
 
 ### Patch Changes
