@@ -1,5 +1,12 @@
 # @thorswap-lib/trustwallet
 
+## 0.0.1-development.7
+
+### Patch Changes
+
+- Updated dependencies [[`25e5a84`](https://github.com/thorswap/SwapKit/commit/25e5a84c2807e309190034cdd060f567b7cd384d)]:
+  - @sequelfinance/toolbox-evm@0.0.1-development.13
+
 ## 0.0.1-development.6
 
 ### Patch Changes
