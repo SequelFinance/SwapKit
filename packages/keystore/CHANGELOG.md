@@ -1,5 +1,12 @@
 # @thorswap-lib/keystore
 
+## 0.0.1-development.5
+
+### Patch Changes
+
+- Updated dependencies [[`40508ba`](https://github.com/thorswap/SwapKit/commit/40508ba1375e1e374d93b83014e9b1364ed8a2fd)]:
+  - @sequelfinance/toolbox-evm@0.0.1-development.10
+
 ## 0.0.1-development.4
 
 ### Patch Changes

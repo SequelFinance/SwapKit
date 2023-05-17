@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.10
+
+### Patch Changes
+
+- [`40508ba`](https://github.com/thorswap/SwapKit/commit/40508ba1375e1e374d93b83014e9b1364ed8a2fd) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Fixes Fees for BSC chain
+
 ## 0.0.1-development.9
 
 ### Patch Changes
