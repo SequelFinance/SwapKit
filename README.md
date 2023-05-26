@@ -6,11 +6,45 @@ ALPHA version of SwapKit SDK. Under heavy development. Use at your own risk.
 
 ## Usage
 
-#### Install
+### Full Integration Example
+
+<details>
+<summary>Full Installation (To be added)</summary>
+</details>
+
+### Partial Install Example
+
+<details>
+<summary>Partial Installation</summary>
+
+If you want to install one part of SwapKit SDK, you can install it separate instances of wallets & toolboxes.
+For example, if you want to use SwapKit SDK with EVM chains and Ledger wallet, you can install `@sequelfinance/toolbox-evm`, `@sequelfinance/ledger` and `@sequelfinance/swapkit-core` packages.
+
+<details>
+<summary>pnpm</summary>
 
 ```bash
-yarn add @thorswap-lib/swapkit-core
+pnpm add @sequelfinance/toolbox-evm @sequelfinance/ledger @sequelfinance/swapkit-core
 ```
+
+</details>
+<details>
+<summary>yarn</summary>
+
+```bash
+yarn add @sequelfinance/toolbox-evm @sequelfinance/ledger @sequelfinance/swapkit-core
+```
+
+</details>
+
+<details>
+<summary>npm</summary>
+
+```bash
+npm install @sequelfinance/toolbox-evm @sequelfinance/ledger @sequelfinance/swapkit-core
+```
+
+</details>
 
 #### Usage
 
@@ -18,28 +52,34 @@ Architecture of SwapKit SDK is pretty simple. It's based on the concept of toolb
 
 ```typescript
 import { Chain, FeeOption } from '@sequelfinance/types';
-import { SwapKitCore } from '@thorswap-lib/swapkit-core';
-import { keystoreWallet } from '@thorswap-lib/keystore';
-import { ledgerWallet } from '@thorswap-lib/ledger';
-import { trustwalletWallet } from '@thorswap-lib/trustwallet';
-import { evmWallet, keplrWallet, xdefiWallet } from '@thorswap-lib/web-extensions';
+import { SwapKitCore } from '@sequelfinance/swapkit-core';
+import { xdefiWallet } from '@sequelfinance/xdefi';
+import { evmWallet } from '@sequelfinance/evm-web3-wallets';
+import { keplr } from '@sequelfinance/keplr';
+import { keystoreWallet } from '@sequelfinance/keystore';
+import { ledgerWallet } from '@sequelfinance/ledger';
+import { trezorWallet } from '@sequelfinance/trezor';
+import { trustwalletWallet } from '@sequelfinance/trustwallet';
+import { walletconnectWallet } from '@sequelfinance/walletconnect';
 
 const getSwapKitClient = () => {
   const client = new SwapKitCore()
 
   client.extend({
     config: {
-      // Blockchair API KEY
       utxoApiKey: ''
       covalentApiKey: '',
       ethplorerApiKey: '',
+      walletConnectProjectId: '',
     },
     wallets: [
+      evmWallet, // MetaMask, BraveWallet, TrustWallet Web, Coinbase Wallet
+      keplrWallet,
       keystoreWallet,
       ledgerWallet,
+      trezorWallet,
       trustwalletWallet,
-      evmWallet,
-      keplrWallet,
+      walletconnectWallet,
       xdefiWallet,
     ],
   });
@@ -100,54 +140,100 @@ const swap = () => {
 
 ```
 
-### Development
+</details>
+
+## Packages
 
 This repo contains packages around SwapKit sdk and its integrations with different blockchains.
 
-#### Packages
+| Package                                                                 | Description                        | Chains                                            |
+| ----------------------------------------------------------------------- | ---------------------------------- | ------------------------------------------------- |
+| [@sequelfinance/swapkit-core](./packages/swapkit/swapkit-core/README.md)         | Core package for SwapKit           | -                                                 |
+| [@sequelfinance/toolbox-evm](./packages/toolboxes/toolbox-evm/README.md)           | Toolkit to integrate EVM chain     | ETH, AVAX, BSC                                    |
+| [@sequelfinance/toolbox-utxo](./packages/toolboxes/toolbox-utxo/README.md)         | Toolkit to integrate UTXO chain    | BTC, LTC, DOGE, BCH                               |
+| [@sequelfinance/toolbox-cosmos](./packages/toolboxes/toolbox-cosmos/README.md)     | Toolkit to integrate Cosmos chains | THOR, ATOM, BNB                                   |
+| [@sequelfinance/keystore](./packages/wallets/keystore/README.md)                 | Keystore implementation            | All chains supported by toolboxes                 |
+| [@sequelfinance/ledger](./packages/wallets/ledger/README.md)                     | Ledger implementation              | All chains supported by toolboxes                 |
+| [@sequelfinance/trezor](./packages/wallets/trezor/README.md)                     | Trezor implementation              | BTC, ETH, LTC, DOGE, BCH, AVAX                    |
+| [@sequelfinance/trustwallet](./packages/wallets/trustwallet/README.md)           | Trustwallet implementation         | THOR, BNB, ETH                                    |
+| [@sequelfinance/walletconnect](./packages/wallets/walletconnect/README.md)       | Walletconnect implementation       | ETH                                               |
+| [@sequelfinance/keplr](./packages/wallets/keplr/README.md)                       | Keplr implementation               | ATOM                                              |
+| [@sequelfinance/xdefi](./packages/wallets/xdefi/README.md)                       | XDEFI implementation               | All chains                                        |
+| [@sequelfinance/evm-web3-wallets](./packages/wallets/evm-web3-wallets/README.md) | EVM Browser Extensions             | [See more](./packages/wallets/evm-web3-wallets/README.md) |
 
+## Contributing
+
+<<<<<<< HEAD
 | Package                                                             | Description                        | Chains                                          |
 | ------------------------------------------------------------------- | ---------------------------------- | ----------------------------------------------- |
-| [@thorswap-lib/swapkit-core](./packages/swapkit-core/README.md)     | Core package for SwapKit           | -                                               |
+| [@sequelfinance/swapkit-core](./packages/swapkit-core/README.md)     | Core package for SwapKit           | -                                               |
 | [@sequelfinance/toolbox-evm](./packages/toolbox-evm/README.md)       | Toolkit to integrate EVM chain     | ETH, AVAX, BSC                                  |
-| [@thorswap-lib/toolbox-utxo](./packages/toolbox-utxo/README.md)     | Toolkit to integrate UTXO chain    | BTC, LTC, DOGE, BCH                             |
-| [@thorswap-lib/toolbox-cosmos](./packages/toolbox-cosmos/README.md) | Toolkit to integrate Cosmos chains | THOR, ATOM, BNB                                 |
-| [@thorswap-lib/keystore](./packages/keystore/README.md)             | Keystore implementation            | All chains supported by toolboxes               |
-| [@thorswap-lib/ledger](./packages/ledger/README.md)                 | Ledger implementation              | All chains supported by toolboxes               |
-| [@thorswap-lib/trustwallet](./packages/trustwallet/README.md)   | Trustwallet implementation       | THOR, BNB, ETH
-| [@thorswap-lib/walletconnect](./packages/walletconnect/README.md)   | Walletconnect implementation       | ETH                                  |
-| [@thorswap-lib/web-extensions](./packages/web-extensions/README.md) | Browser extensions                 | [See more](./packages/web-extensions/README.md) |
+| [@sequelfinance/toolbox-utxo](./packages/toolbox-utxo/README.md)     | Toolkit to integrate UTXO chain    | BTC, LTC, DOGE, BCH                             |
+| [@sequelfinance/toolbox-cosmos](./packages/toolbox-cosmos/README.md) | Toolkit to integrate Cosmos chains | THOR, ATOM, BNB                                 |
+| [@sequelfinance/keystore](./packages/keystore/README.md)             | Keystore implementation            | All chains supported by toolboxes               |
+| [@sequelfinance/ledger](./packages/ledger/README.md)                 | Ledger implementation              | All chains supported by toolboxes               |
+| [@sequelfinance/trustwallet](./packages/trustwallet/README.md)   | Trustwallet implementation       | THOR, BNB, ETH
+| [@sequelfinance/walletconnect](./packages/walletconnect/README.md)   | Walletconnect implementation       | ETH                                  |
+| [@sequelfinance/web-extensions](./packages/web-extensions/README.md) | Browser extensions                 | [See more](./packages/web-extensions/README.md) |
+=======
+#### Pre-requisites
+>>>>>>> upstream/develop
 
-### Setup
+1.
 
 ```bash
-yarn install; yarn build
+npm install -g pnpm
 ```
 
-### Contributing
+2.
+
+```pre
+Copy .env.example to .env and fill it with data
+```
+
+### Installation
+
+```bash
+pnpm bootstrap;
+```
+
+#### Branches
+
+- `main` - production branch
+- `develop` - development branch - all PRs should be merged here first
+
+#### Testing
+
+To run tests use `pnpm test` command.
+
+#### Pull requests
+
+- PRs should be created from `develop` branch
+- PRs should be reviewed by at least Code Owner (see CODEOWNERS file)
+- PRs should have scope in commit message (see commit messages section)
+- PRs should have tests if it's possible
+- PRs should have changeset file if it's possible (see release section)
 
 #### New package
 
-To create new package use `yarn generate` and pick one of the options
+To create new package use `pnpm generate` and pick one of the options
 It will setup the package with the necessary files for bundling and publishing.
+</br>
+New toolbox(TBA)
+</br>
+New wallet(TBA)
 
-#### Rules and conventions
+### Release and publish
 
-Project comes with `@commitlint/config-lerna-scopes` so we can generate changelogs with changesets so commits should have scope in task when it's touching just one package i.e. "`chore(ledger): add ATOM integration`". [See more](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-lerna-scopes)
-
-#### Release and publish
-
-Packages are automatically published to npm when new PR is merged to `develop` and `main` branches.
+Packages are automatically published to npm when new PR is merged to `main` & `develop` branches.
 To automate and handle process we use [changesets](https://github.com/changesets/changesets) and github action workflows.
+
+<b>Before running `pnpm changeset` you have to pull `main` & `develop`</b>
 
 To release new version of package you need to create PR with changes and add changeset file to your commit.
 
 ```bash
-yarn changeset
+pnpm changeset
 ```
 
 After PR is merged to `develop` branch with changeset file, github action will create new PR with updated versions of packages and changelogs.
-
-#### Testing
-
-To run tests use `yarn test` command.

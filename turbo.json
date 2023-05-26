@@ -6,48 +6,56 @@
         "^build"
       ],
       "outputs": [
-        "dist/**"
+        "dist/**",
+        "node_modules/.cache/**"
       ]
     },
+    "build-playground": {
+      "dependsOn": [
+        "^build",
+        "^build-playground"
+      ],
+      "outputs": [
+        "dist/**",
+        "node_modules/.cache/**"
+      ]
+    },
+    "clean": {
+      "cache": false
+    },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:android": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:ios": {
       "cache": false,
       "persistent": true
     },
     "lint": {
       "dependsOn": [
         "build"
-      ],
-      "outputs": []
+      ]
     },
     "publish": {
       "dependsOn": [
         "build"
-      ],
-      "outputs": []
+      ]
     },
     "test": {
       "dependsOn": [
         "build"
-      ],
-      "inputs": [
-        "__tests__/**/*.test.ts",
-        "__tests__/**/*.test.tsx"
-      ],
-      "outputs": []
+      ]
     },
     "test:coverage": {
       "dependsOn": [
         "build"
-      ],
-      "inputs": [
-        "__tests__/**/*.test.ts",
-        "__tests__/**/*.test.tsx"
       ]
     },
     "test:watch": {
-      "dependsOn": [
-        "build"
-      ],
       "inputs": [
         "__tests__/**/*.test.ts",
         "__tests__/**/*.test.tsx"

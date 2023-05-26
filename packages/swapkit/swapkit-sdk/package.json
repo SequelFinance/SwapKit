@@ -1,0 +1,63 @@
+{
+  "author": "sequelfinance",
+  "dependencies": {
+    "@cosmos-client/core": "0.45.13",
+    "@sequelfinance/evm-web3-wallets": "workspace:*",
+    "@sequelfinance/keplr": "workspace:*",
+    "@sequelfinance/keystore": "workspace:*",
+    "@sequelfinance/ledger": "workspace:*",
+    "@sequelfinance/swapkit-api": "workspace:*",
+    "@sequelfinance/swapkit-core": "workspace:*",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
+    "@sequelfinance/trezor": "workspace:*",
+    "@sequelfinance/trustwallet": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
+    "@sequelfinance/walletconnect": "workspace:*",
+    "@sequelfinance/xdefi": "workspace:*",
+    "bip39": "3.1.0",
+    "cosmos-client": "0.39.2"
+  },
+  "description": "Fork of THORSwap Lib swapkit-sdk",
+  "devDependencies": {
+    "@internal/config": "workspace:*",
+    "@vitest/coverage-istanbul": "0.31.1",
+    "vite": "4.3.8",
+    "vitest": "0.31.1"
+  },
+  "eslintConfig": {
+    "extends": "../../../internal/eslint-config-thorswap"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "homepage": "https://github.com/SequelFinance/SwapKit",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.es.js",
+  "name": "@sequelfinance/swapkit-sdk",
+  "publishConfig": {
+    "access": "public"
+  },
+  "react-native": "./src/index.ts",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
+  "scripts": {
+    "build": "echo 'Build swapkit-sdk 🛠';NODE_OPTIONS=--max_old_space_size=32768 vite build && echo 'Build succeeded swapkit-sdk ✅'",
+    "clean": "rm -rf dist .turbo",
+    "lint": "eslint ./ --ext .ts,.tsx --fix; tsc --noEmit",
+    "test": "echo 'vitest --run'",
+    "test:coverage": "echo 'vitest run --coverage'"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "version": "0.0.1-development.3"
+}

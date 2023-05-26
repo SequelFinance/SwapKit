@@ -1,12 +1,14 @@
+import { decryptFromKeystore } from '@sequelfinance/keystore';
 import { getDerivationPathFor } from '@sequelfinance/ledger';
+import { SwapKitCore } from '@sequelfinance/swapkit-core';
 import { Chain, WalletOption } from '@sequelfinance/types';
 import { useCallback, useState } from 'react';
 
-import { getSwapKitClient } from './swapKitClient';
 import { WalletDataType } from './types';
 
 type Props = {
   setWallet: (wallet: WalletDataType | WalletDataType[]) => void;
+  skClient?: SwapKitCore;
 };
 
 const walletOptions = Object.values(WalletOption).filter(
@@ -46,10 +48,10 @@ export const availableChainsByWallet: Record<WalletOption, Chain[]> = {
   [WalletOption.TRUSTWALLET_WEB]: EVMChainsSupported,
   [WalletOption.TRUSTWALLET]: [Chain.THORChain, Chain.Ethereum, Chain.Binance],
   [WalletOption.XDEFI]: AllChainsSupported,
+  [WalletOption.WALLETCONNECT]: [], // [Chain.Ethereum, Chain.Avalanche],
 };
 
-export const WalletPicker = ({ setWallet }: Props) => {
-  const skClient = getSwapKitClient();
+export const WalletPicker = ({ skClient, setWallet }: Props) => {
   const [loading, setLoading] = useState(false);
   const [chains, setChains] = useState<Chain[]>([]);
   const connectWallet = useCallback(
@@ -72,6 +74,9 @@ export const WalletPicker = ({ setWallet }: Props) => {
         case WalletOption.TREZOR: {
           const derivationPath = getDerivationPathFor({ chain: chains[0], index: 0 });
           return skClient.connectTrezor(chains[0], derivationPath);
+        }
+        case WalletOption.WALLETCONNECT: {
+          return skClient.connectWalletconnect(chains);
         }
         default:
           break;

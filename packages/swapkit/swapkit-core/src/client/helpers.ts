@@ -1,0 +1,58 @@
+import { getRequest } from '@sequelfinance/helpers';
+import { AssetEntity } from '@sequelfinance/swapkit-entities';
+import { Asset, Chain } from '@sequelfinance/types';
+
+const THORNODE_MAINNET_URL = 'https://thornode.thorswap.net';
+const THORNODE_STAGENET_URL = 'https://stagenet-thornode.ninerealms.com';
+
+type InboundAddressData = {
+  address: string;
+  chain: Chain;
+  chain_lp_actions_paused: boolean;
+  chain_trading_paused: boolean;
+  dust_threshold: string;
+  gas_rate: string;
+  gas_rate_units: string;
+  global_trading_paused: boolean;
+  halted: boolean;
+  outbound_fee: string;
+  outbound_tx_size: string;
+  pub_key: string;
+  router: string;
+}[];
+
+export const getAssetForBalance = ({ symbol, chain }: Asset) => {
+  const isSynth = symbol.includes('/');
+  const assetChain = (isSynth ? symbol.split('/')?.[0] : chain)?.toUpperCase() as Chain;
+  const assetSymbol = (isSynth ? symbol.split('/')?.[1] : symbol)?.toUpperCase();
+
+  return new AssetEntity(assetChain, assetSymbol, isSynth);
+};
+
+export const getInboundData = (stagenet: boolean) => {
+  const baseUrl = stagenet ? THORNODE_STAGENET_URL : THORNODE_MAINNET_URL;
+
+  return getRequest<InboundAddressData>(`${baseUrl}/thorchain/inbound_addresses`);
+};
+
+export const getMimirData = (stagenet: boolean) => {
+  const baseUrl = stagenet ? THORNODE_STAGENET_URL : THORNODE_MAINNET_URL;
+
+  return getRequest<Record<string, number>>(`${baseUrl}/thorchain/mimir`);
+};
+
+export const getEmptyWalletStructure = () => ({
+  [Chain.Arbitrum]: null,
+  [Chain.Avalanche]: null,
+  [Chain.Binance]: null,
+  [Chain.BinanceSmartChain]: null,
+  [Chain.BitcoinCash]: null,
+  [Chain.Bitcoin]: null,
+  [Chain.Cosmos]: null,
+  [Chain.Doge]: null,
+  [Chain.Ethereum]: null,
+  [Chain.Litecoin]: null,
+  [Chain.Optimism]: null,
+  [Chain.Polygon]: null,
+  [Chain.THORChain]: null,
+});

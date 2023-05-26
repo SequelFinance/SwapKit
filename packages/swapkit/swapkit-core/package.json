@@ -1,0 +1,64 @@
+{
+  "author": "sequelfinance",
+  "dependencies": {
+    "@ethersproject/bytes": "5.7.0",
+    "@ethersproject/units": "5.7.0",
+    "@sequelfinance/helpers": "workspace:*",
+    "@sequelfinance/swapkit-entities": "workspace:*",
+    "@sequelfinance/swapkit-explorers": "workspace:*",
+    "@sequelfinance/types": "workspace:*",
+    "bignumber.js": "9.1.1"
+  },
+  "description": "Fork of THORSwap Lib swapkit-core",
+  "devDependencies": {
+    "@ethersproject/abstract-provider": "5.7.0",
+    "@ethersproject/units": "5.7.0",
+    "@internal/config": "workspace:*",
+    "@sequelfinance/toolbox-cosmos": "workspace:*",
+    "@sequelfinance/toolbox-evm": "workspace:*",
+    "@sequelfinance/toolbox-utxo": "workspace:*",
+    "@sequelfinance/trustwallet": "workspace:*",
+    "@sequelfinance/walletconnect": "workspace:*",
+    "@sequelfinance/swapkit-api": "workspace:*",
+    "@vitest/coverage-istanbul": "0.31.1",
+    "vite": "4.3.8",
+    "vite-plugin-top-level-await": "1.3.0",
+    "vite-plugin-wasm": "3.2.2",
+    "vitest": "0.31.1"
+  },
+  "eslintConfig": {
+    "extends": "../../../internal/eslint-config-thorswap"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "homepage": "https://github.com/SequelFinance/SwapKit",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.es.js",
+  "name": "@sequelfinance/swapkit-core",
+  "publishConfig": {
+    "access": "public"
+  },
+  "react-native": "./src/index.ts",
+  "repository": "https://github.com/SequelFinance/SwapKit.git",
+  "scripts": {
+    "build": "echo 'Build swapkit-core 🛠';NODE_OPTIONS=--max_old_space_size=16384 pnpm vite build && echo 'Build succeeded swapkit-core ✅'",
+    "clean": "rm -rf dist .turbo",
+    "lint": "eslint ./ --ext .ts,.tsx --fix; tsc --noEmit",
+    "test": "echo 'vitest --run'",
+    "test:coverage": "echo 'vitest run --coverage'"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "version": "0.0.1-development.3"
+}

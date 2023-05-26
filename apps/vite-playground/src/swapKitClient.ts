@@ -1,26 +1,28 @@
+import { evmWallet } from '@sequelfinance/evm-web3-wallets';
+import { keplrWallet } from '@sequelfinance/keplr';
 import { keystoreWallet } from '@sequelfinance/keystore';
 import { ledgerWallet } from '@sequelfinance/ledger';
 import { SwapKitCore } from '@sequelfinance/swapkit-core';
 import { trezorWallet } from '@sequelfinance/trezor';
-import { evmWallet, xdefiWallet } from '@sequelfinance/web-extensions';
+import { xdefiWallet } from '@sequelfinance/xdefi';
 
-let skClient: SwapKitCore;
-
-export const getSwapKitClient = () => {
-  if (skClient) return skClient;
-
-  const client = new SwapKitCore();
+export const getSwapKitClient = ({
+  ethplorerApiKey = 'freekey',
+  covalentApiKey = '',
+  utxoApiKey = '',
+  stagenet,
+}: {
+  ethplorerApiKey?: string;
+  covalentApiKey?: string;
+  utxoApiKey?: string;
+  stagenet?: boolean;
+} = {}) => {
+  const client = new SwapKitCore({ stagenet });
 
   client.extend({
-    config: {
-      ethplorerApiKey: 'freekey',
-      covalentApiKey: '',
-      utxoApiKey: 'freekey',
-    },
-    wallets: [xdefiWallet, evmWallet, ledgerWallet, keystoreWallet, trezorWallet],
+    config: { ethplorerApiKey, covalentApiKey, utxoApiKey },
+    wallets: [xdefiWallet, ledgerWallet, keystoreWallet, trezorWallet, keplrWallet, evmWallet],
   });
-
-  skClient = client;
 
   return client;
 };

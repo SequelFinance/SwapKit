@@ -1,4 +1,4 @@
-import * as kleur from 'kleur';
+import kleur from 'kleur';
 
 const baseLog =
   (color: kleur.Color) =>
@@ -6,10 +6,10 @@ const baseLog =
     console.info(color(args));
 
 export const log = {
-  accent: baseLog(kleur.default.italic().cyan),
-  branded: (...args: any) => baseLog(kleur.default.underline().green)(`===ᚱ ${args} ᚱ===`),
-  error: baseLog(kleur.default.bold().red),
-  info: baseLog(kleur.default.italic().dim),
+  accent: baseLog(kleur.bold().italic().cyan),
+  branded: (...args: any) => baseLog(kleur.underline().green)(`===ᚱ ${args} ᚱ===`),
+  error: baseLog(kleur.bold().red),
+  info: baseLog(kleur.italic().dim),
 };
 
 export const messages = {
@@ -44,7 +44,7 @@ export const messages = {
           .:--=#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*:.
             .-+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=:.
               ..:=*%@@@@@@@@@@@@@@@@@@@@@@@@%*=:.
-                  ..:-+*#%@@@@@@@@@@@@%#*=-:..
-                        ....::------::....
+                 ..:-+*#%@@@@@@@@@@@@%#*=-:..
+                      ....::------::....
 `,
 };

@@ -1,22 +1,15 @@
 {
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-lerna-scopes"
-    ]
-  },
   "devDependencies": {
-    "@babel/core": "7.21.4",
-    "@babel/eslint-parser": "7.21.3",
-    "@changesets/assemble-release-plan": "5.2.3",
+    "@babel/core": "7.21.8",
+    "@babel/eslint-parser": "7.21.8",
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.1",
-    "@commitlint/cli": "17.6.1",
-    "@commitlint/config-lerna-scopes": "17.4.2",
-    "@evilmartians/lefthook": "1.3.10",
     "@size-limit/file": "8.2.4",
-    "@typescript-eslint/eslint-plugin": "5.59.1",
-    "@typescript-eslint/parser": "5.59.1",
-    "eslint": "8.39.0",
+    "@size-limit/time": "8.2.4",
+    "@typescript-eslint/eslint-plugin": "5.59.6",
+    "@typescript-eslint/parser": "5.59.6",
+    "dotenv-cli": "7.2.1",
+    "eslint": "8.40.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-eslint-comments": "3.2.0",
@@ -30,11 +23,9 @@
     "prettier": "2.8.8",
     "react": "18.2.0",
     "size-limit": "8.2.4",
-    "turbo": "1.9.3",
+    "turbo": "1.9.8",
     "typescript": "5.0.4"
   },
-  "name": "swapkit",
-  "packageManager": "yarn@3.2.1",
   "prettier": {
     "bracketSameLine": true,
     "bracketSpacing": true,
@@ -49,124 +40,38 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "resolutions": {
-    "@changesets/assemble-release-plan": "patch:@changesets/assemble-release-plan@npm:5.2.3#.yarn/patches/@changesets-assemble-release-plan-npm-5.2.3-296454a28f.patch",
-    "@changesets/cli": "patch:@changesets/cli@npm:2.26.0#.yarn/patches/@changesets-cli-npm-2.26.0-49d5c5f72d.patch",
-    "@ethersproject/abstract-signer@5.7.0": "patch:@ethersproject/abstract-signer@npm:5.7.0#.yarn/patches/@ethersproject-abstract-signer-npm-5.7.0-f61d0a970e.patch",
-    "cipher-base@1.0.4": "patch:cipher-base@npm:1.0.4#.yarn/patches/cipher-base-npm-1.0.4-2e98b97140.patch",
-    "sr25519@0.2.0": "patch:sr25519@npm:0.2.0#.yarn/patches/sr25519-npm-0.2.0-c9939c5c8a.patch",
-    "typeforce": "patch:typeforce@npm:1.18.0#.yarn/patches/typeforce-npm-1.18.0-372e34e2a2.patch"
+  "pnpm": {
+    "overrides": {
+      "axios@^0.x.x": "^0.27.2",
+      "json5@<=1.0.1": "^1.0.2",
+      "semver@<=4.3.2": "^4.3.6"
+    },
+    "patchedDependencies": {
+      "@ethersproject/abstract-signer@5.7.0": "patches/@ethersproject-abstract-signer-npm-5.7.0-f61d0a970e.patch",
+      "cipher-base@1.0.4": "patches/cipher-base-npm-1.0.4-2e98b97140.patch",
+      "sr25519@0.2.0": "patches/sr25519-npm-0.2.0-c9939c5c8a.patch",
+      "typeforce@1.18.0": "patches/typeforce@1.18.0.patch",
+      "asyncstorage-down@4.2.0": "patches/asyncstorage-down-npm-4.2.0-d323e014ba.patch",
+      "@changesets/assemble-release-plan@5.2.3": "patches/@changesets__assemble-release-plan@5.2.3.patch",
+      "@changesets/cli@2.26.1": "patches/@changesets__cli@2.26.1.patch"
+    }
   },
   "scripts": {
-    "build": "NODE_OPTIONS=--max_old_space_size=32768 turbo run build --cache-dir=./.turbo-cache",
-    "bump:development": "yarn changeset && yarn changeset version",
-    "bump:release": "yarn changeset pre exit && yarn changeset && yarn changeset version",
-    "changelog": "yarn changeset",
-    "dev:vite": "turbo run dev --concurrency=20",
-    "generate": "yarn internal/generator generate",
-    "lint": "turbo run lint",
-    "publish-packages": "turbo run build lint --cache-dir=./.turbo-cache && changeset version && changeset publish",
-    "test": "turbo run test",
-    "ci": "turbo run build lint test --cache-dir=./.turbo-cache",
-    "test:coverage": "turbo run test:coverage",
-    "version-development": "yarn changeset version",
-    "version-release": "yarn changeset pre exit && yarn changeset version"
-  },
-  "size-limit": [
-    {
-      "path": "./packages/keystore/dist/index.cjs",
-      "limit": "200 KB"
-    },
-    {
-      "path": "./packages/keystore/dist/index.es.js",
-      "limit": "200 KB"
-    },
-    {
-      "path": "./packages/ledger/dist/index.cjs",
-      "limit": "1.5 MB"
-    },
-    {
-      "path": "./packages/ledger/dist/index.es.js",
-      "limit": "1.5 MB"
-    },
-    {
-      "path": "./packages/swapkit-core/dist/index.cjs",
-      "limit": "200 KB"
-    },
-    {
-      "path": "./packages/swapkit-core/dist/index.es.js",
-      "limit": "200 KB"
-    },
-    {
-      "path": "./packages/swapkit-entities/dist/index.cjs",
-      "limit": "100 KB"
-    },
-    {
-      "path": "./packages/swapkit-entities/dist/index.es.js",
-      "limit": "100 KB"
-    },
-    {
-      "path": "./packages/toolbox-cosmos/dist/index.cjs",
-      "limit": "1 MB"
-    },
-    {
-      "path": "./packages/toolbox-cosmos/dist/index.es.js",
-      "limit": "1 MB"
-    },
-    {
-      "path": "./packages/toolbox-evm/dist/index.cjs",
-      "limit": "200 KB"
-    },
-    {
-      "path": "./packages/toolbox-evm/dist/index.es.js",
-      "limit": "200 KB"
-    },
-    {
-      "path": "./packages/toolbox-utxo/dist/index.cjs",
-      "limit": "400 KB"
-    },
-    {
-      "path": "./packages/toolbox-utxo/dist/index.es.js",
-      "limit": "400 KB"
-    },
-    {
-      "path": "./packages/trezor/dist/index.cjs",
-      "limit": "1.7 MB"
-    },
-    {
-      "path": "./packages/trezor/dist/index.es.js",
-      "limit": "2.2 MB"
-    },
-    {
-      "path": "./packages/types/dist/index.cjs",
-      "limit": "100 KB"
-    },
-    {
-      "path": "./packages/types/dist/index.es.js",
-      "limit": "100 KB"
-    },
-    {
-      "path": "./packages/trustwallet/dist/index.cjs",
-      "limit": "500 KB"
-    },
-    {
-      "path": "./packages/trustwallet/dist/index.es.js",
-      "limit": "500 KB"
-    },
-    {
-      "path": "./packages/web-extensions/dist/index.cjs",
-      "limit": "1 MB"
-    },
-    {
-      "path": "./packages/web-extensions/dist/index.es.js",
-      "limit": "1 MB"
-    }
-  ],
-  "type": "module",
-  "version": "0.0.0",
-  "workspaces": [
-    "apps/*",
-    "internal/*",
-    "packages/*"
-  ]
+    "bootstrap": "rm --rf node_modules; pnpm install; pnpm build",
+    "build": "turbo run build --token=turbotoken-oss-europe1",
+    "build:vite": "turbo run build-playground --token=turbotoken-oss-europe1 --concurrency=30",
+    "clean": "turbo run clean",
+    "dev:android": "turbo run dev:android --concurrency=30 --filter=\"{./apps/expo-playground}...\"",
+    "dev:expo": "turbo run dev --concurrency=30 --filter=\"{./apps/expo-playground}...\"",
+    "dev:ios": "turbo run dev:ios --concurrency=30 --filter=\"{./apps/expo-playground}...\"",
+    "dev:vite": "turbo run dev --concurrency=30 --filter=\"{./apps/vite-playground}...\"",
+    "generate": "cd ./internal/generator; pnpm generate; cd ../..",
+    "lint": "turbo run lint --token=turbotoken-oss-europe1",
+    "postinstall": "rm -rf ./.git/hooks/pre-commit ./.git/hooks/prepare-commit-msg",
+    "publish-packages": "turbo run build lint --token=turbotoken-oss-europe1 && pnpm version-bump && pnpm changeset publish",
+    "test": "dotenv -- turbo run test --token=turbotoken-oss-europe1",
+    "test:coverage": "dotenv -- turbo run test:coverage",
+    "version-bump": "dotenv -- pnpm changeset version",
+    "version-release": "pnpm changeset pre exit && pnpm version-bump"
+  }
 }
