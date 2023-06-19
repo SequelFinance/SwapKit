@@ -1,5 +1,11 @@
 # @thorswap-lib/toolbox-evm
 
+## 0.0.1-development.16
+
+### Patch Changes
+
+- [`4c4b519`](https://github.com/thorswap/SwapKit/commit/4c4b519187ab2b1c5e8a3062da8862d200fba454) Thanks [@damian-sequel](https://github.com/damian-sequel)! - Fixes package json
+
 ## 0.0.1-development.15
 
 ### Patch Changes
