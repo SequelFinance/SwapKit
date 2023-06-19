@@ -1,6 +1,7 @@
 {
   "author": "sequel",
   "dependencies": {
+    "@arbitrum/sdk": "^3.1.2",
     "@eth-optimism/sdk": "^2.0.2",
     "@ethersproject/abstract-provider": "5.7.0",
     "@ethersproject/abstract-signer": "5.7.0",
@@ -18,7 +19,6 @@
   },
   "description": "Fork of THORSwap Lib toolbox-evm",
   "devDependencies": {
-    "@arbitrum/sdk": "^3.1.2",
     "@internal/config": "workspace:*",
     "@vitest/coverage-c8": "0.30.1",
     "vite": "4.3.3",
